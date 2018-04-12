@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+
+\title{Operating Systems: Homework 1}
+\author{Jack Shi - A92122910}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate} [label=\textbf{\arabic*}.]
+	% Problem 1
+	\item Missing mechanism:
+		\paragraph{Without privileged instructions}Since manipulating protected
+		control registers is a privileged instruction, without it, the user would be
+		able to bypass the dual-mode operation and make their instructions kernel
+		operations as they please. This can result in security issues especially if
+		the user decide to manage I/O directly which is usually a system call
+		through the kernel.
+		\paragraph{Without memory protection}Programs would be able to access
+		eachother's memory address space. This could allow malicious software to
+		steal data or manipulate other programs by illegally access, change their
+		memory data.
+		\paragraph{Without timer interrupts}This would result in the inability to
+		timeout process that take too long or stuck in an infinite loop.
+
+	% Problem 2
+	\item System without privileged mode:
+		\paragraph{Possible to be secure:}Programs could be forced to run in VMs
+		such as the JVM where the enviornment is controlled and the program's access
+		is restricted.
+		\paragraph{Not possible:}In case that the program must run on bare-metal for
+		high efficiency or performance reasons, the lack of a privileged mode could
+		result in kernel corruption.
+
+	% Problem 3
+	\item Which instructions should be privileged?
+		\begin{enumerate} [label=\textbf{\alph*})]
+			% 3a.
+			\item Set value of timer \\
+				\textbf{privileged:} Changing the timer could change the behavior of
+				the interrupts which is a kernel level operation.
+			% 3b.
+			\item Read the clock \\
+				\textbf{privileged:} System time can be used for timing attacks. The
+				system clock is also managed by the kernel.
+			% 3c.
+			\item Clear memory\\
+				\textbf{privileged:} Because of memory protection, processes should not
+				be able to clear memory anywhere. However, within it's own allocated
+				address space, it fine.
+			% 3d.
+			\item Turn off interrupts\\
+				\textbf{privileged:} If any process is allowed to turn off interrupts,
+				then time-out timer interrupt would not be able to prevent malicious
+				infinite loops.
+			%3 e.
+			\item Switch from user to monitor(kernel) mode\\
+				\textbf{privileged:} There is no point is separating modes if the user
+				can just switch to kernel mode as they please.
+		\end{enumerate}
+
+	% Problem 4
+	\item Condition of failure:\\
+		\paragraph{open}\texttt{pathname} refer to block device, and that block
+		device is being used by the system. \texttt{open} fails with error
+		\texttt{EBUSY}.
+		\paragraph{read} \texttt{file descriptor} does not refer to a opened file.
+		\texttt{read} fails with error \texttt{EBADF}.
+		\paragraph{fork} \texttt{fork} fails with error \texttt{ENOMEM} when there
+		is not sufficient memory for another process.
+		\paragraph{exec} If the header of the file for \texttt{exec} is not
+		recognized, \texttt{exec} will result in error \texttt{ENOEXEC}.
+		\paragraph{unlink} If the \texttt{pathname} points to somewhere outside of
+		the alloted address sapce, \texttt{unlink} result in error \texttt{EFAULT}.
+
+	% Problem 5
+\item Challenges when copying parameters from user to kernel modes:\\
+	\textbf{Challenge 1:} The program in user mode does not have the privilege to
+	build a function stack in kernel mode and copy over the parameters.\\
+	\textbf{Challenge 2:} If the parameters contains pointerrs, dereferencing will
+	require violating the user/kernel mode boundaries as well.\\
+	\textbf{Solution: } Temporary grant the caller kernel privileges.
+
+	% Problem 6
+	\item Use hardware interval timer to keep track of the time of day:\\
+		\textbf{Solution:} Since time of day is usually descretized to seconds, the
+		OS can set 1 second long interval timers that update the system time on
+		1Hz interrupt.
+	% Problem 7
+	\item Divise subsitute for traps using interrupts and/or exceptions:\\
+		\textbf{Solution:} It is possible if the user get kernel privilege and
+		implement it's own version of the interrupt handler.
+	% Problem 8
+	\item Consider C program:
+		\begin{enumerate} [label=\textbf{\alph*}.]
+			% 8 a.
+			\item 8 forks total are created.
+			% 8 a.
+			\item The statement is executed twice.
+		\end{enumerate}
+\end{enumerate}
+
+\end{document}
+
