@@ -1,0 +1,1 @@
+./debug.sh: line 34:  9347 Segmentation fault      (core dumped) ./actorconnections movie_casts.tsv test_pairs.tsv connections_test.tsv "ufind"

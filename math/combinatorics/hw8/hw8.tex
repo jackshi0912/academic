@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\title{Combinatorics Homework 7}
+\author{Jack Shi - A92122910}
+\date{March 16th, 2018}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate} [label=(\arabic*)]
+	% (1)
+	\item For each permutation $\pi$ of $1,\cdots,N$, let $LIS(\pi)$ denote the
+		maximal length of an increasing subsequence in $\pi$, and let $LDS(\pi)$
+		denote the maximal length of a decreasing subsequence in $\pi$.
+		\begin{enumerate} [label=(\alph*)]
+			% (a)
+			\item Show that $LIS(\pi)LDS(\pi) \ge N$ for all $\pi$.\\
+			Computer Erdos-Szekeres number $ES(m, n) = N = (m-1)(n-1)+1$.
+			\paragraph{Case 1.}$LIS\ or\ LDS = N$. The condition is trivially
+			satisfied.
+			\paragraph{Case 2.}$LIS\ or\ LDS \neq N$. The lower bound would be the
+			case when either $LIS(\pi)\ \text{or}\ LDS(\pi) = 2$ because there must
+			exist a pair of numbers that are out of order otherwise it would be the
+			first case. The other number (the one that's not 2) is as small as
+			possible without violating Erdos-Szekeres theorem. This condiion is
+			reached when $m=n$. Any imbalance would cause either LIS or LDS to be
+			bigger.
+			\begin{align*}
+				N &= (n-1)(n-1) + 1\\
+				N-1 &= (n-1)^2\\
+				n \ge \frac{N}{2}
+			\end{align*}
+			Since the smallest possible product of $LIS(\pi)LDS(\pi)$ is
+			$\frac{N}{2}*2$. Hence $LIS(\pi)LDS(\pi) >= N$
+
+			% (b)
+			\item Let $\pi_N$ be a $random$ permutation of $1,\cdots,N$. Show that the
+				expected value of $LIS(\pi_N)$ is at least $\sqrt{N}$.\\
+		\end{enumerate}
+
+	% (2)
+	\item Show that, in any finite gathering of people, there are at least two
+		people who know the same number of people at the gathering (assume that
+		“knowing” is a mutual relationship).
+		\begin{proof}
+			First represent the people as vertices V, and ``mutually knowing'' as
+			edges, E, connecting pairs of people. The group of people can be therefore
+			represented as a graph $G = (V,\ E)$ Wants to show there exists $v_i,\ v_j
+			\in V \mid deg(v_i) = deg(v_j)$
+			\paragraph{Case 1: G is a connected finite simple graph }
+				Suppose $|V|=n$, the vertex set contains vertices $\{v_1,\ v_2,\dots
+				v_n\}$, the set of degrees for each vertex contains $\{1,\ 2, \dots
+				n-1\}$. $0$ is not in the possible degree set since the graph is
+				connected.\\
+				By Pigeonhole Principle, there exist a fiber of the function 
+				$f:V \mapsto deg(V)$ that is of size at least $2$. This means that there
+				exist at least two people with the same number of ``known people.''
+			\paragraph{Case 2: G is not a connected graph }If G is a empty graph, then
+			everyone has 0 ``known people'' which satisifies the condition. If there
+			exist edges in the graph, isolate each connected graph and based on
+			\textbf{Case 1}, there exist two people with the same number of ``known
+			people.''
+		\end{proof}
+		
+	% (3)
+	\item Show that, given any five points in a unit square, two of these points
+		are separated by a distance of at most $\frac{1}{\sqrt{2}}$.\\
+		\begin{proof}
+			Given a unit square, split the unit square into 4 identicle
+			$\frac{1}{2} \times \frac{1}{2}$ squares by connecting the midpoint of
+			each opposite sides. Given an assignment function $f$ that maps each point
+			to a small square. By pigeonhole principle there exist a fiber of $f$ such
+			that the size of the fiber is at least 2. This means that at least two
+			points must be in the same small square. The maximum distance between this
+			two points would be 
+			\begin{align*}
+			\sqrt{\left(\frac{1}{2}\right)^2 + \left(\frac{1}{2}\right)^2} 
+			&= \sqrt{\frac{1}{4} + \frac{1}{4}}\\
+			&= \sqrt{\frac{1}{2}}\\
+			&= \frac{1}{\sqrt{2}}
+			\end{align*}
+		\end{proof}
+		
+\end{enumerate}
+\end{document}
+

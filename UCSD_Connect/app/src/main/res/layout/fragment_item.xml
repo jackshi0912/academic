@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/UCSD_Blue"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/text_margin">
+        <TextView
+            android:id="@+id/event_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/light_grey"
+            android:text="Title"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textAppearance="?attr/textAppearanceListItem" />
+        <TextView
+            android:id="@+id/event_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/white"
+            android:text="Date"
+            android:textSize="16dp"
+            android:textAppearance="?attr/textAppearanceListItem" />
+        <TextView
+            android:id="@+id/event_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/light_grey"
+            android:text="Location"
+            android:textSize="16dp"
+            android:textStyle="italic"
+            android:textAppearance="?attr/textAppearanceListItem" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/event_info_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Info"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plan"
+                android:id="@+id/event_plan_button" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hide"
+                android:id="@+id/event_hide_button" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white" />
+</LinearLayout>

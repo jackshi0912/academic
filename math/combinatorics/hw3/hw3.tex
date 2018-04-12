@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+
+\title{Combinatorics: Homework 3}
+\author{Jack Shi - A92122910}
+\date{February 2, 2018}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate} [label=\textbf{\arabic*}.]
+	% Problem 1
+	\item For each positive integer n, prove that there exists a $2^n\times 2^n$
+		Hadamard matrix.
+	\begin{proof} 
+		Show $m\times m$ Hadamard matrices exist for all $m=2^n$.\\
+		Let $X=\{x\in\mathbb{N} \mid x \le n\}$. Since $|X|=n$, $|P(X)|=2^n$.
+		Let C be subsets of X indexed as $\{C_1,\ C_2,\ \cdots,C_{2^n}\}$.\\
+		Let matrix $A=(a_{ij})$ defined as follows: 
+			$$a_{ij}=(-1)^{|C_i\cap C_j|}$$
+		To claim that A is a Hadamard matrix, $\langle r_i,r_j\rangle=0$ for
+		$i\neq j$ must be true.
+		From definition of A, the following holds:
+			$$\langle r_i,r_j \rangle=\sum_k (-1)^{|C_i\cap C_k| + |C_j\cap C_k|}$$
+		Since $C_i \neq C_j$, there exists an element $x \in X$ such that $x\in
+		C_i \setminus C_j$ or $x\in C_j \setminus C_i$. Let $x\in C_i \setminus
+		C_j$. Since x is a arbituary element in X, half of the subsets contain
+		x, the other half does not. Let $C_x$ be all the subsets that contain x,
+		$C_{\bar{x}}$ be all the subsets that does not contain x.\\
+		Given $\langle r_i,r_j \rangle=\sum_k (-1)^{|C_i\cap C_k| + |C_j\cap C_k|}$,
+		for half of the sum $C_k \in C_x$, for the other half $C_k \in C_{\bar{x}}$.
+		These two halves have different parity because x is in half of the $C_k$ of
+		the sum and not in $C_k$ for the other half. Since half of the sum has
+		$(-1)^{odd}$, the other half have $(-1)^{even}$, this result in $(-1) + (1)$
+		which is 0.\\
+
+		Hence shown for any number n, there is a $m\times m$ Hadamard matrix such
+		that $m = 2^n$
+	\end{proof}
+
+	% Problem 2
+	\item 
+		\begin{proof} Wants to show:
+			$$min\{a_1, a_2, \dots a_n\} \le \frac{a_1 + a_2 + \dots + a_n}{n}
+			\le max\{a_1, a_2, \dots a_n\}$$
+			let $a_{min}$ be the minimum element in series $\{a_1, a_2, \dots a_n\}$,
+			$a_{max}$ be the maximum element in series $\{a_1, a_2, \dots a_n\}$. 
+			\begin{align*}
+				a_{min} \cdot n &\le a_1 + a_2 + \dots + a_n \le a_{max} \cdot n &\\
+				\frac{a_{min} \cdot n}{n} &\le \frac{a_1 + a_2 + \dots + a_n}{n} \le
+				\frac{a_{max}\cdot n}{n} &\\
+				a_{min} &\le \frac{a_1 + a_2 + \dots + a_n}{n} \le a_{max}& \\
+				min\{a_1, a_2, \dots a_n\} &\le \frac{a_1 + a_2 + \dots + a_n}{n}
+				\le max\{a_1, a_2, \dots a_n\} &
+			\end{align*}
+		\end{proof}
+
+	% Problem 3
+	\item  For each positive integer n, prove that there exists an $n \times n$
+		matrix A with $\pm 1$ entries such that $|det A| \ge \sqrt{n!}$
+		\begin{proof}
+			There are $2^{n^2}$ matrices with $\pm 1$ entries. Let $D_n$ be the mean
+			square average:
+			$$D_n=\sqrt{\frac{\sum_A (det\ A)^2}{2^{n^2}}}$$
+			$$\Rightarrow max_A\ det\ A \ge D_n$$
+			This is true as we have shown in previous proof that average is in between
+			min and max. By squaring both sides of D and subsituting the definition of
+			determinant, the following is true:
+			\begin{align*}
+				D_n=\sqrt{\frac{\sum_A (det\ A)^2}{2^{n^2}}}
+				{D_n}^2=\frac{1}{2^{n^2}} \sum_A \left(\sum_{\pi} (sign\
+				\pi)a_{1\pi(1)}a_{2\pi(2)} \dots a_{n\pi(n)}\right)^2
+			\end{align*}
+
+			By expanding the squared summation, splitting $\pi$ into $\sigma$ and
+			$\tau$, the following holds:
+				$${D_n}^2=\frac{1}{2^{n^2}} \sum_A \left(\sum_\sigma \sum_\tau (sign\
+				\sigma)(sign\ \tau) a_{1\sigma(1)}a_{1\tau(1)} \dots a_{n\sigma(n)}a_{n\tau(n)} \right)$$
+			By applying interchage of summation, we have:
+			$${D_n}^2=\frac{1}{2^{n^2}} \sum_{\sigma ,\ \tau}  (sign\ \sigma)(sign\
+			\tau) \left(\sum_A a_{1\sigma(1)}a_{1\tau(1)} \dots a_{n\sigma(n)}a_{n\tau(n)} \right)$$
+
+			Since $\sum_A X$ is equivalent as the following: 
+			\begin{align*}
+				&\sum_{a_{11}, a_{12}, \dots a_{nn}} X &\\ 
+				&\sum_{a_{11}=\pm 1} \sum_{a_{12}=\pm 1} \dots
+				\sum_{a_{nn}=\pm 1} X &\\
+			\end{align*}
+			Let $X = a_{1\sigma(1)}a_{1\tau(1)} \dots a_{n\sigma(n)}a_{n\tau(n)}$ we
+			have the following:
+				$$\sum_{a_{11}=\pm 1} \sum_{a_{12}=\pm 1} \dots
+				\sum_{a_{nn}=\pm 1} a_{1\sigma(1)}a_{1\tau(1)} \dots a_{n\sigma(n)}a_{n\tau(n)} $$
+			Suppose $\sigma (i) = k \neq \tau (i)$. Every sum contains $a_{ik}$.
+			This implies that the entire sum has the factor $\sum_{a_{ik}=\pm 1}
+			a_{ik} = 0$. If $\sigma = \tau$ the sum is no longer 0. The long product
+			in this case converges to 1, $(sign\ \sigma)^2$ also converges to 1.
+			Hence we have the following:
+			\begin{align*}
+				&\sum_{a_{11}=\pm 1} \dots \sum_{a_{nn}=\pm 1} 1 = 2^{n^2}&\\
+				D_n^2 = \frac{1}{2^{n^2}} \sum_\sigma 2^{n^2} = n!
+				D_n = \sqrt{n!}
+			\end{align*}
+			Hence shown there exists an $n \times n$ matrix A with entries $\pm 1$
+			such that $|det\ A| \ge \sqrt{n!}$
+		\end{proof}
+\end{enumerate}
+
+\end{document}

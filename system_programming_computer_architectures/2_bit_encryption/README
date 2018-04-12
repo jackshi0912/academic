@@ -1,0 +1,94 @@
+Description:
+	The program encrypt and decrypt data. The process is achieved by firs
+	creating a mask. The mask is made by combinging the user input
+	64-bit passphrase and the user input 64-bit key using the bitwise xor 
+	operator. In other words, each bit of the 64-bit key and 64-bit
+	passphrase are xor-ed to create a mask. The mask is then rotated bitwise
+	based on user's input. Neigative rotate value indicate a left rotate
+	while positive rotate value rotates the mask right. The data is
+	encrypted by performing a bitwise xor with the mask. Each xor-ed piece
+	is 64-bit. Once there are no longer 64-bit size data left, the
+	encryption is then performed one byte at a time. The input data to be
+	encrypted is recived through stdin. The encrypted data is then written
+	to stdout.
+
+How to compile:
+	Make sure the current working directory contains the Makefile and source
+	files. Use shell command "make new" clean all the previous
+	compiled side products and compile/link all the new files to create a
+	new executable.
+	The default "make" target also compiles the source files and links all
+	the modules together.
+
+How to run:
+	The executable takes 4 parameters
+	passphrase, key1 key2, rotateValue
+	pasphrase is a string which has to be at least 8 characters long
+	key 1, 2 are integer values that can be hex, octal or decimal
+	rotateValue has to be an decimal value within the range +- 63
+
+	Execution instruction: Type the following into the UNIX Terminal
+	"./pa2 passphrase key1 key2 rotateValue"
+	The program then would then pause for data to be inputed from stdin.
+	Enter the desired data to be encrypted. (Finish with control+D)
+	The encrypted data should be displayed in stdout.
+
+	Encrypting data could also be passed into stdin by piping or
+	redirecting.
+	Piping:
+		cat data | pa2 passphrase key1 key2 rotateValue
+		data is the name of the file containing the data for encryption
+
+	Redirecting:
+		pa2 passphrase key1 key2 rotateValue < data
+		data is the name of the file containing the data for encryption
+
+	Redirecting stdout:
+		With any method above, the stdout could be redirected by adding
+		"> outputFile" to the end of the command
+		outputFile is the name of the file containing stdout data
+
+Example of normal output:
+
+pa2$ ./pa2 cse30rocks 12 12 4
+this is my first message
+¿__ ¿nU¿SVB¿RE ¿`Ce
+
+Example of abnormal output:
+
+pa2$ ./pa2
+Usage: ./pa2 passphrase key0 key1 rotateValue
+	passphrase (must be at least eight characters long)
+	key0 (must be numeric; decimal, octal, or hexadecimal)
+	key1 (must be numeric; decimal, octal, or hexadecimal)
+	rotateValue (must be a decimal value within the range [-63 - +63])
+
+Testing Process:
+
+	Unit testing was done for all moduals other than myCipher.
+	Each moduals is tested with common cases, edge cases and purposly
+	erroneous inputs. The edge cases include the upper and lower bound of
+	the roatate value (+-63). Wrong inputs include character input for
+	integer prameters and inputs out side of the proper range.
+	myCipher is tested by checking the output of pa2.c which uses my Cipher
+	for the encryption/decryption process.
+
+Questions:
+
+1. mv oldFileName newFileName
+2. cp ~/location/file ~/newLocation/file
+3. The content of the clipbord is copied into vim. The effect is hemologous to
+   control + shift + V
+4. A .vimrc file is the configuration file for the vim editor. Settings can be 
+   added/changed by writing commands in them. The file can be accessed by first
+   going to the root directory (cd). then use vim to edit .vimrc (vim .vimrc).
+5. The command for cutting a line is "dd". The line can be pasted by using "p"
+6. Search is initiated in command mode, starting with "/". The command looks
+   like "/string".
+7. The command is used in command mode: ":set number"
+8. cd ~/fubar
+   This works anywhere because ~/fubar is the absolute path relative to root
+9. chmod g+r
+10. Cheating in a professional setting is just as counterproductive as cheating
+    in the academic setting if not more. It can damage the reputation of the
+    group as well as the company. It may also result in serious penalties.

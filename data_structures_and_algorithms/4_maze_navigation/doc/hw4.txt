@@ -1,0 +1,18 @@
+/*
+ * NAME: Huize Shi
+ * ID: A92122910
+ * LOGIN: cs12wjz
+ */
+ 
+I used the list's isEmpty method for the stack's isEmpty method because the 
+stack is empty when the list is empty. The list's isEmpty method returns true 
+if the list is empty.
+I used removeLast method to remove the element on top of the stack. I used this
+particular method because I defined the tail of the list as the top of the 
+stack. The head is the bottom of the stack.
+Since Stack's IO configuration is first in last out, I used removeLast method 
+of the list to remove an element from the top of the stack. I implemented it 
+this way because the tail is defined as the top of the stack.
+I used the list's size method as the stack's own size method because all the 
+stack's data are going to be stored in the list. The list's size is therefore 
+the same as the stack's size.

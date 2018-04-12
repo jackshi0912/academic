@@ -1,0 +1,330 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{scrextend}
+\title{Abstract Algebra: Homework 2}
+\author{Huize Shi - A92122910}
+\date{Thursday January 25, 2018}
+
+\begin{document}
+\maketitle
+
+\section*{Section 3}
+\subsection*{4.}
+	Let $a,\ b \in \mathbb{Z},\ a\neq b$. 
+	\begin{flalign*}
+		\phi(a+b) &= a+b+1&\\
+		\phi(a) + \phi(b) &= (a+1)+(b+1)&\\
+		a+b+1 &\neq a+ b+2&\\
+		\phi(a+b) &\neq \phi(a) + \phi(b)&
+	\end{flalign*}
+	$\phi$ is not isomorphic.
+
+\subsection*{17.}
+	\subsubsection*{a.}
+	\begin{addmargin}[1em]{1em}
+		Let $a,\ b \in \mathbb{Z}$. 
+		\begin{flalign*}
+			a*b &= \phi(a-1) * \phi(b-1)&\\
+			&= \phi((a-1)\cdot(b-1))&\\
+			&=\phi(ab-a-b+1)&\\
+			&=ab-a-b+2&
+		\end{flalign*}
+		$*:\mathbb{Z}\times\mathbb{Z}\mapsto\mathbb{Z}$ by $*(a, b)=ab-a-b+2$\\
+		Identity element for $\langle \mathbb{Z}, *\rangle$ is $\phi(1) = 2$
+		\begin{proof} $\phi$ is an isomorphism:\\
+			Let $a,\ b \in \mathbb{Z}$. 
+			\begin{align*}
+				\phi(a\cdot b) &\stackrel{?}{=} \phi(a) * \phi(b)&\\
+				ab+1 &\stackrel{?}{=} (a+1)(b+1)-(a+1)-(b+1)+2&\\
+				ab+1 &\stackrel{?}{=} (a+1)(b+1)-(a+1)-(b+1)+2&\\
+				ab+1 &\stackrel{?}{=} ab+a+b+1-a-1-b-1+2&\\
+				ab+1 &= ab+1&
+			\end{align*}
+			Hence shown $\phi(a\cdot b) = \phi(a) * \phi(b)$, $\phi$ is an isomorphism
+			of $\langle \mathbb{Z},\ \cdot\rangle$ with $\langle \mathbb{Z},\ *\rangle$.
+		\end{proof}
+	\end{addmargin}
+
+	\subsubsection*{b.}
+	\begin{addmargin}[1em]{1em}
+		Let $a,\ b \in \mathbb{Z}$.
+		\begin{flalign*}
+			\phi^{-1}(n) = n-1
+			a*b &= \phi^{-1}(a+1) * \phi(b+1)&\\
+			&= \phi^{-1}((a+1)\cdot(b+1))&\\
+			&=\phi^{-1}(ab+a+b+1)&\\
+			&=ab+a+b&
+		\end{flalign*}
+		$*:\mathbb{Z}\times\mathbb{Z}\mapsto\mathbb{Z}$ by $*(a, b)=ab+a+b$\\
+		Identity element for $\langle \mathbb{Z}, *\rangle$ is $\phi^{-1}(1) = 0$
+		\begin{proof} $\phi$ is an isomorphism:\\
+			Let $a,\ b \in \mathbb{Z}$.
+			\begin{align*}
+				\phi(a*b) &\stackrel{?}{=} \phi(a) \cdot \phi(b)&\\
+				\phi(ab+a+b) &\stackrel{?}{=} (a+1) \cdot (b+1)&\\
+				ab+a+b+1 &= ab+a+b+1&
+			\end{align*}
+			Hence shown $\phi(a* b) = \phi(a) \cdot \phi(b)$, $\phi$ is an isomorphism
+			of $\langle \mathbb{Z},\ *\rangle$ with $\langle \mathbb{Z},\ \cdot\rangle$.
+		\end{proof}
+		
+	\end{addmargin}
+
+\subsection*{26.}
+	\begin{proof} Assume $\phi:S\mapsto S'$ is an isomorphism of $\langle S, *\rangle$
+		with $\langle S', *'\rangle$. Wants to show $\phi^{-1}$ is an isomorphism of 
+		$\langle S', *'\rangle$ with $\langle S, *\rangle$.\\
+		Let $a,\ b \in S$, such that $\phi(a)=a'$, $\phi(b)=b'$, for some
+		$a',\ b' \in S'$.
+		\begin{align*}
+			\phi(a*b) &= \phi(a) *' \phi(b) &\\
+			\phi(a*b) &= a' *' b' &\\
+			\phi^{-1}(\phi(a*b)) &= \phi^{-1}(a' *' b') &\\
+			a*b &= \phi^{-1}(a' *' b') &\\
+			\phi^{-1}(a')*\phi^{-1}(b') &= \phi^{-1}(a' *' b') &
+		\end{align*}
+		By definition of isomorphism, $\phi^{-1}$ is an isomorphism of $\langle S',
+		*'\rangle$ with $\langle S, *\rangle$.
+	\end{proof}
+
+\subsection*{27.}
+	\begin{proof} Assume $\phi:S\mapsto S'$ is an isomorphism of $\langle S, *\rangle$
+		with $\langle S', *'\rangle$ and $\psi:S'\mapsto S''$ is an isomorphism of
+		$\langle S', *'\rangle$ with $\langle S'', *''\rangle$. Wants to show 
+		$\psi \circ \phi$ is an isomorphism of $\langle S, *\rangle$ with $\langle
+		S'', *''\rangle$.\\
+		Let $a,\ b \in S$, such that $\phi(a)=a'$, $\phi(b)=b'$, for some
+		$a',\ b' \in S'$, $\psi(a') = a''$, $\psi(b')=b''$, for some
+		$a'',\ b'' \in S''$.
+		\begin{align*}
+			\phi(a*b) &= \phi(a) *' \phi(b) &\\
+								&= a' *' b' &\\
+			\psi(a'*' b') &= \psi(a') *'' \psi(b') &\\
+										&= a'' *'' b'' &\\
+			\psi(\phi(a*b)) &= \psi(a'*' b') = a'' *'' b''&
+		\end{align*}
+		Hence shown $\psi \circ \phi$ is an isomorphism of $\langle S, *\rangle$ with $\langle
+		S'', *''\rangle$.
+	\end{proof}
+
+\subsection*{30.}
+\begin{proof} ``The operator * is associative.'' is a structural property of a
+	binary structure $\langle S',\ *'\rangle$.\\
+	Let $\phi: S \mapsto S'$ be an isomorphism of $\langle S,\ *\rangle$ with $\langle S',\
+	*'\rangle$.\\
+	Let $a,\ b,\ c \in S$, such that $\phi(a)=a'$, $\phi(b)=b'$, $\phi(c)=c'$, for some
+	$a',\ b',\ c' \in S'$.
+
+	\begin{align*}
+		((a' *' b') *' c') &= (\phi(a) *' \phi(b)) *' \phi(c) &\\
+											 &= \phi(a*b) *' \phi(c)&\\
+											 &= \phi((a * b) * c))&\\
+											 &= \phi(a*(b*c))&\\
+											 &= \phi(a) *' \phi(b*c)&\\
+											 &= a' *' (\phi(b)*'\phi(c))&\\
+											 &= (a' *' (b'*' c'))&
+	\end{align*}
+	Hence proved that ``the operator * is associative'' is a structural property of a
+	binary structure $\langle S',\ *'\rangle$.\\
+\end{proof}
+
+\subsection*{32.}
+\begin{proof} ``There exists an element b in S such that $b * b = b$'' is a structural 
+	property of a binary structure $\langle S',\ *'\rangle$.\\
+	Let $\phi: S \mapsto S'$ be an isomorphism of $\langle S,\ *\rangle$ with $\langle S',\
+	*'\rangle$.\\
+	Assume $\exists b \in S$ such that $b*b=b$. 
+	\begin{align*}
+		b*b &= b&\\
+		\phi(b*b) &= \phi(b)&\\
+		\phi(b)*'\phi(b) &= \phi(b)&\\
+		b' *' b' &= b'&
+	\end{align*}
+	Hence proved that ``There exists an element b in S such that $b * b = b$'' is a structural 
+	property of a binary structure $\langle S',\ *'\rangle$.
+\end{proof}
+
+\section*{Section 4}
+\subsection*{4.}
+	$\langle \mathbb{Q},\ * \rangle$ is a group structure.
+	\paragraph{$\mathcal{G}_1$: Associativity} For $a,\ b,\ c\in \mathbb{Q}$,
+	$a*(b*c) = a(bc) = (ab)c = (a*b)*c$.
+	\paragraph{$\mathcal{G}_2$: Left identity element} For $a \in 
+	\mathbb{Q}$, $1 * a = a$, 1 is the left identity element.
+	\paragraph{$\mathcal{G}_3$: $\forall a \in \mathbb{Q},\ 
+	\exists a^{-1},\ a^{-1}*a=e$, e is the identity}
+	Let $\frac{a}{b} \in \mathbb{Q}$, $\frac{b}{a} * \frac{a}{b}=\frac{b}{a}
+	\cdot \frac{a}{b}=1$. Since 1 is the identity, the inverse $\frac{b}{a}$ 
+	exist $\forall \frac{a}{b}\in\mathbb{Q}$.
+
+\subsection*{19.}
+\subsubsection*{a.}
+	\begin{addmargin}[1em]{1em}
+		Show that $*:S\times S\mapsto S$\\
+		Let $a,\ b\in (\mathbb{R} \setminus \{-1\})$, $a+b+ab \in \mathbb{R}$
+		because $\mathbb{R}$ is closed under addition and multiplication.\\
+		Check if {-1} is in image of *: 
+		\begin{align*}
+			a+b+ab &= -1&\\
+			a+b+ab+1 &= 0&\\
+			(a+1)(b+1)&= 0&\\
+			a &=-1&\\ 
+			b &=-1&
+		\end{align*}
+		Since $-1 \notin S$, -1 is not in the image of *. Since $*:S\times S\mapsto
+		S$, * is a binary operator on S.
+	\end{addmargin}
+
+\subsubsection*{b.}
+	\begin{addmargin}[1em]{1em}
+		\begin{proof} $\langle S,\ * \rangle$ is a group structure.
+		\paragraph{$\mathcal{G}_1$: Associativity} For $a,\ b,\ c\in S$,
+			\begin{align*}
+				a*(b*c) &\stackrel{?}{=} (a*b)*c&\\
+		  	a*(b+c+bc) &\stackrel{?}{=} (a*b) + c + (a*b)c&\\
+		  	a + (b+c+bc) + a(b+c+bc) &\stackrel{?}{=}(a+b+ab)+c+(a+b+ab)c&\\
+		  	a + b+ ab+c+ca+cb+abc &=a+b+ab+c+ca+cb+abc&
+			\end{align*}
+			Since $a*(b*c) = (a*b)*c$, * on S is a associative.
+		\paragraph{$\mathcal{G}_2$: Left identity element} For $a \in S$
+			\begin{align*}
+				e * a &= a&\\
+				e + a + ea &= a&\\
+				e &= 0&
+			\end{align*}
+			Since 0 * a = a, 0 is the left identity element in S.
+		\paragraph{$\mathcal{G}_3$: $\forall a \in S,\ \exists a^{-1},\ a^{-1}*a=e$,
+			e is the identity}
+			Let $a^{-1},\ a \in S$,
+			\begin{align*}
+				a^{-1} * a &= 0&\\
+				a^{-1} + a + a^{-1}a &= 0&\\
+				a^{-1} + a^{-1}a &= -a&\\
+				a^{-1} &= \frac{-a}{1+a}&
+			\end{align*}
+			Since $\frac{-a}{1+a} * a=e$, $\forall a \in S, \frac{-a}{1+a}$ is an
+			inverse of a.\\ \\
+			Hence prooved $\langle S,\ * \rangle$ is a group structure.
+			\end{proof}
+	\end{addmargin}
+
+\subsubsection*{c.}
+	\begin{addmargin}[1em]{1em}
+		Operation * is commutative because $a*b = a+b+ab = b+a+ba = b*a$.
+		\begin{align*}
+			2*x*3 &= 7 &\\
+			(2*3)*x &= 7&\\
+			(11)*x &= 7&\\
+			(11) + x +11x &= 7&\\
+			x +11x &= 7-11&\\
+			x &= \frac{7-11}{1+11}&\\
+			x &= \frac{-4}{12}&\\
+			x &= \frac{-1}{3}&
+		\end{align*}
+	\end{addmargin}
+
+\subsection*{30.}
+\subsubsection*{a.}
+	\begin{addmargin}[1em]{1em}
+		\begin{proof} * is a Binary operator on $\mathbb{R}^*$\\
+			$*:\mathbb{R}^*\times \mathbb{R}^* \mapsto \mathbb{R}^*$ by $a*b =
+			|a|b$\\
+			Since $|\mathbb{R}| \subset \mathbb{R}$, $\mathbb{R} \cdot \mathbb{R} \in
+			\mathbb{R}$, * is binary operator on $\mathbb{R}$, 0 $\notin$ img(*) 
+			$\Rightarrow$ * is binary operator on $\mathbb{R}^*$.
+			\begin{align*}
+				a*b &= 0&\\
+				|a|b &= 0&\\
+					a &= 0 &\\
+					b &= 0 &
+			\end{align*}
+			Since $0 \notin \mathcal{R}^*$, a and b cannot be 0. 0 is therefore not
+			in range of *. Hence proved * is a binary operator on $\mathbb{R}^*$.
+		\end{proof}
+
+		\begin{proof} * on $\mathbb{R}^*$ is associative\\
+			Let a, b, c in $\mathcal{R}^*$,
+			\begin{align*}
+				a*(b*c) &= a*(|b|c)&\\
+								&= |a||b|c&\\
+								&= |ab|c&\\
+								&= (a*b)*c\\
+			\end{align*}
+			Hence proved * on $\mathbb{R}^*$ is associative.
+		\end{proof}
+		\noindent
+		Hence shown * gives an associative binary operation on $\mathbb{R}$.
+	\end{addmargin}
+
+\subsubsection*{b.}
+	\begin{addmargin}[1em]{1em}
+		Left identity e:
+		\begin{align*}
+			e * a &= a &\\
+			|e|a &= a &\\
+			e &= 1 &
+		\end{align*}
+		1 is a left identity of $\langle \mathbb{R}^*, *\rangle$.
+		\begin{align*}
+			a*a^{-1} &= 1 &\\
+			|a|a^{-1} &= 1 &\\
+			a^{-1} &= \frac{1}{|a|} &
+		\end{align*}
+		$\forall a \in \mathbb{R}^*$, $a^{-1} = \frac{1}{|a|}$ is the right inverse of a.
+	\end{addmargin}
+
+\subsubsection*{c.}
+No because $|1|$ is the identity. That means $a \in \mathbb{R}$ has two inverses:
+$a^{-1}$ and $-a^{-1}$.
+
+\subsubsection*{d.}
+It is important to enforce that all conditions of the one sided group axioms must
+apply to the same side. Mixing and matching sides breaks an important constraint
+of the group axioms.
+
+\subsection*{32.}
+	\begin{proof}Every group G with identity e and such that $x*x=e$ for all $x\in G$ is
+	abelian. Let $a,\ b \in G$
+		\begin{align*}
+			e&=(a*b)*(a*b)&\\
+			e&=(a*a)*(b*b)&\\
+			a*b*a*b&=a*a*b*b&\\
+			(a^{-1}*a)*b*a*(b*b^{-1})&=(a^{-1}*a)*a*b*(b*b^{-1})&\\
+			b*a &= a*b &
+		\end{align*}
+	Hence every group G with identity e and such that $x*x=e$ for all $x\in G$ is
+	abelian.
+	\end{proof}
+
+\subsection*{35.}
+\begin{proof}
+	Assume $(a*b)^2 = a^2 * b^2$, wants to show $a*b = b*a$
+	\begin{align*}
+		(a*b)^2 &= a^2 * b^2&\\
+		(a*b)*(a*b) &= a*a*b*b&\\
+		a*b*a*b&=a*a*b*b&\\
+		(a^{-1}*a)*b*a*(b*b^{-1})&=(a^{-1}*a)*a*b*(b*b^{-1})&\\
+		b*a &= a*b &
+	\end{align*}
+	Ergo $(a*b)^2 = a^2 * b^2 \Rightarrow a*b = b*a$
+\end{proof}
+
+\subsection*{36.}
+\begin{proof}
+	Assume $a*b = b*a$ wants to show $(a*b)'=a' * b'$
+	\begin{align*}
+		(a*b)' &= (b*a)'&\\
+					 &= a'*b'&\\
+	\end{align*}
+
+	Assume $(a*b)'=a' * b'$ wants to show $a*b = b*a$.
+	\begin{align*}
+		(a*b)' &= a'*b'&\\
+		(a*b)' &= (b*a)'&\\
+		a*b &= b*a&
+	\end{align*}
+	Since $((a*b)'=a' * b'\Rightarrow a*b = b*a) \wedge (a*b = b*a
+	\Rightarrow (a*b)'=a' * b')$, ergo $(a*b)'=a' * b'\Leftrightarrow a*b = b*a$
+\end{proof}
+\end{document}
+

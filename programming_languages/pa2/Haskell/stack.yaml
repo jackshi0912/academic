@@ -1,0 +1,7 @@
+resolver: lts-9.5
+packages:
+- '.'
+extra-deps: 
+- clock-0.7.2 
+flags: {}
+extra-package-dbs: []

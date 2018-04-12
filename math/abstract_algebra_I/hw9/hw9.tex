@@ -1,0 +1,138 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amsfonts, mathtools}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+
+\title {Abstract Algebra Homework 8}
+\date {March 15, 2018}
+\author {Huize(Jack) Shi - A92122910}
+
+\begin {document}
+\maketitle
+
+\section*{Section 10}
+\subsection*{34. }
+A proper subgroup can conly be of cardinality $p$, $q$ and $1$. Since $p$ and $q$
+are primes, groups of prime order is syclic and groups of order $1$ contains only
+the identity which is cyclic. This means every proper subgroup of a group of
+order $pq$ must be cyclic.
+
+\subsection*{35. }
+Define a bijection $\phi(aH) = Ha^{-1}$:
+\paragraph{Well defined: }
+Show that $aH = bH \Rightarrow Ha^{-1} = Hb^{-1}$\\
+Let $\phi(aH) = a^{-1}$, $\phi(bH) = b^{-1}$, $aH = bH$. Wants to show
+$Ha^{-1} = Hb^{-1}$.\\
+Let $a\in aH$. Since $aH = bH$, $a\in bH$, which implies $\exists h \in H \mid
+a=bh$. If we take the inverse of both sides, we have $a^{-1} = h^{-1}b^{-1}$
+Since $H$ is a subgroup $h^{-1} \in H$. This implies $a^{-1} \in Hb^{-1}$. Since 
+$a = ah \mid h=e \in H$, $a^{-1} = h^{-1}a^{-1}$, $a^{-1} \in Ha^{-1}$, this
+means that $Ha^{-1} = Hb^{-1}$.
+
+\paragraph{Bijective: }$\phi^{-1}(Ha^{-1}) = aH$
+
+
+\subsection*{39. }
+The left cosets partition $G$ into two cells: $aH, eH=H$. Since cells form a
+parition of $G$, $aH = G \setminus H$. The right cosets parition $G$ also into two cells 
+$Ha, eH=H$. These cells also form a partiton of $G$ which means $Ha = G
+\setminus H$. This means $aH = Ha$.
+
+\subsection*{41. }
+Identity: identity of $(R,\ +)$ is 0. The left coset of $(\mathbb{Z},\ +)$
+containing identity holds this property because it is simply $\mathbb{Z}$ and
+only $0 \in \mathbb{Z} \mid 0 \le 0 < 1$.\\
+Consider $r \in \mathbb{R}$, $z_i \in \mathbb{Z} = \{\cdots z_{-1}, z_0,
+z_1 \cdots\}$ in increasing order, let $r+z_i$ satisfy the condition $0 \le r+z_i
+< 1$. Consider $r + z_{i\pm 1}$, since $z_{i\pm 1} - z_1 = \pm 1$. This means
+$r+z_{i \pm 1}$ will add or subtract 1 from $r+z_i$ which position them out of
+the interval. Since $\mathbb{Z}$ is ordered as shown above and it monotolically increase,
+this means only $z_i$ is in the interval.
+
+\subsection*{43. }
+\paragraph{a. }
+\subparagraph{Reflexive: }
+	\begin{align*}
+			a &= a \\
+		eae &= eae \\
+			a &\sim a
+	\end{align*}
+\subparagraph{Symmetric: }
+	\begin{align*}
+			a &\sim b \\
+			a &= hbk \\
+	  hbk &= b \\
+		h^{-1}hbkk^{-1} &= h^{-1}bk^{-1} \\
+		  b &= h^{-1}bk^{-1} \\
+	\end{align*}
+	Since $h^{-1} \in H \wedge k^{-1} \in K$, $b \sim a$.
+\subparagraph{Transitive: }
+	\begin{align*}
+			a &\sim b \wedge b \sim c \\
+			a &= hbk wedge b=h'ck' \\
+			a &= hh'ck'k
+	\end{align*}
+Since $H$ and $K$ are sub groups, $hh' \in H \wedge kk' \in K$ therefore $a \sim
+c$.
+\paragraph{b. }The equivalence class contains $HaK$. This set contains all right
+coset of $H$ on $a$, and left coset of $K$ on $a$.
+
+\section*{Section 11}
+\subsection*{1. }
+element: order\\
+\begin{align*}
+	(0, 0)&:\ 1\\
+	(1, 0)&:\ 2\\
+	(0, 1)&:\ 4\\
+	(1, 1)&:\ 6\\
+	(0, 2)&:\ 2\\
+	(1, 2)&:\ 4\\
+	(0, 3)&:\ 4\\
+	(1, 3)&:\ 6
+\end{align*}
+The group is cyclic because the highest order is 6.
+
+\subsection*{2. }
+element: order\\
+\begin{align*}
+	(0, 0)&:\ 1\\
+	(0, 1)&:\ 4\\
+	(0, 2)&:\ 2\\
+	(0, 3)&:\ 4\\
+	(1, 0)&:\ 3\\
+	(1, 1)&:\ 12\\
+	(1, 2)&:\ 6\\
+	(1, 3)&:\ 12\\
+	(2, 0)&:\ 3\\
+	(2, 1)&:\ 12\\
+	(2, 2)&:\ 6\\
+	(2, 3)&:\ 12\\
+\end{align*}
+
+\subsection*{3. }
+order of $(2,6)$ in $\mathbb{Z}_4 \times \mathbb{Z}_{12}$ is $lcm(2,2) = 2$.
+
+\subsection*{4. }
+order of $(2,3)$ in $\mathbb{Z}_6 \times \mathbb{Z}_{15}$ is $lcm(3,5) = 15$.
+
+\subsection*{7. }
+order of $(3,6,12,16)$ in $\mathbb{Z}_4 \times \mathbb{Z}_{12} \times
+\mathbb{Z}_{20} \times \mathbb{Z}_{24}$ is $lcm(4,2,5,3) = 60$.
+
+\subsection*{46. }
+\begin{proof}Given abelian groups $G_1, G_2, \cdots, G_n$. Let their cartesian
+	product $G_1 \times G_2 \times \cdots \times G_n = (g_1,g_2,\cdots,g_n)$.
+	Consider the direct product $(g_1,g_2,\cdots,g_n)(g_1',g_2',\cdots,g_n') =
+(g_1g_1',g_2g_2',\cdots,g_ng_n')$. Since each group $G_i \mid i\in\mathbb{Z},
+1\le i\le n$ is Abelian, the following is true: 
+\begin{align*}
+(g_1,g_2,\cdots,g_n)(g_1',g_2',\cdots,g_n') &= (g_1g_1',g_2g_2',\cdots,g_ng_n')\\
+&= (g_1'g_1,g_2'g_2,\cdots,g_n'g_n)\\
+&= (g_1',g_2',\cdots,g_n')(g_1,g_2,\cdots,g_n)
+\end{align*}
+Hence shown a direct product of abelian group is abelian.
+\end{proof}
+
+\end {document}
+

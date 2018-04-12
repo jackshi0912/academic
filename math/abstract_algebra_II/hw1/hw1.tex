@@ -1,0 +1,232 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsthm, amsfonts, mathtools}
+\usepackage{enumitem}
+\usepackage{dsfont}
+
+\begin{document}
+
+\null\hfill\begin{tabular}[t]{l@{}}
+	\textbf{Name: }Huize Shi - A92122910 \\
+	\textbf{Discussion: }A04 \\
+	\textbf{Homework: }1
+\end{tabular}
+\noindent\rule{\textwidth}{0.5pt}
+
+\begin{enumerate}
+	% 1
+	\item Suppose $R_1, \dots, R_n$ are rings. Prove that $R_1, \dots, R_n$ are
+		unital if and only if $R_1 \times, \dots, \times R_n$ is unital.
+		\begin{proof} $(=>)$:
+			Assume $R_1 \times, \dots, \times R_n$ is unital, wants to show $R_1,
+			\dots, R_n$ are unital.
+			\begin{align*}
+				&R_1 \times, \dots, \times R_n \text{ are unital } \Rightarrow \exists
+				\text{ unity }(\mathds{1}_1, \dots, \mathds{1}_n)\\
+				\Rightarrow &(\mathds{1}_1, \dots, \mathds{1}_n) \cdot (r_1, \dots, r_n)
+				= (r_1, \dots, r_n) \forall r_i \in R_i,\ i\in \mathbb{Z},\ 1 \le i \le n \\
+				\Rightarrow &(\mathds{1}_1 \cdot r_1, \dots, \mathds{1}_n \cdot r_n) 
+				= (r_1, \dots, r_n) \forall r_i \in R_i,\ i\in \mathbb{Z},\ 1 \le i \le n \\
+				\Rightarrow &(r_1, \dots, r_n) \cdot (\mathds{1}_1, \dots, \mathds{1}_n) 
+				= (r_1, \dots, r_n) \forall r_i \in R_i,\ i\in \mathbb{Z},\ 1 \le i \le
+				n \\
+				\Rightarrow &(r_1 \cdot \mathds{1}_1, \dots, r_n \cdot \mathds{1}_n) 
+				= (r_1, \dots, r_n) \forall r_i \in R_i,\ i\in \mathbb{Z},\ 1 \le i \le n \\
+				\Rightarrow &r_i \cdot \mathds{1}_i = \mathds{1}_i \cdot r_i = r_i,\
+				\forall r_i \in R_i,\ i\in \mathbb{Z},\ 1 \le i \le n
+			\end{align*}
+			This shows that $\mathds{1}_i$ is the unity for each ring $R_i$. Hence
+			$R_1 \times, \dots, \times R_n$ are unital rings. \\
+			
+			$(<=)$: Assume $R_1, \dots, R_n$ are unital, wants to show $R_1 \times,
+			\dots, \times R_n$ is unital. By assumption, $\exists\ \mathds{1}_1 \dots
+			\mathds{1}_n$, unity for each ring $R_1, \dots, R_n$. Wants to show
+			$(\mathds{1}_1 \dots \mathds{1}_n)$ is the unity of $R_1 \times, \dots,
+			\times R_n$.
+			\begin{align*}
+				(\mathds{1}_1, \dots, \mathds{1}_n) \cdot (r_1, \dots, r_n)
+				&=(\mathds{1}_1 \cdot r_1, \dots, \mathds{1}_n \cdot r_n) \\
+				&=(r_1, \dots, r_n)\forall r_i \in R_i,\ i\in \mathbb{Z},\ 1 \le i \le n
+			\end{align*}
+			\begin{align*}
+				(r_1, \dots, r_n) \cdot (\mathds{1}_1, \dots, \mathds{1}_n)
+				&=(r_1 \cdot \mathds{1}_1 , \dots, r_n \cdot \mathds{1}_n) \\
+				&=(r_1, \dots, r_n)\forall r_i \in R_i,\ i\in \mathbb{Z},\ 1 \le i \le n
+			\end{align*}
+		Hence shown $(\mathds{1}_1, \dots, \mathds{1}_n)$ is the unity of $R_1 \times, \dots,
+			\times R_n$.
+		\end{proof}
+
+	% 2
+	\item Suppose $R$ is a unital ring. An element x of $R$ is called a unit if it
+		has a multiplicative inverse. Let $\mathcal{U}(R)$ be the set of all the
+		units of $R$.
+		\begin{enumerate}
+			% a
+			\item Prove that $\mathcal{U}(R)$ is closed under multiplication.\\
+				Given $u_1, u_2 \in \mathcal{U}(R)$, wants to show $u_1u_2 \in
+				\mathcal{U}(R)$. Since $u_1, u_2 \in \mathcal{U}(R)$, $u_1^{-1},
+				u_2^{-1} \in \mathcal{U}(R)$. This means the inverse of $u_1u_2$ exists
+				$(u_1u_2)^{-1} = u_2^{-1}u_1^{-1}$. This means that $u_1u_2$ has
+				multiplicative inverse, therefore in $\mathcal{U}(R)$. Hence shown
+				$\mathcal{U}(R)$ is closed under multiplication.
+
+			% b
+			\item Prove that $(\mathcal{U}(R), \cdot)$ is a group.
+				\paragraph{Associativity}$\cdot$ operator is associative by definition
+				of ring.
+				\paragraph{Identity}Since the ring is unital, and the inverse of the
+				unity is itself, the unity is in $\mathcal{U}(R)$.
+				\paragraph{Inverse}By the definition of $\mathcal{U}(R)$ all elements
+				have inverse under multiplication.
+
+			% c
+			\item Suppose $R_i$ are unital rings. Prove that $\mathcal{U}(R_1 \times,
+				\dots, \times R_n) = \mathcal{U}(R_1) \times \dots \times \mathcal{U}(R_n)$
+				Let $r_i$ be any element in $R_i$ where $i \in \mathbb{Z}, 1 \le i \le
+				n$.
+				\begin{align*}
+					\mathcal{U}(R_1\times \dots \times R_n) = (u_1, \dots, u_n) \text{
+					such that } \exists (u_1', \dots, u_n'), \\
+					(u_1, \dots, u_n)(u_1', \dots, u_n') = (u_1', \dots, u_n')(u_1,
+					\dots, u_n) = (\mathds{1}_1, \dots, \mathds{1}_n)
+				\end{align*}
+				By the definition of element wise multiplication:
+				\begin{align*}
+					(u_1, \dots, u_n)(u_1', \dots, u_n') &= (u_1u_1', \dots, u_nu_n') 
+					= (\mathds{1}_1, \dots, \mathds{1}_n)\\
+					(u_1', \dots, u_n')(u_1, \dots, u_n) &= (u_1'u_1, \dots, u_n'u_n)
+					= (\mathds{1}_1, \dots, \mathds{1}_n)
+				\end{align*}
+				This shows that each element $u_i$ has multiplicative inverse. This
+				means that $u_i$ is in $\mathcal{U}(R)$. since $u_i$ is a general term
+				for $\mathcal{U}(R_i)$, this shows that $\mathcal{U}(R_1 \times, \dots,
+				\times R_n) = \mathcal{U}(R_1) \times \dots \times \mathcal{U}(R_n)$.
+			
+			% d
+			\item Find $\mathcal{U}(\mathbb{Z} \times \mathbb{Q})$ \\
+				By part c, $\mathcal{U}(\mathbb{Z} \times \mathbb{Q}) =
+				\mathcal{U}(\mathbb{Z}) \times \mathcal{U}(\mathbb{Q})$
+				Since the only integers with multiplicative inverse in $\mathbb{Z}$ are
+				$\pm1$, and $(Q, +, \cdot)$ is a field, $\mathcal{U}(\mathbb{Z} \times
+				\mathbb{Q}) = (\pm1, \mathbb{Q})$
+		\end{enumerate}
+	
+	% 3
+	\item Show that $\{a+b\sqrt{3} \mid a,b\in\mathbb{Z}\}$ is ring.\\
+		\paragraph{Group portion}First show $(\{a+b\sqrt{3} \mid a,b\in\mathbb{Z}\},
+		+)$ is a abelian group.
+		\subparagraph{Associativity}
+		\begin{align*}
+			&(a+b\sqrt{3}) + ((a'+b'\sqrt{3}) + (a''+b''\sqrt{3}))\\
+		 =&(a+b\sqrt{3}) + (a'+b'\sqrt{3}) + (a''+b''\sqrt{3}) \\
+		 =&((a+b\sqrt{3}) + (a'+b'\sqrt{3})) + (a''+b''\sqrt{3})
+		\end{align*}
+	
+		\subparagraph{Identity}$0 + 0\sqrt{3}=0$, $0 + a = a+0 = a$. Identity
+		exists in the set under $+$.
+
+		\subparagraph{Inverse}$(a+b\sqrt{3})^{-1}=-a-b\sqrt{3}$, since
+		$a+b\sqrt{3} + (-a-b\sqrt{3}) = a-a + b\sqrt{3} - b\sqrt{3} = 0$. The
+		inverse exists in the set under $+$.
+
+		\subparagraph{Abelian}$(a+b\sqrt{3}) + (a'+b'\sqrt{3}) = a+b\sqrt{3} +
+		a'+b'\sqrt{3} = a'+b'\sqrt{3} + a+b\sqrt{3} = (a'+b'\sqrt{3}) +
+		(a+b\sqrt{3})$. Hence shown the group is abelian.
+
+		\paragraph{Multiplication associativity}
+		\begin{align*}
+			&(a+b\sqrt{3}) \cdot ((a'+b'\sqrt{3}) \cdot (a''+b''\sqrt{3})) \\
+			=&(a + b\sqrt{3}) \cdot (a'a'' + a'b''\sqrt{3} + b'\sqrt{3}a'' +
+			b'\sqrt{3}b''\sqrt{3}) \\
+			=&aa'a'' + aa'b''\sqrt{3} + ab'\sqrt{3}a'' + ab'\sqrt{3}b''\sqrt{3} \\
+			&+ b\sqrt{3}a'a'' + b\sqrt{3}a'b''\sqrt{3} + b\sqrt{3}b'\sqrt{3}a'' 
+			+ b\sqrt{3}b'\sqrt{3}b''\sqrt{3})\\
+			=&(aa' + ab'\sqrt{3}+b\sqrt{3}a' + b\sqrt{3}b'\sqrt{3})(a'' +
+			b''\sqrt{3})\\
+			=&((a+b\sqrt{3}) \cdot (a'+b'\sqrt{3})) \cdot (a''+b''\sqrt{3})
+		\end{align*}
+
+		\paragraph{Distributive property}
+		\begin{align*}
+			&(a+b\sqrt{3}) \cdot ((a'+b'\sqrt{3}) + (a''+b''\sqrt{3})) \\
+			=&(a+b\sqrt{3}) \cdot (a'+b'\sqrt{3} + a''+b''\sqrt{3}) \\
+			=&aa'+ab'\sqrt{3} + aa''+b''\sqrt{3} + b\sqrt{3}a'+b\sqrt{3}b'\sqrt{3} +
+			b\sqrt{3}a''+b''\sqrt{3} \\
+			=&(a+b\sqrt{3}) \cdot (a'+b'\sqrt{3}) + (a+b\sqrt{3}) \cdot (a''+b''\sqrt{3}) \\
+		\end{align*}
+
+	% 4
+	\item As in problem 3, one can show $F=\{a+b\sqrt{3} \mid a,b\in\mathbb{Q}\}$
+		is a ring. Show that $\mathcal{U}(F) = F \setminus \{0\}$; that means any
+		non-zero element is a unit.
+		\begin{proof}
+			Given $a + b\sqrt{3}$, define $(a + b\sqrt{3})^{-1}$ as $\frac{a -
+				b\sqrt{3}}{aa - 3bb}$. Wants to show the inverse is an element of the ring.
+			\begin{align*}
+				(a + b\sqrt{3})\cdot \frac{a - b\sqrt{3}}{aa - 3bb} &= \frac{a -
+					b\sqrt{3}}{aa - 3bb}\cdot(a + b\sqrt{3}) =\frac{aa - 3bb}{aa - 3bb} =
+					1\\
+					\frac{a - b\sqrt{3}}{aa - 3bb} &= \frac{a}{aa-3bb} - \frac{b}{aa-3bb}
+					\cdot \sqrt{3}\\
+			\end{align*}
+			This is of the form $a + b\sqrt{3}$ since $(\mathbb{Q}, +, \cdot)$ is a
+			field. It contains inverses for all elements and is closed under addition 
+			(denominators are therefore rational). Since $\mathbb{Q}$ is a field,
+			$\frac{1}{aa - 3bb}$ is rational since it is the multiplicative inverse of
+			$aa - 3bb$ which previously explained to be rational. Hence any non-zero
+			element of F is a unit since $\frac{a - b\sqrt{3}}{aa - 3bb}$ is
+			demonstrated to be the multiplicative inverse of any element in $F$.
+		\end{proof}
+
+	% 5
+	\item For a ring $R$, let $R[x] = \{a_0 + a_1x + \dots + a_nx^n \mid a_0,
+		\dots, a_n \in \mathcal{R}, n \in \mathbb{Z}^{\ge 0}\}$ be the ring of
+		polynomials with coefficients in $R$ and indeterminant x. We add and
+		multiply polynomials as usual.
+		\begin{enumerate}
+			% a
+			\item Show that $\mathcal{U}(\mathbb{Z}[x]) = \{\pm 1\}$ \\
+				Given $z_x = a_0 + a_1x + \dots + a_nx^n$, it's inverse 
+				$z_x^{-1} = a_0' + a_1'x + \dots + a_n'x^n$.
+				\begin{align*}
+					z_xz_x' = \sum^n_{i=0}\sum^n_{j=0} a_ia_j'x^{i+j} = (1,0, 0, \dots 0)
+				\end{align*}
+				Assume towards a contradiction that $z_x$ and $z_x'$ are not $\pm 1$.
+				This is impossible because the $x$ terms cannot be cancled. Hence it can
+				only be the case if the polynomial is $(1, 0, \dots, 0)$ or $(-1, 0,
+				\dots, 0)$.
+
+			% b
+			\item Show that $2x+1 \in \mathcal{U}(\mathbb{Z}_8[x])$
+
+		\end{enumerate}
+	
+	% 6
+	\item Suppose A is a ring with unity $1$. Suppose there is $a_0 \in A$ such
+		that $a^2_0 = 1$. Let $B:=\{a_0 r a_0 \mid r \in A\}$. Prove that $B$ is a
+		subring of $A$.\\
+		\paragraph{Subtraction}Given any $r$ and $r'$ in $A$, consider $a_0ra_0 -
+		a_0r'a_0$:
+		\begin{align*}
+			a_0ra_0 - a_0r'a_0 = a_0(r-r')a_0
+		\end{align*}
+		Since $r, r' \in A$, A is a ring, $r-r'$ is also in $A$. Hence the first
+		condition is satisfied.
+		\paragraph{Multiplication}Given any $r$ and $r'$ in $A$, consider
+		$(a_0ra_0) \cdot (a_0r'a_0)$. Since multiplication is associative the
+		following holds:
+		\begin{align*}
+			(a_0ra_0) \cdot (a_0r'a_0) &= a_0r(a_0\cdot a_0)r'a_0 \\
+																 &= a_0r\cdot 1 \cdot r'a_0 \\
+																 &= a_0rr'a_0 \\
+		\end{align*}
+		Since $r, r' \in A$, A is a ring, $rr'$ is also in $A$. Hence the second
+		condition is satisfied.\\
+		Hence shown $B\le A$.
+
+\end{enumerate}
+
+\end{document}
+

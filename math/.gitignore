@@ -1,0 +1,7 @@
+# LaTeX
+*.swp
+*.aux
+*.dvi
+*.log
+*.synctex.gz
+.Rproj.user

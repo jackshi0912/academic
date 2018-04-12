@@ -1,0 +1,10 @@
+# LaTeX
+*.swp
+*.aux
+*.dvi
+*.log
+*.synctex.gz
+*.hi
+*.o
+.stack-work
+play

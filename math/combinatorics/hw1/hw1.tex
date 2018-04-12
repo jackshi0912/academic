@@ -1,0 +1,160 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\title{Homework 1}
+\author{Jack Shi - A92122910}
+\date{Friday, January 19, 2018}
+
+\begin{document}
+\maketitle
+
+\section*{Problem 1: }
+	Proove $\sqrt{p}$ is irrational for $p \in \mathcal{P}$, where 
+	$\mathcal{P}$ is the set containing all prime numbers.
+	\begin{proof}
+	Assume $\sqrt{p}$ is rational. This implies
+	that $\exists\ a,\ b \in \mathbb{Z},\ \sqrt{p} = \frac{a}{b}$. Define 
+	$\Omega(x)$ as the number of prime factors for $x,\ x\in\mathbb{Z}$.
+
+	\begin{align*}
+		\sqrt{p} &= \frac{a}{b}& \\
+		b\sqrt{p} &= a& \\
+		b^2p &= a^2& \\
+		\Omega(b^2p) &\stackrel{?}{=} \Omega(a^2)& \\
+		(\Omega(b)*\Omega(b)) + \Omega(p) &\stackrel{?}{=} \Omega(a)*\Omega(a)& \\
+		(\Omega(b)*\Omega(b)) + 1 &\neq (\Omega(a)*\Omega(a))& \\
+	\end{align*}
+	This statement is false because $(\Omega(x)\in\mathbb{Z}) \wedge (\Omega(p)=1)
+	\wedge (\Omega(x) * \Omega(x))$ is even. The number of prime factors for the 
+	left hand side is odd, and the number of prime factor for the right hand is 
+	even. This is a contradiction. The assumption is false, $\sqrt{p}$ is
+	irrational.
+	\end{proof}
+
+\section*{Problem 2: }
+	\paragraph{a. }Let $n\in\mathbb{Z}$, and $n=\prod_{i=1}^{k}p_i^{e_i}$, its
+	decomposition into primes. Find a formula for the number of divisors of n.\\
+	Let s be a factor of n, $n=st,\ t\in\mathbb{Z}$:
+	\begin{align*}
+				 n &= \prod_{i=1}^{k}p_i^{e_i}& \\
+				st &= \prod_{i=1}^{k}p_i^{e_i}& \\
+		Let\ s &= \prod_{i=1}^{k}p_i^{f_i}& \\
+				 t &= \prod_{i=1}^{k}p_i^{e_i-f_i}& \\
+	\end{align*}
+	From the above expansion, it is aparent that for all prime factors $p_i$ of n, 
+	the factor s can choose $f_i$ such that $\ e_i-f_i \ge 0$ (because otherwise n
+	is no longer an integer). This means $f_i$ can be $\{0, 1 \ldots e_i\}$, which
+	has $e_i+1$ elements.
+	The number of divisors for n is defined as follows:
+	$$\tau(n)=\prod_{i=1}^{k}(e_i+1)$$
+
+	\paragraph{b. }Find number/numbers with the highest number of divisors in [1,
+	33].
+	\begin{equation*}
+	\begin{split}
+		\tau(1)&=1 \\
+		\tau(7)&=2 \\
+		\tau(13)&=2 \\
+		\tau(19)&=2 \\
+		\tau(25)&=3 \\
+		\tau(31)&=2 \\
+	\end{split}
+	\quad
+	\begin{split}
+		\tau(2)&=2 \\
+		\tau(8)&=4 \\
+		\tau(14)&=4 \\
+		\tau(20)&=6 \\
+		\tau(26)&=4 \\
+		\tau(32)&=6 \\
+	\end{split}
+	\quad
+	\begin{split}
+		\tau(3)&=2 \\
+		\tau(9)&=3 \\
+		\tau(15)&=4 \\
+		\tau(21)&=4 \\
+		\tau(27)&=4 \\
+		\tau(33)&=4 \\
+	\end{split}
+	\quad
+	\begin{split}
+		\tau(4)&=3 \\
+		\tau(10)&=4 \\
+		\tau(16)&=5 \\
+		\tau(22)&=4 \\
+		\tau(28)&=6 \\\\
+	\end{split}
+	\quad
+	\begin{split}
+		\tau(5)&=2 \\
+		\tau(11)&=2 \\
+		\tau(17)&=2 \\
+		\tau(23)&=2 \\
+		\tau(29)&=2 \\\\
+	\end{split}
+	\quad
+	\begin{split}
+		\tau(6)&=4 \\
+		\tau(12)&=6 \\
+		\tau(18)&=6 \\
+		\tau(24)&=8 \\
+		\tau(30)&=8 \\\\
+	\end{split}
+	\end{equation*}
+	The integers 24 and 30 have the highest number of divisors (8) in [1, 33].
+
+\section*{Problem 3: }
+Fix a real number $x \ge 1$, and let $\mathbb{N}_x$, denote the set of positive
+integers with no prime factor exceeding x. Prove the inequality:
+$$\sum_{m \in N,\ m \le x}\frac{1}{m} \le \sum_{m \in \mathbb{N}_x}\frac{1}{m}$$
+\begin{proof}
+Wants to show $(m \in N,\ m \le x) \subseteq (m \in \mathbb{N}_x)$ because 
+$\frac{1}{m} > 0$, therefore the sumation of $\frac{1}{m}$ is greater if one
+$\sum \frac{1}{m}$ has a greater range than another.
+\subparagraph {Set cardinality: } $\{m \mid m \in N,\ m \le x\}$ contains all integers
+greater than 0, less than or equals to x. This implies that the set contains 
+all integers greater than 0 less than or equals to x 
+\textit{that is composed of prime factors less than x} because. By being less
+than or equals to x, there cannot be any factors that is greater than x.
+It is easy to see that $(m \in \mathbb{N}_x)$ is not constrained to be less 
+than or equals to x. This implies that $(m \in N,\ m \le x) \subseteq (m \in
+\mathbb{N}_x)$. For reasons stated above, this implies the following inequality
+holds:
+$$\sum_{m \in N,\ m \le x}\frac{1}{m} \le \sum_{m \in \mathbb{N}_x}\frac{1}{m}$$
+\end{proof}
+
+\section*{Problem 4: }
+	\paragraph{a. }Show that the following holds:
+		$${2n \choose 0} < {2n \choose 1} < \cdots < {2n \choose n} > \cdots {2n \choose
+		2n-1} > {2n \choose 2n}$$
+
+		\begin{proof}
+		Let $x\in (\mathbb{Z^+} \cup \{0\})$, proove $2n \choose n$ is the largest item 
+		in the inequality above:
+		\begin{align*}
+			{2n \choose x} < {2n \choose x+1} &\Leftrightarrow \frac{(2n)!}{x!(2n-x)!} <
+			\frac{(2n)!}{(x+1)!(2n-x-1)!} &\\
+			&\Leftrightarrow \frac{1}{2n-x} <
+			\frac{1}{x+1} &\\
+			&\Leftrightarrow x+1 < 2n-x &\\
+			&\Leftrightarrow x < n-\frac{1}{2}
+		\end{align*}
+		The largest integer value for x for the statement to hold is n-1. The largest
+		item according to the inequality is $2n \choose x+1$, which is $2n \choose n$
+		given x = n-1. Hence prooved the inequality holds.
+		\end{proof}
+
+		\paragraph{b. }Deduce that ${2n \choose n} \le \frac{4^n}{2n}$.
+		\begin{align*}
+			(1+1)^{2n} &= 4^n &\\
+			\sum_{k=0}^{2n}{2n \choose k}1^{n-k}1^k &= 4^n &\\
+			\frac{\sum_{k=0}^{2n}{2n \choose k}}{2n} &= \frac{4^n}{2n} &\\
+		\end{align*}
+		Since $\frac{\sum_{k=0}^{2n}{2n \choose k}}{2n}$ is the average value of the
+		sum of $2n \choose k$ with $k=0 \dots 2n$, from \textbf{part a}, we proved that $2n
+		\choose n$ is the greatest element in the series. It is the case that $2n
+		\choose n$ equals to the mean of the series if n=0. Hence the following is shown: 
+		$${2n \choose n} \leq \frac{\sum_{k=0}^{2n}{2n \choose k}}{2n} \Leftrightarrow 
+		{2n \choose n} \leq \frac{4^n}{2n}$$
+		
+\end{document}

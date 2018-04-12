@@ -1,0 +1,158 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+\title{Combinatorics: Homework 2}
+\author{Huize Shi - A92122910}
+\date{Friday, January 26, 2018}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[label=\textbf{\arabic*}.]
+	\item  % Question 1
+		\begin{proof}Assume towards contradiction that $\log{2}{3}$ is a 
+			rational number. This implies that $\log_2 3=\frac{a}{b}$ where $a, b
+			\in \mathbb{Z}$.\\
+			\begin{align*}
+				\log_2 3 &= \frac{a}{b}&\\
+				2^{\frac{a}{b}} &= 3&\\
+				(2^{\frac{a}{b}})^b &= 3^b&\\
+				2^a &= 3^b&
+			\end{align*}
+			This is clearly a contradiction because 2 is not a factor of $3^b,\
+			b\in\mathbb{Z}$, but 2 is a factor of  $2^a,\ a\in\mathbb{Z}$.
+		\end{proof}
+
+	\item  % Question 2
+		By Legendre's Theorem
+		$\nu_p(n!)=\sum_{k=1}{\floor*{\frac{n}{p^k}}}$, which gives the exact
+		exponent of p in the prime factorization of n!
+		\begin{align*}
+			{n \choose k} &= \frac{n!}{k!(n-k)!}&\\
+			\nu_p\left({n \choose k}\right ) &= \nu_p\left(\frac{n!}{k!(n-k)!}\right )&\\
+													 &= \nu_p\left(n!\right ) - (\nu_p(k!) + \nu_p((n-k)!))&\\
+													 &= \sum_{i=1}{\floor*{\frac{n}{p^i}}} -
+													 \sum_{i=1}{\floor*{\frac{k}{p^i}}} - 
+													 \sum_{i=1}{\floor*{\frac{(n-k)}{p^i}}}&\\
+													 &= \sum_{i=1}{\left(\floor*{\frac{n}{p^i}} -
+													 \floor*{\frac{k}{p^i}} - 
+													 \floor*{\frac{(n-k)}{p^i}}\right )}&
+		\end{align*}
+		The formula for the multiplicity of p in the binomial coefficient ${n \choose
+		k}$ is as follows: 
+		$$\sum_{i=1}{\left(\floor*{\frac{n}{p^i}} - \floor*{\frac{k}{p^i}} - \floor*{\frac{(n-k)}{p^i}}\right )}$$
+
+	\item \quad  % Question 3
+		\begin{enumerate}
+			\item  %  3.a
+				\begin{proof}
+				Given $r = \frac{a}{b},\ r!=0,\ b>0$, r is a rational number in normal form such
+				that $\frac{a}{b}$ is a unique, irreducible representation of r. if r is
+				not in normal form, normalization of r is trivial by eleminating shared
+				factors between a and b.	
+				a and b are coprimes because any shared factor would have been
+				elimenated during normalization of r. \\
+				Let $l,\ i,\ j \in \mathbb{Z},\ l >= 1$, $p \in \mathbb{P}$:
+
+				\begin{align*}
+					r = \frac{a}{b} &= \frac{\pm\prod_{i=1} p_i^{k_i}}{\prod_{j=1} p_j^{e_j}}&\\
+					&= p_l^{k_l}\frac{\pm\prod_{i=1, i\neq l} p_i^{k_i}}{\prod_{j=1}
+					p_j^{e_j}}&\\
+				\end{align*}
+				Since this is of the form $p^k\frac{a}{b}$, and a,b are coprimes, $p^k$
+				is taken out of the prime factors of a, therefore it is not in the prime
+				factor of a or b which is coprime to a, this proves that any nonzero rational 
+				number r can be written uniquely in the form $p^k\frac{a}{b}$, where k is 
+				an integer, a,b, are coprime integers coprime to p, and b is positive.
+				\end{proof}
+
+			\item \quad  % 3.b 
+				\begin{enumerate}
+					\item  % 3.b.i
+						\begin{proof}
+							$x=0 \Rightarrow |x|_p = 0$ is true by definition.\\
+							Assume $|x|_p = 0$, show that $x=0$:
+							\begin{align*}
+								x &= 0 \Rightarrow |x|_p=0&\\
+								x &\neq 0 \Rightarrow |x|_p=p^{-k} \neq 0&\\
+								|x|_p &= 0 \Rightarrow x = 0 &
+							\end{align*}
+							Hence shown $x=0 \Leftrightarrow |x|_p = 0$
+						\end{proof}
+
+					\item  % 3.b.ii
+						\begin{proof} let $x = p^k\frac{a}{b}$, $y = p^l\frac{m}{n}$. Wants
+							to show $|x|_p|y|_p = |xy|_p$
+							\begin{align*}
+								xy &= p^kp^l\frac{am}{bn}&
+							\end{align*}
+							Since $p^k$ is coprime with a and b, $p^l$ is coprime with m and
+							n. This means p is not a factor of m, n, a, b. This means $p^kq^l$
+							is coprime with am and bn. 
+							\begin{align*}
+								|xy|_p &= (p^kq^l)^{-1} = p^{-k}q^{-l}&\\
+								|x|_p|y|_p &= p^{-k}p^{-l}&\\
+								|xy|_p &= |x|_p|y|_p&\\
+							\end{align*}
+							If either x, y is 0, then both sides are 0, the case is trivially
+							proved. For all other cases the above processed proved $|xy|_p =
+							|x|_p|y|_p$.
+						\end{proof}
+
+					\item  % 3.b.iii
+						\begin{proof}
+							If either x, y = 0:
+							$y = 0 \Rightarrow |x|_p=|x|_p$, $x = 0 \Rightarrow |y|_p=|y|_p$.
+							This case is trivially proved.
+							Let $x = p^k\frac{a}{b}$, $y = p^l\frac{m}{n}$, assume $k\ge l 
+							\Rightarrow p^{-l} = max\{p^{-k}, p^{-l}\}$:
+							\begin{align*}
+								|x+y|_p &= \abs*{p^k\frac{a}{b} + p^l\frac{m}{n}}_p&\\
+												&= \abs*{\frac{p^kan + p^lmb}{nb}}_p&\\
+												&= \abs*{p^l\frac{p^{k-l}an + mb}{nb}}_p&\\
+												&= \abs*{p^l}_p \cdot \abs*{\frac{p^{k-l}an +
+													 mb}{nb}}_p&\\
+											  &\le p^{-l} \cdot 1 = max\{p^{-k}, p^{-l}\}
+							\end{align*}
+							Hence shown $|x+y|_p \le max\{p^{-k}, p^{-l}\}$
+						\end{proof}
+					\end{enumerate}
+
+				\item  % 3.c
+					\begin{proof}
+						In part (b), $|x+y|_p \le max\{p^{-k}, p^{-l}\}$ is shown to be
+						true. $max\{p^{-k}, p^{-l}\} \le p^{-k}+p^{-l}$ is trivially true
+						since neither $p^{-k}$ or $p^{-l}$ are negative. Hence the following
+						ineuqality is true:
+						$$|x+y|_p \le max\{p^{-k}, p^{-l}\}\le p^{-k}+p^{-l}$$
+						Ergo $|x+y|_p \le p^{-k}+p^{-l}$ is true.
+					\end{proof}
+
+				\item  % 3.d
+					\begin{proof}
+						From part 3.b.iii, we know the following holds:\\
+						Let $x = p^k\frac{a}{b}$, $y = p^l\frac{m}{n}$,
+						$$|x+y|_p = \abs*{p^l}_p \cdot \abs*{\frac{p^{k-l}an + mb}{nb}}_p$$
+						Assume $|x|_p \neq |x|_p$, then $k>l0 \Rightarrow p^{-l} =
+						max\{p^{-k}, p^{-l}\}$ . This means that
+						$\abs*{\frac{p^{k-l}an + mb}{nb}}_p$ is 1 because p is coprime to
+						an, mb and nb. This means that $|x+y|_p = p^{-l} \cdot 1 =
+						max\{p^{-k}, p^{-l}\}$.\\
+						Assume $|x|_p = |x|_p$, $\abs*{\frac{p^{k-l}an + mb}{nb}}_p \le 1$ 
+						because $p^{k-l} = p^0 = 1$. This term becomes $\abs*{\frac{an +
+						mb}{nb}}_p$ which could contain $p^x$ in the numerator. The p-adic
+						of this term could therefore be less than 1. This means that $p^{-l}
+						= max\{p^{-k}, p^{-l}\}$ no longer holds when $|x|_p = |x|_p$.\\
+						It is therefore shown that $|x+y|_p = max{|x|_p, |x|_p}$ whenever
+						$|x|_p \neq |y|_p$
+					\end{proof}
+
+			\end{enumerate}
+\end{enumerate}
+
+\end{document}
+

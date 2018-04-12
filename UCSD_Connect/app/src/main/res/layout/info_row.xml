@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/info_outer_padding">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="@string/event_name"
+            android:textAllCaps="true"
+            android:textSize="@dimen/row_title_size"
+            android:textStyle="bold"
+            android:id="@+id/row_title" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_internal_padding" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Sportsball"
+            android:textSize="@dimen/row_content_size"
+            android:textColor="@color/light_grey"
+            android:id="@+id/row_content" />
+    </LinearLayout>
+</merge>

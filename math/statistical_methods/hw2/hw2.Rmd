@@ -1,0 +1,60 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(ggplot2)
+```
+
+Problem 2 a
+```{r}
+red_light <- c(1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 9, 9, 9, 10, 10, 10, 11, 12, 12, 13, 13, 14, 14, 15)
+breaks = c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+hist(red_light, main="Frequency plot", xlab="Days into Experiment", ylab="Lights I Stopped At", breaks=breaks)
+```
+
+R questions
+```{r}
+# R1
+smoking <- read.table("./smoking.csv", header=TRUE, sep=",")
+```
+
+```{r}
+# R2
+nrow(smoking)
+ncol(smoking)
+```
+
+```{r}
+# R3
+mean(smoking$age)
+```
+
+```{r}
+# R4
+length(smoking$maritalStatus[smoking$maritalStatus == "Divorced"])/nrow(smoking)
+```
+
+```{r}
+# R5
+irish_smoker <- subset(smoking, nationality=="Irish")
+```
+
+```{r}
+# R6
+male_smoker <- subset(smoking, gender=="Male")
+male_smoker <- male_smoker[complete.cases(male_smoker[, 10:11]), ]
+mean(male_smoker$amtWeekdays + male_smoker$amtWeekends)
+
+female_smoker <- subset(smoking, gender=="Female")
+female_smoker <- female_smoker[complete.cases(female_smoker[, 10:11]), ]
+mean(female_smoker$amtWeekdays + female_smoker$amtWeekends)
+```
+
+```{r}
+# R7
+hist(smoking$age)
+mean(smoking$age)
+median(smoking$age)
+```
+

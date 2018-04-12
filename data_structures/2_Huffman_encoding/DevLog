@@ -1,0 +1,22 @@
+Checkpoint:
+	compress.cpp - Complete
+	uncompress.cpp - Complete
+	HCNode.hpp - Given
+	HCNode.cpp - Complete
+	HCTree.hpp - Given
+	HCTree.cpp - Complete
+	Checkpoint.pdf - Complete
+
+PA2 Final:
+	BitInputStream.hpp/.cpp - Done - Commented
+		- No parallel potential
+	BitOutputStream.hpp/.cpp - Done - Commented
+		- No parallel potential
+	HCTree.hpp/cpp - Done - Commented
+		- Minimal parallel potential
+	HCNode.hpp/cpp - Done - Commented
+		- No parallel potential
+	compress.cpp - Done - Commented
+		- No parallel potential
+	uncompress.cpp - Done - Commented
+		- Minimal parallel potential

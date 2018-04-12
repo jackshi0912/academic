@@ -1,0 +1,24 @@
+Buffers: Color (font, back, left right), depth (z), accumulation stencil.
+When you draw, you write to some buffer (most simply, front and depth)
+
+main:
+	initialize glut
+
+Convensions:
+	Use C++ STL templates to make stacks for modelview and viewing matrices
+	Camera always at the origin, pointing in the -z direction
+	Transformations move objects relative to the camera
+	OpenGL create matrix in colum major form
+
+Geometry:
+	Points (GL_POINTS)
+	Line segments (GL_LINES)
+	Triangle (GL_TRIANGLES)
+	More complex primitives (GLUT): Sphere, teapot, cube, ...
+
+Vertex Array Objects define geometries
+
+Shader setup:
+	Initialize -> Create shader -> Compile shader -> Link shader
+
+	

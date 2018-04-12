@@ -1,0 +1,4 @@
+schedule breakfast 1000 45
+schedule study 1400 280
+schedule dinner 1725 30
+run 350

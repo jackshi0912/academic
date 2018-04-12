@@ -1,0 +1,34 @@
+name:                warmup-pa2
+version:             0.1.0.0
+synopsis:            haskell warmup exercises
+license:             MIT
+license-file:        LICENSE
+author:              Ranjit Jhala
+maintainer:          Deian Stefan
+category:            Language
+build-type:          Simple
+cabal-version:       >=1.10
+
+Library
+  ghc-options:         -W -threaded
+  exposed-modules:     Warmup
+
+  -- other-extensions:
+  build-depends:       array, base
+
+  hs-source-dirs:      lib
+  default-language:    Haskell2010
+
+test-suite test
+  default-language: Haskell98
+  type:             exitcode-stdio-1.0
+  hs-source-dirs:   tests
+  ghc-options:      -threaded
+  main-is:          Test.hs
+  build-depends:    base,
+                    directory,
+                    filepath,
+                    process,
+                    tasty,
+                    tasty-hunit,
+                    warmup-pa2

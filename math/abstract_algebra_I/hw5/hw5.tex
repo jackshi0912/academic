@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+
+\title{Abstract Algebra Homework 5}
+\author{Jack Shi - A92122910}
+\date{February 15, 2018}
+
+\begin{document}
+\maketitle
+
+\section*{Section 7}
+\subsection*{3. }
+$$\{0, 2, 4, 6, 8, 10, 12, 14, 16\}$$
+\subsection*{4. }
+$$\{0, 6, 12, 18, 24, 30\}$$
+\subsection*{5. }
+$$<6>$$
+\subsection*{6. }
+$$<3>$$
+
+\section*{Section 8}
+\subsection*{2}
+\begin{equation*}
+	\Bigl(\begin{matrix}
+		1 & 2 & 3 & 4 & 5 & 6\\
+		2 & 4 & 1 & 5 & 6 & 3\\
+	\end{matrix}\Bigr)
+\end{equation*}
+
+\subsection*{3}
+\begin{equation*}
+	\Bigl(\begin{matrix}
+		1 & 2 & 3 & 4 & 5 & 6\\
+		3 & 4 & 1 & 6 & 2 & 5\\
+	\end{matrix}\Bigr)
+\end{equation*}
+
+\subsection*{5}
+\begin{equation*}
+	\Bigl(\begin{matrix}
+		1 & 2 & 3 & 4 & 5 & 6\\
+		2 & 6 & 1 & 5 & 4 & 3\\
+	\end{matrix}\Bigr)
+\end{equation*}
+
+\subsection*{16}
+Since one element in the permutation of 4 choose 4 is fixed, the number of
+options is therefore $(4-1)! = 6$
+
+\subsection*{17}
+Since one element in the permutation of 5 choose 5 is fixed, the number of
+options is therefore $(5-1)! = 24$
+
+\subsection*{20}
+No because $S_3$ is not Abelian but this group is since it is a cyclic group.
+Group being Abelian is a structural property. Ergo, this group is not
+isomorphic to $S_3$
+
+\subsection*{31}
+No $f_2$ is not a bijection. For example -1 is in $\mathbb{R}$ but not in the
+range of $f_2$ therfore violating surjective property.
+\subsection*{32}
+Yes because $f_3$ is a bijection on $\mathbb{R}$.
+
+\subsection*{46}
+\begin{proof}
+Let the following be two groups in $S_n$:
+\begin{align*}
+	x &= \Bigl(\begin{matrix}
+		1 & 2 & 3 & \cdots & n\\
+		2 & 3 & 1 & \cdots & n\\
+	\end{matrix}\Bigr)\\
+	y &= \Bigl(\begin{matrix}
+		1 & 2 & 3 & \cdots & n\\
+		1 & 3 & 2 & \cdots & n\\
+	\end{matrix}\Bigr)\\
+\end{align*}
+Then the following is true:
+\begin{align*}
+	xy &= \Bigl(\begin{matrix}
+		1 & 2 & 3 & \cdots & n\\
+		2 & 1 & 3 & \cdots & n\\
+	\end{matrix}\Bigr)\\
+	yx &= \Bigl(\begin{matrix}
+		1 & 2 & 3 & \cdots & n\\
+		3 & 2 & 1 & \cdots & n\\
+	\end{matrix}\Bigr)\\
+\end{align*}
+Since $xy \neq yx$, the group $S_n,\ n \ge 3$ is not Abelian.
+\end{proof}
+
+\end{document}
+

@@ -1,0 +1,20 @@
+truncateHashKey.s - READY
+hashString.s - READY
+charCompare.s - READY
+lowerCaseSortString.c - READY
+parseArgs.c - READY
+
+pa3.c - READY - mem leak checked
+loadAF.c - READY - mem leak checked
+loadAnagram.c - READY - mem leak checked
+findAnagrams.c - READY - mem leak checked
+createAnagram.c - READY - mem leak checked
+hashKeyMemberCompare.s - READY
+anagramCompare.s - READY
+usage.c - READY
+Lint warnings - DONE
+
+TODO:
+
+README
+EC

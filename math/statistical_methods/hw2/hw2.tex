@@ -1,0 +1,90 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amsfonts, mathtools}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+\subsection*{4.}
+Let $X$ be the random variable that maps the result of two fair dice roll to
+$\{1, 2, 3, 4, 5\}$. Since every dice roll is an independent event, The joint
+probability that the first roll is $a$ and the second roll is $b$ is $P(a)P(b)$.
+Since each joint event is independent, the addition rule applies:
+\begin{align*}
+p=& P(X=1)P(X=3) + P(X=1)P(X=5) + P(X=2)P(X=2) + P(X=2)P(X=4) \\
+&+ P(X=3)P(X=1) + P(X=3)P(X=3) + P(X=3)P(X=5) + P(X=4)P(X=2) \\
+&+ P(X=4)P(X=4) + P(X=5)P(X=1) + P(X=5)P(X=3) + P(X=5)P(X=5)
+\end{align*}
+Sinc the dice is fair, the pdf of the random variable $X$ is uniform. Each face
+has the probability $1/5$ to become the result of the dice roll:
+\begin{align*}
+	p = (\frac{1}{5} \cdot \frac{1}{5}) \cdot 12 = \frac{12}{25}
+\end{align*}
+The probability that that sum of the numbers showing on the two fair dice are
+roll is $\frac{12}{25}$.
+
+\subsection*{5.}
+\begin{proof}
+\begin{align*}
+	P(A, B) = P(A) + P(B) - P(A\cap B)
+\end{align*}
+Since $P(A\cap B)$ represent the probability of getting both A and B, it is
+at most 1, $P(A\cap B) \le 1$.
+\begin{align*}
+	P(A, B) &= P(A) + P(B) - P(A\cap B) \text{ AND } P(A\cap B) \le 1 \\
+	\Rightarrow &P(A) + P(B) - P(A\cap B) \ge P(A) + P(B) - 1 \\
+	\Rightarrow &P(A, B) \ge P(A) + P(B) - 1
+\end{align*}
+\end{proof}
+
+\subsection*{6a.}
+Let $X$ be the random variable that maps the result of the flip of a single coin
+to either $H$ for heads or $T$ for tails.
+Since the three coins are identicle and the flip result in events that are
+independent from eachother, the the addition rule holds:
+\begin{align*}
+p &= P(X = T)P(X = T)P(X = H) + P(X = T)P(X = H)P(X = T) \\
+&+ P(X = T)P(X = T)P(X = T) + P(X = H)P(X = T)P(X = T) \\
+p &= 0.7\cdot 0.3\cdot 0.7 \cdot 3 + 0.7\cdot 0.7\cdot 0.7 \\
+p &= 0.441 + 0.343 \\
+p &= 0.784
+\end{align*}
+The probability that the flip result in two or more tails is $0.784$
+
+\subsection*{6a.}
+Let $X$ be the random variable that maps the result of the flip of a single coin
+to either $H$ for heads or $T$ for tails.
+Since it is given that one of the coin is already heads, the problem reduces to
+tossing two coins and getting at least 1 heads.
+
+\begin{align*}
+p &= P(X=H)P(X=T) + P(X=H)P(X=T) + P(X=H)P(X=H) \\
+  &= 0.3 \cdot 0.7 \cdot 2 + 0.3 \cdot 0.3 \\
+	&= 0.51
+\end{align*}
+The probability that the flip result in two or more heads given at least one
+head is $0.51$
+
+\subsection*{7}
+Since circuit functional is true if either path works. The probability of the
+circuit working is therefore the union of the probability that either branch
+works. The probability that a point does not break is $p^c = 1-p$\\
+Let $\eta$ be a normalization factor.
+\begin{align*}
+p_{functing} &= \eta (p_{TopWorking} + p_{BottomWorking})\\
+p_{functing} &= \eta((1-p)(1-p) + (1-p)) \\
+p_{functing} &= \eta(1 - 2p + pp + 1 - p)\\
+p_{functing} &= \eta(2 - 3p + pp)\\
+\end{align*}
+
+Since probability $\in [0,1]$, $\eta = \frac{1}{2}$.
+$$
+p_{functing} = \frac{(2 - 3p + pp)}{2}\\
+$$
+
+This make sense because if $p=0$, The probability that the circuit functions is
+$\frac{2}{2} = 1$. If $p=1$ the probability that the circuit functions is
+$\frac{0}{2} = 0$.
+
+\end{document}
+

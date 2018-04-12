@@ -1,0 +1,10 @@
+{
+  "name": "pa1",
+  "version": "0.0.1",
+  "description": "CSE130 Programming Assignment #1",
+  "author": "UCSD CSE 130 Staff",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "immutable": "^3.8.1"
+  }
+}

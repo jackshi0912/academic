@@ -1,0 +1,92 @@
+Filename: README
+Author: Huize Shi
+Date: May 17, 2016
+
+Description: This program takes a word input from the user, then look through a
+dictionary of anagrams to check for matching anagrams. This process is done by
+using the following proceedures:
+
+	1. Parse the command-line arguments: The user may set the following
+	flags: -b to truncate a certain bits of the hashKey [1 - 32] ( this
+	argument takes one argument as the number of bits of hashKey to
+	truncate), -c flag to show collision count, -h flag to show the help
+	string (long usage). The -f flag is mandatory in the absents of -h flag.
+	The -f flag takes one argument (The name of the .af file).
+
+	2. Print error message or execute programm: The flags and arguments are
+	collected into a struct to be examined. Upon finding any errors, the
+	program prints out the appropriate error message and exit. If there are
+	no errors encountered, the progarm will proceed to the next step.
+
+	3. Establish the dictionary of anagrams by loading a .af file into
+	memory. The function loadAF() loads the anagrams from the fiel into an
+	dynamically allocated array of anagrams structs.
+
+	4. Finding Anagrams: At this stage, the user is prompt to enter a word.
+	This word is used to construct a anagram struct which will serve as a
+	key for searching. The search algorithm used is binary search. The
+	hashkey will be the value to search for. The anagrams will be printed
+	while the words with the same hashkey and different word will be
+	considered as an collision. If the -c flag is set, the number of
+	collision is also printed.
+
+How to compile:
+	Set the current working directory to the directory containing the source
+	file. The default make target will compile and link all the file. In
+	order to avoid old files from influencing the result. A make clean
+	target may be run before make to clean out all the old .o and .ln files.
+	make new target does both clean and make default. Each test file is run
+	by making testFile, the testFile target is the name of the source file
+	without the extension. The name is then used as a file name for the
+	executable also without an extension.
+
+How to run it:
+	Command: ./pa3 [flags: -f arg1 -c -b arg2 -h]
+	The program is executed with optional flags. The -h flag automatically
+	truncte all the other flags and display the usage format. The -f flag is
+	mandatory if -h flag is not present. The -f flag should be followed by a
+	argument indicating the name of the .af file. The -c flag turns on the
+	collision counter. The -b flag enables the truncation of hashKey. It is
+	followed by the number of bits of the hashKey to truncte.
+	Run example: ./pa3 -f dictionary.af -c -b 4
+
+Example of normal output (stdout):
+
+user:pa3$ ./pa3 -h
+
+Usage: ./pa3 -f anagramsFile [-b hashBits] [-c] | [-h]
+Interactive anagram search.
+  -f <anagramsFile>  File with .af extension to read anagrams from.
+  -b <hashBits>      Number of bits to extract from the hash value;
+		     Must be a decimal value within the range [1 - 32].
+  -c                 Display the number of hash key collisions.
+  -h                 Print the long usage.
+
+
+Example of errors (stderr):
+
+user:pa3$ ./pa3 -f ~/../public/data.af
+
+	Error opening anagrams file; permission denied.
+
+Usage: ./pa3 -f anagramsFile [-b hashBits] [-c] | [-h]
+Try './pa3 -h' for more information.
+
+Testing methods:
+
+	Unit tests were used to test truncateHashKey.c charCompare.c
+	parseArgs.c hashString.c lowerCaseSortString.c  anagramCompare.s
+	hashKeyMemberCompare.s
+
+	The rest are tested by comparing the output with the reference
+	executables
+
+	During debugging phase, each entries in the dictionary were output to
+	stderr and directed to stdout and piped to grep. This allowed me to
+	compare the dictionary hashKey versus my hashKey which implicitly tested
+	my lowerCaseSorted and hashing related functions.
+
+Question:
+	
+	Think of the bigger picture. Getting a bad grade on a assignment is
+	always better than just forfeiting a career in Computer Science.

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">UCSDConnect</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="event_name">Event Name</string>
+    <string name="event_description">Description</string>
+    <string name="event_location">Location</string>
+    <string name="event_date"><![CDATA[Date & Time]]></string>
+    <string name="event_category">Category</string>
+    <string name="title_activity_list_view">ListView</string>
+    <string name="title_activity_popup">PopupActivity</string>
+    <string name="title_activity_event">Event</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_input_maps">Map</string>
+    <string name="okayString">Okay</string>
+    <string name="cancelString">Cancel</string>
+    <!-- from https://www.mkyong.com/android/android-spinner-drop-down-list-example/ -->
+    <string-array name="categories">
+        <item>--Select Category--</item>
+        <item>Academic</item>
+        <item>Club</item>
+        <item>Sports</item>
+        <item>Other</item>
+    </string-array>
+</resources>

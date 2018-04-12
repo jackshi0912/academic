@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{mathtools, amssymb, amsmath}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\lstset {
+	tabsize=2
+}
+
+\title{Homework 6: Continuations}
+\author{Jack Shi - A92122910 \\
+				Wyatt Guidry - A12994977 \\
+				Austin Coleman - A12888539}
+
+\begin{document}
+\maketitle
+
+\section{Why CPS?}
+\begin{enumerate}
+	% 1
+	\item \textbf{Answer:}
+	\begin{lstlisting}
+		fun div(x, y, cc) {
+			cc(x / y)
+		}
+
+		fun f(x, y, cc) {
+			div(2, y, r => cc(3 * y * r))
+		}
+		div(3, 4, r => f(r, 5, top_cc))
+	\end{lstlisting}
+
+	% 2.
+	\item $\beta,\ \eta$ optimization\\
+		For part \textbf{a} and \textbf{b}, first transform the functions into
+		$\lambda$-calculus form.
+		\begin{align*}
+		div &\equiv \lambda x.\lambda y. \lambda cc.(cc\ (/\ x\ y))\\
+		f &\equiv \lambda x.\lambda y. \lambda cc.((div)\ 2\ y\ \lambda r.((cc)\
+		(3*y*r)))\\
+		(div)\ &3\ 4\ \lambda r.((f)\ r\ 5\ top\_cc)\\
+		(\lambda x.\lambda y. \lambda cc.(cc\ (/\ x\ y)))\ &3\ 4\ \lambda r.((f)\ r\ 5\
+		top\_cc)\\
+		\end{align*}
+		\begin{enumerate}
+			% a.
+			\item \textbf{Answer:} For the sake of clarity and readability, I did not
+				rewrite multiplication as prefix function application.
+
+				First simplify $f$:
+			\begin{align*}
+			f &\equiv\  \lambda x.\lambda y. \lambda cc.((div)\ 2\ y\ \lambda r.((cc)\
+			(3*y*r)))\\
+			&=\ \ \lambda x.\lambda y. \lambda cc.((\lambda x.\lambda y. 
+			\lambda cc.(cc\ (/\ x\ y)))\ 2\ y\ \lambda r.((cc)\ (3*y*r)))\\
+			&=_{\beta}\ \lambda x.\lambda y. \lambda cc.(\lambda r.((cc)\ (3*y*r))\ (/\ 2\ y))\\
+			&=_{\beta}\ \lambda x.\lambda y. \lambda cc.(\lambda r.((cc)\ (3*y*r))\ (/\ 2\ y))\\
+			&=_{\beta}\ \lambda x.\lambda y. \lambda cc.((cc)\ (3*y*(/\ 2\ y)))
+			\end{align*}
+			Subsitute \texttt{f} in to the original equation.
+			\begin{align*}
+			&\ \ (\lambda x.\lambda y. \lambda cc.(cc\ (/\ x\ y)))\ 3\ 4\ \lambda r.((f)\
+			r\ 5\ top\_cc)\\
+			=&\ \ (\lambda x.\lambda y. \lambda cc.(cc\ (/\ x\ y)))\ 3\ 4\ \lambda
+			r.((\lambda x.\lambda y. \lambda cc.((cc)\ (3*y*(/\ 2\ y))))\ r\ 5\ top\_cc)\\
+			=&_{\beta}\ (\lambda x.\lambda y. \lambda cc.(cc\ (/\ x\ y)))\ 3\ 4\ \lambda
+			r.((top\_cc)\ (3*5*(/\ 2\ 5)))\\
+			=&_{\beta}\ (\lambda r.((top\_cc)\ (3*5*(/\ 2\ 5))))\ (/\ 3\ 4)\\
+			=&_{\beta}\ (top\_cc)\ (3*5*(/\ 2\ 5))\\
+			=&\ \ (top\_cc)\ (6)\\
+			\end{align*}
+
+			% b.
+			\item \textbf{Answer:} For the sake of clarity and readability, I did not
+				rewrite multiplication as prefix function application.
+
+				Simplify $f$ using $\eta$ reduction:
+			\begin{align*}
+			f &\equiv\  \lambda x.\lambda y. \lambda cc.((div)\ 2\ y\ \lambda r.((cc)\
+			(3*y*r)))\\
+			&=\ \ \lambda x.\lambda y. \lambda cc.((\lambda x.\lambda y. 
+			\lambda cc.(cc\ (/\ x\ y)))\ 2\ y\ \lambda r.((cc)\ (3*y*r)))\\
+			&=_{\eta}\ \lambda x.\lambda y. \lambda cc.((\lambda x. \lambda cc.(cc\
+			(/\ x\ y)))\ 2\ \lambda r.((cc)\ (3*y*r)))\\
+			&=_{\beta}\ \lambda x.\lambda y. \lambda cc.(\lambda r.((cc)\ (3*y*r))\
+			(/\ 2\ y))\\
+			&=_{\beta}\ \lambda x.\lambda y. \lambda cc.((cc)\ (3*y*(/\ 2\ y)))
+			\end{align*}
+
+			By $\eta$ reduction, \texttt{f} converged to the same result. The rest of
+			the reduction follows the same as part \textbf{a.}.
+
+			\begin{align*}
+			&\ \ (\lambda x.\lambda y. \lambda cc.(cc\ (/\ x\ y)))\ 3\ 4\ \lambda r.((f)\
+			r\ 5\ top\_cc)\\
+			=&\ \ (\lambda x.\lambda y. \lambda cc.(cc\ (/\ x\ y)))\ 3\ 4\ \lambda
+			r.((\lambda x.\lambda y. \lambda cc.((cc)\ (3*y*(/\ 2\ y))))\ r\ 5\ top\_cc)\\
+			=&_{\beta}\ (\lambda x.\lambda y. \lambda cc.(cc\ (/\ x\ y)))\ 3\ 4\ \lambda
+			r.((top\_cc)\ (3*5*(/\ 2\ 5)))\\
+			=&_{\beta}\ (\lambda r.((top\_cc)\ (3*5*(/\ 2\ 5))))\ (/\ 3\ 4)\\
+			=&_{\beta}\ (top\_cc)\ (3*5*(/\ 2\ 5))\\
+			=&\ \ (top\_cc)\ (6)\\
+			\end{align*}
+
+		\end{enumerate}
+
+	% 3
+	\item Error throwing and catching
+	\begin{enumerate}
+		% a
+		\item \textbf{Answer:}
+		\begin{lstlisting}
+			fun div(x, y, cc_ok, cc_fail) {
+				if (y != 0) {
+					cc_ok(x / y)
+				} else {
+					cc_fail(``Divide by zero'')
+				}
+			}
+
+			fun f(x, y, cc) {
+				div(2, y, r => cc(3 * y * r), r => 0)
+			}
+			
+			div(3, 4, r => f(r, 5, top_cc_ok), top_cc_fail)
+		\end{lstlisting}
+
+		% b
+		\item \textbf{Answer:} In case of \texttt{Node.js}, when the call back begin
+			to execute, the high level \texttt{try/catch} block is not responsible for
+			handling the callback errors. The issue is similar here. If throw is used,
+			then the high level \texttt{try/catch} might not catch if the function
+			that throw an error is used as an callback for some function in the
+			\texttt{try/catch} block.
+
+	\end{enumerate}
+\end{enumerate}
+
+\section{Tail Recursion and Continuations}
+\begin{enumerate}
+	% 1
+	\item \textbf{Answer: }With compiler optimizations, since the recursive call
+		is the last instruciton of the current function, there is no need to keep
+		the previous stack frame. This allows tail recursive calls to all be
+		executed in a single stack space which means that the space requirement is
+		independent from n which governs the number of recursive calls.
+	% 2
+	\item \textbf{Answer: }This program require a stack for \texttt{fact}, a stack
+		for tail recursive \texttt{f} call and n stacks for \texttt{g}. The stack
+		for \texttt{fact} can be freed when the function is done. The stack for
+		\texttt{f} is reused because of tail recursive optimization. The memory is
+		freed right before \texttt{fact} stack is freed. The n \texttt{g} stacks are
+		spawned when base case is hit and destroyed when the value is calculated for
+		the base case.
+\end{enumerate}
+
+\end{document}
+

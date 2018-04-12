@@ -1,0 +1,265 @@
+In file included from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable.h:35:0,
+                 from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/unordered_set:47,
+                 from ActorNode.hpp:11,
+                 from ActorGraph.hpp:9,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h: In instantiation of 'struct std::__detail::_Hash_code_base<Path*, Path*, std::__detail::_Identity, HashPath, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>':
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h:1402:10:   required from 'struct std::__detail::_Hashtable_base<Path*, Path*, std::__detail::_Identity, std::equal_to<Path*>, HashPath, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<true, true, true> >'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable.h:174:11:   required from 'class std::_Hashtable<Path*, Path*, std::allocator<Path*>, std::__detail::_Identity, std::equal_to<Path*>, HashPath, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:96:18:   required from 'class std::unordered_set<Path*, HashPath>'
+ActorNode.hpp:28:34:   required from here
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h:1070:12: error: invalid use of incomplete type 'class HashPath'
+     struct _Hash_code_base<_Key, _Value, _ExtractKey, _H1, _H2,
+            ^
+In file included from ActorGraph.hpp:9:0,
+                 from ActorGraph.cpp:4:
+ActorNode.hpp:16:7: error: forward declaration of 'class HashPath'
+ class HashPath;
+       ^
+In file included from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable.h:35:0,
+                 from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/unordered_set:47,
+                 from ActorNode.hpp:11,
+                 from ActorGraph.hpp:9,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h:1070:12: error: invalid use of incomplete type 'class HashPath'
+     struct _Hash_code_base<_Key, _Value, _ExtractKey, _H1, _H2,
+            ^
+In file included from ActorGraph.hpp:9:0,
+                 from ActorGraph.cpp:4:
+ActorNode.hpp:16:7: error: forward declaration of 'class HashPath'
+ class HashPath;
+       ^
+In file included from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable.h:35:0,
+                 from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/unordered_set:47,
+                 from ActorNode.hpp:11,
+                 from ActorGraph.hpp:9,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h:1082:53: error: invalid use of incomplete type 'class HashPath'
+       using __ebo_h1 = _Hashtable_ebo_helper<1, _H1>;
+                                                     ^
+In file included from ActorGraph.hpp:9:0,
+                 from ActorGraph.cpp:4:
+ActorNode.hpp:16:7: error: forward declaration of 'class HashPath'
+ class HashPath;
+       ^
+In file included from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable.h:35:0,
+                 from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/unordered_set:47,
+                 from ActorNode.hpp:11,
+                 from ActorGraph.hpp:9,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h:1082:53: error: invalid use of incomplete type 'class HashPath'
+       using __ebo_h1 = _Hashtable_ebo_helper<1, _H1>;
+                                                     ^
+In file included from ActorGraph.hpp:9:0,
+                 from ActorGraph.cpp:4:
+ActorNode.hpp:16:7: error: forward declaration of 'class HashPath'
+ class HashPath;
+       ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h: In instantiation of 'struct std::__detail::__is_noexcept_hash<ActorNode*, HashActor>':
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/type_traits:121:12:   recursively required from 'struct std::__and_<std::is_default_constructible<HashActor>, std::is_copy_assignable<HashActor>, std::__detail::__is_noexcept_hash<ActorNode*, HashActor> >'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/type_traits:121:12:   required from 'struct std::__and_<std::__is_fast_hash<HashActor>, std::is_default_constructible<HashActor>, std::is_copy_assignable<HashActor>, std::__detail::__is_noexcept_hash<ActorNode*, HashActor> >'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/type_traits:127:38:   required from 'struct std::__not_<std::__and_<std::__is_fast_hash<HashActor>, std::is_default_constructible<HashActor>, std::is_copy_assignable<HashActor>, std::__detail::__is_noexcept_hash<ActorNode*, HashActor> > >'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:95:63:   required from 'class std::unordered_set<ActorNode*, HashActor>'
+ActorGraph.hpp:16:40:   required from here
+ActorNode.hpp:63:12: error: 'size_t HashActor::operator()(const ActorNode*) const' is private
+     size_t operator()(const ActorNode *other) const;
+            ^
+In file included from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable.h:35:0,
+                 from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/unordered_set:47,
+                 from ActorNode.hpp:11,
+                 from ActorGraph.hpp:9,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h:85:33: error: within this context
+  noexcept(declval<const _Hash&>()(declval<const _Key&>()))>
+                                 ^
+In file included from ActorGraph.hpp:9:0,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h: In instantiation of 'struct std::__detail::__is_noexcept_hash<Movie*, HashMovie>':
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/type_traits:121:12:   recursively required from 'struct std::__and_<std::is_default_constructible<HashMovie>, std::is_copy_assignable<HashMovie>, std::__detail::__is_noexcept_hash<Movie*, HashMovie> >'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/type_traits:121:12:   required from 'struct std::__and_<std::__is_fast_hash<HashMovie>, std::is_default_constructible<HashMovie>, std::is_copy_assignable<HashMovie>, std::__detail::__is_noexcept_hash<Movie*, HashMovie> >'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/type_traits:127:38:   required from 'struct std::__not_<std::__and_<std::__is_fast_hash<HashMovie>, std::is_default_constructible<HashMovie>, std::is_copy_assignable<HashMovie>, std::__detail::__is_noexcept_hash<Movie*, HashMovie> > >'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:95:63:   required from 'class std::unordered_set<Movie*, HashMovie>'
+ActorGraph.hpp:17:36:   required from here
+ActorNode.hpp:58:12: error: 'size_t HashMovie::operator()(const Movie*) const' is private
+     size_t operator()(const Movie *other) const;
+            ^
+In file included from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable.h:35:0,
+                 from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/unordered_set:47,
+                 from ActorNode.hpp:11,
+                 from ActorGraph.hpp:9,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h:85:33: error: within this context
+  noexcept(declval<const _Hash&>()(declval<const _Key&>()))>
+                                 ^
+ActorGraph.cpp: In member function 'bool ActorGraph::loadFromFile(const char*, bool)':
+ActorGraph.cpp:63:12: error: request for member 'actor' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><Movie*, true, true>()', which is of pointer type 'Movie* const' (maybe you meant to use '->' ?)
+       *it->actor.push_back(temp->actor); // Adding an actor to the movie
+            ^
+ActorGraph.cpp:73:35: error: request for member 'actor' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><Movie*, true, true>()', which is of pointer type 'Movie* const' (maybe you meant to use '->' ?)
+       for (size_t i = 0; i < *it->actor.size(); ++i) { // Looping through actors
+                                   ^
+ActorGraph.cpp:74:43: error: request for member 'actor' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><Movie*, true, true>()', which is of pointer type 'Movie* const' (maybe you meant to use '->' ?)
+         nodeSet.insert(new ActorNode(*it->actor[i])); // Add actor into graph
+                                           ^
+ActorGraph.cpp:78:35: error: request for member 'actor' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><Movie*, true, true>()', which is of pointer type 'Movie* const' (maybe you meant to use '->' ?)
+       for (size_t j = 0; j < *it->actor.size(); j++) {
+                                   ^
+ActorGraph.cpp:79:23: error: request for member 'actor' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><Movie*, true, true>()', which is of pointer type 'Movie* const' (maybe you meant to use '->' ?)
+         if (j != *it->actor.size() - 1) { // Check if reach the end
+                       ^
+ActorGraph.cpp:80:43: error: request for member 'actor' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><Movie*, true, true>()', which is of pointer type 'Movie* const' (maybe you meant to use '->' ?)
+           for (size_t k = j + 1; k < *it->actor.size(); k++) {
+                                           ^
+ActorGraph.cpp:82:55: error: request for member 'actor' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><Movie*, true, true>()', which is of pointer type 'Movie* const' (maybe you meant to use '->' ?)
+             ActorNode *downActor = new ActorNode(*it->actor[j]);
+                                                       ^
+ActorGraph.cpp:83:53: error: request for member 'actor' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><Movie*, true, true>()', which is of pointer type 'Movie* const' (maybe you meant to use '->' ?)
+             ActorNode *upActor = new ActorNode(*it->actor[k]);
+                                                     ^
+ActorGraph.cpp:86:31: error: request for member 'title' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><Movie*, true, true>()', which is of pointer type 'Movie* const' (maybe you meant to use '->' ?)
+               = new Path(*it->title, downActor, 0);
+                               ^
+ActorGraph.cpp:88:31: error: request for member 'title' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><Movie*, true, true>()', which is of pointer type 'Movie* const' (maybe you meant to use '->' ?)
+               = new Path(*it->title, upActor, 0);
+                               ^
+ActorGraph.cpp:91:35: error: no matching function for call to 'std::unordered_set<Path*, HashPath>::insert(Path&)'
+               link.insert(linkDown); // Forward link
+                                   ^
+ActorGraph.cpp:91:35: note: candidates are:
+In file included from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/unordered_set:48:0,
+                 from ActorNode.hpp:11,
+                 from ActorGraph.hpp:9,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:344:7: note: std::pair<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::is_default_constructible<_Hash>, std::is_copy_assignable<_Hash>, std::__detail::__is_noexcept_hash<_Tp, _Hash> > >::value, true, true> >::iterator, bool> std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(const value_type&) [with _Value = Path*; _Hash = HashPath; _Pred = std::equal_to<Path*>; _Alloc = std::allocator<Path*>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::is_default_constructible<_Hash>, std::is_copy_assignable<_Hash>, std::__detail::__is_noexcept_hash<_Tp, _Hash> > >::value, true, true> >::iterator = std::__detail::_Node_iterator<Path*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::value_type = Path*]
+       insert(const value_type& __x)
+       ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:344:7: note:   no known conversion for argument 1 from 'Path' to 'Path* const&'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:348:7: note: std::pair<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::is_default_constructible<_Hash>, std::is_copy_assignable<_Hash>, std::__detail::__is_noexcept_hash<_Tp, _Hash> > >::value, true, true> >::iterator, bool> std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(std::unordered_set<_Value, _Hash, _Pred, _Alloc>::value_type&&) [with _Value = Path*; _Hash = HashPath; _Pred = std::equal_to<Path*>; _Alloc = std::allocator<Path*>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::is_default_constructible<_Hash>, std::is_copy_assignable<_Hash>, std::__detail::__is_noexcept_hash<_Tp, _Hash> > >::value, true, true> >::iterator = std::__detail::_Node_iterator<Path*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::value_type = Path*]
+       insert(value_type&& __x)
+       ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:348:7: note:   no known conversion for argument 1 from 'Path' to 'Path*&&'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:373:7: note: std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(std::unordered_set<_Value, _Hash, _Pred, _Alloc>::const_iterator, const value_type&) [with _Value = Path*; _Hash = HashPath; _Pred = std::equal_to<Path*>; _Alloc = std::allocator<Path*>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator = std::__detail::_Node_iterator<Path*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::const_iterator = std::__detail::_Node_const_iterator<Path*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::value_type = Path*]
+       insert(const_iterator __hint, const value_type& __x)
+       ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:373:7: note:   candidate expects 2 arguments, 1 provided
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:377:7: note: std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(std::unordered_set<_Value, _Hash, _Pred, _Alloc>::const_iterator, std::unordered_set<_Value, _Hash, _Pred, _Alloc>::value_type&&) [with _Value = Path*; _Hash = HashPath; _Pred = std::equal_to<Path*>; _Alloc = std::allocator<Path*>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator = std::__detail::_Node_iterator<Path*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::const_iterator = std::__detail::_Node_const_iterator<Path*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::value_type = Path*]
+       insert(const_iterator __hint, value_type&& __x)
+       ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:377:7: note:   candidate expects 2 arguments, 1 provided
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:392:2: note: template<class _InputIterator> void std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(_InputIterator, _InputIterator) [with _InputIterator = _InputIterator; _Value = Path*; _Hash = HashPath; _Pred = std::equal_to<Path*>; _Alloc = std::allocator<Path*>]
+  insert(_InputIterator __first, _InputIterator __last)
+  ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:392:2: note:   template argument deduction/substitution failed:
+ActorGraph.cpp:91:35: note:   candidate expects 2 arguments, 1 provided
+               link.insert(linkDown); // Forward link
+                                   ^
+In file included from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/unordered_set:48:0,
+                 from ActorNode.hpp:11,
+                 from ActorGraph.hpp:9,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:403:7: note: void std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(std::initializer_list<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::is_default_constructible<_Hash>, std::is_copy_assignable<_Hash>, std::__detail::__is_noexcept_hash<_Tp, _Hash> > >::value, true, true> >::value_type>) [with _Value = Path*; _Hash = HashPath; _Pred = std::equal_to<Path*>; _Alloc = std::allocator<Path*>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::is_default_constructible<_Hash>, std::is_copy_assignable<_Hash>, std::__detail::__is_noexcept_hash<_Tp, _Hash> > >::value, true, true> >::value_type = Path*]
+       insert(initializer_list<value_type> __l)
+       ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:403:7: note:   no known conversion for argument 1 from 'Path' to 'std::initializer_list<Path*>'
+ActorGraph.cpp:93:33: error: no matching function for call to 'std::unordered_set<Path*, HashPath>::insert(Path&)'
+               link.insert(linkUp); // Forward link
+                                 ^
+ActorGraph.cpp:93:33: note: candidates are:
+In file included from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/unordered_set:48:0,
+                 from ActorNode.hpp:11,
+                 from ActorGraph.hpp:9,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:344:7: note: std::pair<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::is_default_constructible<_Hash>, std::is_copy_assignable<_Hash>, std::__detail::__is_noexcept_hash<_Tp, _Hash> > >::value, true, true> >::iterator, bool> std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(const value_type&) [with _Value = Path*; _Hash = HashPath; _Pred = std::equal_to<Path*>; _Alloc = std::allocator<Path*>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::is_default_constructible<_Hash>, std::is_copy_assignable<_Hash>, std::__detail::__is_noexcept_hash<_Tp, _Hash> > >::value, true, true> >::iterator = std::__detail::_Node_iterator<Path*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::value_type = Path*]
+       insert(const value_type& __x)
+       ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:344:7: note:   no known conversion for argument 1 from 'Path' to 'Path* const&'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:348:7: note: std::pair<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::is_default_constructible<_Hash>, std::is_copy_assignable<_Hash>, std::__detail::__is_noexcept_hash<_Tp, _Hash> > >::value, true, true> >::iterator, bool> std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(std::unordered_set<_Value, _Hash, _Pred, _Alloc>::value_type&&) [with _Value = Path*; _Hash = HashPath; _Pred = std::equal_to<Path*>; _Alloc = std::allocator<Path*>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::is_default_constructible<_Hash>, std::is_copy_assignable<_Hash>, std::__detail::__is_noexcept_hash<_Tp, _Hash> > >::value, true, true> >::iterator = std::__detail::_Node_iterator<Path*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::value_type = Path*]
+       insert(value_type&& __x)
+       ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:348:7: note:   no known conversion for argument 1 from 'Path' to 'Path*&&'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:373:7: note: std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(std::unordered_set<_Value, _Hash, _Pred, _Alloc>::const_iterator, const value_type&) [with _Value = Path*; _Hash = HashPath; _Pred = std::equal_to<Path*>; _Alloc = std::allocator<Path*>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator = std::__detail::_Node_iterator<Path*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::const_iterator = std::__detail::_Node_const_iterator<Path*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::value_type = Path*]
+       insert(const_iterator __hint, const value_type& __x)
+       ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:373:7: note:   candidate expects 2 arguments, 1 provided
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:377:7: note: std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(std::unordered_set<_Value, _Hash, _Pred, _Alloc>::const_iterator, std::unordered_set<_Value, _Hash, _Pred, _Alloc>::value_type&&) [with _Value = Path*; _Hash = HashPath; _Pred = std::equal_to<Path*>; _Alloc = std::allocator<Path*>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator = std::__detail::_Node_iterator<Path*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::const_iterator = std::__detail::_Node_const_iterator<Path*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::value_type = Path*]
+       insert(const_iterator __hint, value_type&& __x)
+       ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:377:7: note:   candidate expects 2 arguments, 1 provided
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:392:2: note: template<class _InputIterator> void std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(_InputIterator, _InputIterator) [with _InputIterator = _InputIterator; _Value = Path*; _Hash = HashPath; _Pred = std::equal_to<Path*>; _Alloc = std::allocator<Path*>]
+  insert(_InputIterator __first, _InputIterator __last)
+  ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:392:2: note:   template argument deduction/substitution failed:
+ActorGraph.cpp:93:33: note:   candidate expects 2 arguments, 1 provided
+               link.insert(linkUp); // Forward link
+                                 ^
+In file included from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/unordered_set:48:0,
+                 from ActorNode.hpp:11,
+                 from ActorGraph.hpp:9,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:403:7: note: void std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(std::initializer_list<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::is_default_constructible<_Hash>, std::is_copy_assignable<_Hash>, std::__detail::__is_noexcept_hash<_Tp, _Hash> > >::value, true, true> >::value_type>) [with _Value = Path*; _Hash = HashPath; _Pred = std::equal_to<Path*>; _Alloc = std::allocator<Path*>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::is_default_constructible<_Hash>, std::is_copy_assignable<_Hash>, std::__detail::__is_noexcept_hash<_Tp, _Hash> > >::value, true, true> >::value_type = Path*]
+       insert(initializer_list<value_type> __l)
+       ^
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:403:7: note:   no known conversion for argument 1 from 'Path' to 'std::initializer_list<Path*>'
+ActorGraph.cpp: In member function 'bool ActorGraph::unweightedTraverse(const char*)':
+ActorGraph.cpp:142:56: error: no matching function for call to 'ActorGraph::bfs(ActorNode* const&, ActorNode* const&)'
+       *nodeSet.find(new ActorNode(record[ACTOR_B_IDX])));
+                                                        ^
+ActorGraph.cpp:142:56: note: candidate is:
+In file included from ActorGraph.cpp:4:0:
+ActorGraph.hpp:39:8: note: void ActorGraph::bfs(ActorNode&, ActorNode&)
+   void bfs(ActorNode &actorA, ActorNode &actorB);
+        ^
+ActorGraph.hpp:39:8: note:   no known conversion for argument 1 from 'ActorNode* const' to 'ActorNode&'
+ActorGraph.cpp: At global scope:
+ActorGraph.cpp:148:6: error: prototype for 'void ActorGraph::bfs(ActorNode*, ActorNode*)' does not match any in class 'ActorGraph'
+ void ActorGraph::bfs(ActorNode *actorA, ActorNode *actorB) {
+      ^
+In file included from ActorGraph.cpp:4:0:
+ActorGraph.hpp:39:8: error: candidate is: void ActorGraph::bfs(ActorNode&, ActorNode&)
+   void bfs(ActorNode &actorA, ActorNode &actorB);
+        ^
+ActorGraph.cpp: In member function 'void ActorGraph::resetGraph()':
+ActorGraph.cpp:181:10: error: request for member 'distance' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><ActorNode*, true, true>()', which is of pointer type 'ActorNode* const' (maybe you meant to use '->' ?)
+     *it->distance = numeric_limits<int>::max();
+          ^
+ActorGraph.cpp:182:10: error: request for member 'done' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><ActorNode*, true, true>()', which is of pointer type 'ActorNode* const' (maybe you meant to use '->' ?)
+     *it->done = 0;
+          ^
+ActorGraph.cpp:183:10: error: request for member 'prev' in '* it.std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator-><ActorNode*, true, true>()', which is of pointer type 'ActorNode* const' (maybe you meant to use '->' ?)
+     *it->prev = nullptr;
+          ^
+In file included from ActorGraph.hpp:9:0,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h: In instantiation of 'std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _H1, _H2, std::__detail::_Default_ranged_hash, true>::__hash_code std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _H1, _H2, std::__detail::_Default_ranged_hash, true>::_M_hash_code(const _Key&) const [with _Key = Movie*; _Value = Movie*; _ExtractKey = std::__detail::_Identity; _H1 = HashMovie; _H2 = std::__detail::_Mod_range_hashing; std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _H1, _H2, std::__detail::_Default_ranged_hash, true>::__hash_code = long unsigned int]':
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable.h:1023:50:   required from 'std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _H1, _H2, _Hash, _RehashPolicy, _Traits>::iterator std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _H1, _H2, _Hash, _RehashPolicy, _Traits>::find(const key_type&) [with _Key = Movie*; _Value = Movie*; _Alloc = std::allocator<Movie*>; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<Movie*>; _H1 = HashMovie; _H2 = std::__detail::_Mod_range_hashing; _Hash = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _H1, _H2, _Hash, _RehashPolicy, _Traits>::iterator = std::__detail::_Node_iterator<Movie*, true, true>; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _H1, _H2, _Hash, _RehashPolicy, _Traits>::key_type = Movie*]'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:517:29:   required from 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::find(const key_type&) [with _Value = Movie*; _Hash = HashMovie; _Pred = std::equal_to<Movie*>; _Alloc = std::allocator<Movie*>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator = std::__detail::_Node_iterator<Movie*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::key_type = Movie*]'
+ActorGraph.cpp:56:71:   required from here
+ActorNode.hpp:58:12: error: 'size_t HashMovie::operator()(const Movie*) const' is private
+     size_t operator()(const Movie *other) const;
+            ^
+In file included from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable.h:35:0,
+                 from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/unordered_set:47,
+                 from ActorNode.hpp:11,
+                 from ActorGraph.hpp:9,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h:1103:22: error: within this context
+       { return _M_h1()(__k); }
+                      ^
+In file included from ActorGraph.hpp:9:0,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h: In instantiation of 'std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _H1, _H2, std::__detail::_Default_ranged_hash, true>::__hash_code std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _H1, _H2, std::__detail::_Default_ranged_hash, true>::_M_hash_code(const _Key&) const [with _Key = ActorNode*; _Value = ActorNode*; _ExtractKey = std::__detail::_Identity; _H1 = HashActor; _H2 = std::__detail::_Mod_range_hashing; std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _H1, _H2, std::__detail::_Default_ranged_hash, true>::__hash_code = long unsigned int]':
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable.h:1023:50:   required from 'std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _H1, _H2, _Hash, _RehashPolicy, _Traits>::iterator std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _H1, _H2, _Hash, _RehashPolicy, _Traits>::find(const key_type&) [with _Key = ActorNode*; _Value = ActorNode*; _Alloc = std::allocator<ActorNode*>; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<ActorNode*>; _H1 = HashActor; _H2 = std::__detail::_Mod_range_hashing; _Hash = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _H1, _H2, _Hash, _RehashPolicy, _Traits>::iterator = std::__detail::_Node_iterator<ActorNode*, true, true>; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _H1, _H2, _Hash, _RehashPolicy, _Traits>::key_type = ActorNode*]'
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/unordered_set.h:517:29:   required from 'std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::find(const key_type&) [with _Value = ActorNode*; _Hash = HashActor; _Pred = std::equal_to<ActorNode*>; _Alloc = std::allocator<ActorNode*>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator = std::__detail::_Node_iterator<ActorNode*, true, true>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::key_type = ActorNode*]'
+ActorGraph.cpp:90:37:   required from here
+ActorNode.hpp:63:12: error: 'size_t HashActor::operator()(const ActorNode*) const' is private
+     size_t operator()(const ActorNode *other) const;
+            ^
+In file included from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable.h:35:0,
+                 from /acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/unordered_set:47,
+                 from ActorNode.hpp:11,
+                 from ActorGraph.hpp:9,
+                 from ActorGraph.cpp:4:
+/acsnfs3/software/gcc-4.8.3/include/c++/4.8.3/bits/hashtable_policy.h:1103:22: error: within this context
+       { return _M_h1()(__k); }
+                      ^
+make: *** [ActorGraph.o] Error 1

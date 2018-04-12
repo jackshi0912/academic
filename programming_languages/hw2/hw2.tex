@@ -1,0 +1,198 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+\section{Reduction and variable capture}
+
+\begin{enumerate}
+	% Question 1
+	\item Answer:
+		\subparagraph{Non capture avoiding}
+			\begin{align*}
+				&(\lambda x.(\lambda y.x))\ y &\\
+				&=_{\beta} \lambda y.y &
+			\end{align*}
+		\subparagraph{Capture avoiding}
+			\begin{align*}
+				&(\lambda x.(\lambda y.x))\ y &\\
+				&=_{\alpha} (\lambda x.(\lambda z.x))\ y &\\
+				&=_{\beta} \lambda z.y &
+			\end{align*}
+
+	% Question 2
+	\item Answer: 
+		\subparagraph{Non capture avoiding}
+			\begin{align*}
+				&(\lambda x.(\lambda y.x))\ (\lambda y.x) &\\
+				&=_{\beta} \lambda y.(\lambda y.x)
+			\end{align*}
+		\subparagraph{Capture avoiding}
+			\begin{align*}
+				&(\lambda x.(\lambda y.x))\ (\lambda y.x) &\\
+				&=_{\alpha} (\lambda x.(\lambda z.x))\ (\lambda y.x) &\\
+				&=_{\beta} \lambda zy.x
+			\end{align*}
+
+	% Question 3
+	\item Answer: 
+		\subparagraph{Non capture avoiding}
+			\begin{align*}
+				&(\lambda x.(\lambda y.x))\ (\lambda y.y) &\\
+				&=_{\beta} \lambda y.(\lambda y.y)
+			\end{align*}
+		\subparagraph{Capture avoiding}
+			\begin{align*}
+				&(\lambda x.(\lambda y.x))\ (\lambda y.y) &\\
+				&=_{\alpha} (\lambda x.(\lambda z.x))\ (\lambda y.y) &\\
+				&=_{\beta} \lambda zy.y
+			\end{align*}
+
+	% Question 4
+	\item Answer: 
+		\subparagraph{Non capture avoiding}
+			\begin{align*}
+				&(\lambda xyz.\ \lambda fgh.\ f\ x\ (g\ y)\ (h\ z))\ h\ (\lambda ab.\ a\
+				(g\ b))\ f&\\
+				&=_{\beta} (\lambda yz.\ \lambda fgh.\ f\ h\ (g\ y)\ (h\ z))\ (\lambda ab.\ a\
+				(g\ b))\ f&\\
+				&=_{\beta} (\lambda z.\ \lambda fgh.\ f\ h\ (g\ (\lambda ab.\ a\ (g\
+				b)))\ (h\ z))\ f&\\
+				&=_{\beta} \lambda fgh.\ f\ h\ (g\ (\lambda ab.\ a\ (g\ b)))\ (h\ f)&\\
+			\end{align*}
+		\subparagraph{Capture avoiding}
+			\begin{align*}
+				&(\lambda xyz.\ \lambda fgh.\ f\ x\ (g\ y)\ (h\ z))\ h\ (\lambda ab.\ a\
+				(g\ b))\ f&\\
+				&=_{\alpha} (\lambda xyz.\ \lambda qgr.\ (q\ x)\ (g\ y)\ (r\ z))\ h\ (\lambda ab.\ a\
+				(g\ b))\ f&\\
+				&=_{\beta} (\lambda yz.\ \lambda qgr.\ (q\ h)\ (g\ y)\ (r\ z))\ (\lambda ab.\ a\
+				(g\ b))\ f&\\
+				&=_{\beta} (\lambda z.\ \lambda qgr.\ (q\ h)\ (g\ (\lambda ab.\ a\ (g\
+				b)))\ (r\ z))\ f&\\
+				&=_{\beta} \lambda qgr.\ (q\ h)\ (g\ (\lambda ab.\ a\ (g\
+				b)))\ (r\ f)&
+			\end{align*}
+
+	% Question 5
+	\item Answer: 
+		\begin{align*}
+			&(\lambda xy.z)\ z\ z&\\
+			&=  (\lambda xy.z)\ (z\ z)&\\
+			&=  \lambda y.z &
+		\end{align*}
+
+	% Question 6
+	\item Answer: 
+		\begin{align*}
+			&(\lambda x.(\lambda y.(x\ y)))&\\
+			&=_{\eta}  \lambda x.x&\\
+		\end{align*}
+
+	% Question 7
+	\item Answer: 
+		\begin{align*}
+			S &= \lambda xyz.((x\ z)\ (y\ z))&\\
+			K &= \lambda xy.x &\\
+			I &= \lambda x.x&\\
+		\end{align*}
+		S K S = (S K) S by expression left association. The following are done with
+		call-by-name.
+		\begin{align*}
+			S\ K &= (\lambda xyz.((x\ z)\ (y\ z))) (\lambda xy.x) &\\
+					 &=_{\beta} (\lambda yz.(((\lambda xy.x)\ z)\ (y\ z)))&\\
+					 &=_{\beta} (\lambda yz.((\lambda y.z)\ (y\ z)))&\\
+					 &=_{\beta} \lambda yz.z&\\
+			(S\ K)\ S &= (\lambda yz.z)\ (\lambda xyz.((x\ z)\ (y\ z)))
+					 &={\beta} (\lambda z.z)
+					 &={\alpha} (\lambda x.x) = I
+		\end{align*}
+		S K S hence shown reduces to I.
+\end{enumerate}
+
+\section{Variable Binding and Closure}
+\begin{enumerate}
+	% Question 1:
+	\item Answer: The function is recursive and never terminates. This is because
+		the x(2) call on line 2 refers to the definition of x on line 2 which makes
+		it recursive.
+	% Question 2:
+	\item Answer: x passed in as argument on line two binds to the previous
+		definition on line 1 because at the time of reference, x on line 2 is not
+		assigned yet since the function is not executed at that point.
+	% Question 3:
+	\item Answer: You get the following error: Error reassigning x. This is
+		because Haskel use static types. Variables are not allowed to change values.
+\end{enumerate}
+
+\section{Closure and access links}
+	\begin{enumerate}
+		% question 1
+		\item See scaned document
+
+		% question 2
+		\item 18
+
+		% question 3
+		\item This does not terminate because the function is infinitely recursive
+			without a base case.
+	\end{enumerate}
+\section{Memory management and high-order functions}
+	\begin{enumerate}
+		% question 1
+		\item See scaned document
+
+		% question 2
+		\item The value is 10 because. Within function scope g, x is set to 7. This
+			is passed in as argument to h which is f. Therefore the y argument in f
+			resolves to 7. x is 5 by access link to the parent scope. The function f
+			therefore returns 5 + 7 - 2 which is 10.
+
+	\end{enumerate}
+
+\section{More subsitution and variable capture}
+\begin{enumerate}
+
+	% Problem 1
+	\item Answer: 
+		\begin{align*}
+			&((\lambda x.((\lambda x.x)\ 2) + x)\ x)[x := 3]&\\
+			&=_{\beta}(((\lambda x.x)\ 2) + x)[x := 3]&\\
+			&=_{\beta}(2 + x)[x := 3]&\\
+			&= 2 + 3&\\
+			&= 5&
+		\end{align*}
+		Explaination: In this case it would not matter because the only x that is
+		not captured is one that is ok to replace. All other x are captured by
+		lambda expressions. 3 can not possibly be captured by any lambda.
+
+	% Problem 2
+	\item Answer: 
+		\begin{align*}
+			&(\lambda y.(\lambda xyz.z)\ y\ z\ y)[z := w]&\\
+			&=(\lambda y.((((\lambda xyz.z)\ y)\ z)\ y))[z := w]&\\
+			&=_{\beta} (\lambda y.(((\lambda yz.z)\ y)\ z))[z := w]&\\
+			&=_{\beta} (\lambda y.((\lambda z.z)\ y))[z := w]&\\
+			&=_{\beta} (\lambda y.y)[z := w]&\\
+			&= \lambda y.y&
+		\end{align*}
+		Explaination: In this case it would not matter whether capture avoiding is
+		taken into account. w is not caputured anywhere, therefore subsitution is
+		legal in this case without needing to avoid capturing w.
+
+	% Problem 3
+	\item Answer:
+		\begin{align*}
+			&(\lambda p.(\lambda x.p(x\ x)) (\lambda x.p))[x:=p]&\\
+			&=_{\alpha} (\lambda z.(\lambda x.(z(x\ x))) (\lambda x.z))[x:=p]&\\
+			&=_{\beta} (\lambda x.((\lambda x.z)(x\ x))) [x:=p]&\\
+			&=_{\beta} (\lambda x.z) [x:=p]&\\
+			&=_{\beta} (\lambda x.z)&
+		\end{align*}
+
+		Explaination: Yes, capture avoiding is a must because p is captured by the
+		lambda expression. This violates subsitution rules therefore capture
+		avoiding (alpha renaming) must be performed.
+\end{enumerate}
+
+\end{document}
+

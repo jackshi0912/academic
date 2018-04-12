@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\title{Combinatorics Homework 5}
+\author{Jack Shi - A92122910}
+\date{February 16}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate} [label=(\textbf{\arabic*})]
+	% (1)
+	\item Show that the vertices of any graph can be colored black and white in
+		such a way that each white vertex has at least as many black neighbours as
+		white neighbours, and vice versa.
+
+		\textbf{Solution: }Start by randomly color the graph. Pick each vertex with
+		number of same color neighbours greater than that of different color
+		neighbours. Flip the color of the vertex. This has two effects: \\\\
+		\textbf{First,} the vertex is ``fixed'' in terms of the graph coloring conditions.\\
+		\textbf{Second,} the number of different color edge (edge with two different color
+		vertices) of the graph increase by at least 1 because before switching
+		color, the number of same colored edge for that vertex is greater than that
+		of different colored edge. \\\\
+		With these two conditions, if this operation is continuously
+		performed on the graph, there will be two outcomes:\\\\
+		\textbf{Outcome A: }All the edges are of different color, in which case the
+		condition is reached because the number of same color neighbours is 0
+		therefore number of different color neighbours is greater.\\
+		\textbf{Outcome B: }The graph coloring condition is reached before all the
+		edges is different color.\\\\
+		This algorithm will always converge because as long as Outcome B hasn't been
+		reached, it is possible to increase the number of different color edges in
+		the graph therefore pushing towards outocme A. Either outcome satisifes the
+		coloring condition that the vertices of any graph can be colored black and
+		white in such a way that each white vertex has at least as many black
+		neighbours as white neighbours, and vice versa.
+
+	% (2)
+	\item Solution:
+	\begin{lstlisting}
+Algorithm n-step-random-walk(startVertex, targetVertex, steps):
+	if steps = 0:
+		return 1 if startVertex = targetVertex else 0
+	sum := 0
+	for neighbour in neighbours(startVertex):
+		sum += n-step-random-walk(neighbour, targetVertex, steps-1)
+	return sum
+	\end{lstlisting}
+
+	% (3)
+	\item
+		\begin{enumerate}
+			% (a)
+			\item 
+				\begin{proof} Since the graph is connected palnar as well as triangle
+				free, the nthe following holds. The sum of degree of faces is $2|E|$.
+				$|V| - |E| + |F| = 2$. Since graph is triangle free, each frace must
+				have degree $\ge 4$. This means that $2|E| \ge 4|F| \Leftrightarrow
+				\frac{1}{2}|E| \ge |F|$\\
+				This implies the following: 
+				\begin{align*}
+				|E| - |V| + 2 &\le \frac{1}{2}|E|\\
+				\frac{1}{2}|E| - |V| + 2 &\le 0\\
+				|E| &\le 2|V| - 4
+				\end{align*}
+				\end{proof}
+			% (b)
+			\item
+				\begin{proof}
+					By Euler's theorem, $|V| - |E| + |F| = 2$. In case of $K_{3,3}$,
+					$|F|=2+9-6=5$. We also know that sum of degree of faces is $2|E|$. In
+					the case of $K_{3,3}$, we know that each face is bounded by at least 4
+					edges, therefore this result in a contradiction as $4*5 \ne 2*9
+					\Rightarrow 20 \ne 18$. Since this property does not hold, $K_{3,3}$
+					could not possibly be planar.
+				\end{proof}
+
+		\end{enumerate}
+\end{enumerate}
+
+\end{document}
+

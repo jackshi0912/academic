@@ -1,0 +1,20 @@
+1. False
+2. True
+3. False
+4. False
+5. True
+6. True
+7. False
+8. True
+9. False
+10. True
+11. False
+	The original equation's highest term is n^2,  Θ(n) is not true because even though Ω(n) holds, O(n) is false. n grow slower than n^2.
+12. False
+	The original equation's highest term is n^2,  Θ(n^3) is not true because even though O(n^3) holds, O(n^3) is false. n^3 grow faster than n^2.
+13. True
+	c = 1000; n_0 = 1
+14. True
+	c = 100; n_0 = 1
+15. False
+	The original equation's highest term is log(n)*n^2,  Θ(n^2) is not true because even though Ω(n^2) holds, O(n^2) is false. log(n)*n grows faster than n^2.

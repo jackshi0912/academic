@@ -1,0 +1,28 @@
+1. Running time: Ω(n). 
+You'll have to loop through the list to copy every element. Since there are n elements in the list, 
+it would take a minimum of Ω(n) operations to complete that task.
+
+2. Running time: ArrayList: Ω(n) LinkedList: Ω(1). 
+In the worst case for ArrayList, the list would not have any extra spaces for the element. The ArrayList
+would therefore have to copy every element to a enlarged list. The copy process involves looping through 
+the total of n elements therefore the minimum time required is Ω(n).
+Linked list with tail reference requires only resetting node references to achieve adding a value to the
+end of the list. Since this is a single constant operation for all sizes, the minimum time would be constant
+and the notation would be Ω(1).
+
+3. Running time: ArrayList: Ω(n) LinkedList: Ω(1)
+The ArrayList would need to shift all n of it's elements to the left which would involve looping through n elements. 
+This means that the minimum time would be Ω(n).
+LinkedList, with the reference to the head node, only need to reset the references for the head. This is only a constant
+procedure regardless of the size of the list. The minimum time required is therefore Ω(1).
+
+4. Running time: ArrayList: Ω(n) LinkedList: Ω(1)
+The ArrayList could access the element right away, however, there is no real way to remove that memory space other than 
+copying all the elements to a smaller array. This would involve looping through all n elements of the list. The minimum
+running time is therefore Ω(n).
+LinkedList need to reset the tail reference. This is a constant procedure regardless of the size of the linked list. The 
+minimum running time is therefore Ω(1).
+
+5. Running time: ArrayList: Ω(n), LinkedList: Ω(n)
+In the worst case scenario the value V is not in the list. Both lists regardless of their archtecture, all have to iterate 
+through every element to try to obtain the value. The run time for both is therefore Ω(n).

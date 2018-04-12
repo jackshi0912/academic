@@ -1,0 +1,5 @@
+schedule sleep 70 95
+schedule coffee 80 20
+run 70
+schedule facebook 90 35
+run 100

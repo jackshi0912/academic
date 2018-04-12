@@ -1,0 +1,99 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amsfonts, mathtools}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+
+\title {Abstract Algebra Homework 8}
+\date {March 8, 2018}
+\author {Huize(Jack) Shi - A92122910}
+
+\begin {document}
+\maketitle
+
+\section*{Section 9}
+\subsection*{2. }
+$$(1\ 5\ 8\ 7)\ (2\ 6\ 3)$$
+
+\subsection*{3. }
+$$(1\ 2\ 3\ 5\ 4)\ (7\ 8)$$
+
+\subsection*{4. }
+$$(\cdots\ -1\ 0\ 1\ 2\ \cdots)$$
+
+\subsection*{30. }
+n elements are moved because any element that is not in the cycle are not moved
+by $\sigma$. The $ith$ elements in the cycle are mapped to the $(i+1 mod n)th$
+element of the cycle therefore moved by $\sigma$.
+
+\subsection*{31. }
+Show $H \le S_n$:\\
+\paragraph{Closure: }Let $\sigma_1 \in H$ moves n elements (n is finite). 
+Let $\sigma_2 \in H \mid \sigma_2$ moves m elements (m is finite).  The largest
+possible movement as a result from permutation multiplication would be the case
+when $\sigma_1$ and $\sigma_2$ are disjoint. In which case the size is $n+m$
+which is finite. Therefore H is closed.
+\paragraph{Identity: }Let $\sigma_0$ be a orbit of length 0. Since 0 is finite,
+and $\sigma_0$ is the identity, H contains the identity element.
+\paragraph{Inverse: }Given any $\sigma \in H \mid \sigma = {a_1,\ a_2\ \cdots\
+a_n}$, $\sigma^{-1} \in H \mid \sigma = {a_n,\ a_{n-1}\ \cdots\ a_2,\ a_1}$.\\
+Hence shown $H \le S_n$.
+
+\section*{Section 10}
+\subsection*{4. }
+$$<4> = (\{0,\ 4,\ 8\},\ +_n)$$
+Since $\mathbb{Z}_{12}$ is Abelian, left coset and right coset are equivalent.\\
+\begin{align*}
+0+<4> &= \{0,\ 4,\ 8\}\\
+1+<4> &= \{1,\ 5,\ 9\}\\
+2+<4> &= \{2,\ 6,\ 10\}\\
+3+<4> &= \{3,\ 7,\ 11\}
+\end{align*}
+
+\subsection*{5. }
+Since $\mathbb{Z}_{36}$ is Abelian, left coset and right coset are equivalent.\\
+${i+<18> = \{0+i,\ 18+i\}\mid i \in \mathbb{Z}, 0 \le i < 17}$
+
+\subsection*{6. }
+${\rho_0,\ \mu_2},\ {\rho_1,\ \delta_2},\ {\rho_2,\ \mu_1},\ {\rho_3,\ \delta_1}$
+
+\subsection*{19. }
+\paragraph{a. }True, $aH, H\le G, \forall a\in G$ is always well definined.
+\paragraph{b. }True, proved in class.
+\paragraph{c. }True, proved in class.
+\paragraph{d. }False, each partition can be infinite.
+\paragraph{e. }True, subgroups are closed.
+\paragraph{f. }False, the cosets could be infinite.
+\paragraph{g. }True
+\paragraph{h. }True, of course!
+\paragraph{i. }False
+\paragraph{j. }True
+
+\subsection*{20. }
+Impossible. A subgroup H of an abelian group satisfies $a*H = H*a$, which means
+left right cosets are the same.
+
+\subsection*{23. }
+Impossible. Since each cell has to be non-empty and disjoint, it is impossible
+to have a 12 cells partition for an group of order 6.
+
+\subsection*{24. }
+Impossible. The number of cells must divide the order of the group.
+
+\subsection*{30. }
+Not true. Given $G=S_3$, $H=\{\rho_0,\mu_1\}$, $a = \rho_1$, $b = \mu_3$.
+$aH=\{\rho_1,\mu_3\}=bH$, $Ha=\{\rho_1,\mu_2\},\ Hb=\{\rho_2,\mu_3\}$, $Ha
+\neq Hb$.
+
+\subsection*{33. }
+\begin{align*}
+G &= S_3 \\
+H &= \{e,\ (1\ 3)\} = (1, 3)H = eH \\
+(1\ 2\ 3)H &= \{(1\ 2\ 3),\ (2\ 3)\} \\
+(1\ 2\ 3)H &= (2\ 3)H\\
+\left((1\ 2\ 3)^2H = (1\ 3\ 2)H \right) &\neq \left((2\ 3)^2H = eH\right)\\
+\end{align*}
+Hence shown $aH = bH \not\Leftrightarrow a^2H = b^2H$.
+
+\end {document}
+

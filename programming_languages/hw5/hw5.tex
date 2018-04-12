@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{mathtools, amssymb}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\lstset {
+	tabsize=2
+}
+
+\title{Homework 4: Polymorphism}
+\date{Feb 23, 2018}
+\author{Jack Shi - A92122910 \\
+				Wyatt Guidry - A12994977 \\
+				Austin Coleman - A12888539}
+
+\begin{document}
+\maketitle
+% 1
+\section{[12pts] Smalltalk Implementation Decisions}
+\begin{enumerate}
+	% 1
+	\item \textbf{Answer: }It is an space efficiency optimization. /tbc
+	% 2
+	\item \textbf{Answer: }Advantage would be fast lookup time because this elimates
+			dereferencing and finding definiton from super classes. Disadvantage would
+			be slow compile time since all the subclasses that have many super classes
+			will need to copy all the super class method dictionaries.
+	% 3
+	\item \textbf{Answer: }Assuming instance variable is accessed very often at
+		run-time, this approach can speed up methods that reference instance
+		variables. The disadvantage would be memory requirement since in case a
+		class has many super classes and all the variable names from super classes
+		must be added to the class template of the subclasses.
+
+\end{enumerate}
+
+% 2
+\section{[30pts] Contravariant Method Specialization}
+\begin{enumerate}
+	% 1
+	\item \textbf{Answer: }Without contravariant method specialization, the
+		\texttt{update} method is from \texttt{class A}, because the class pointer
+		points to \texttt{A}. With contravariant method specialization, a method
+		that accept a more general argument could be used in place of one that uses
+		a more specific argument. This means that \texttt{update(Circle\& c)} can be
+		replaced with \texttt{update(Shape\& s)}. 
+
+	% 2
+	\item \textbf{Answer: }The compiler should not accept \texttt{class B} as a
+		valid subclass of \texttt{class A} because with contravariant method, the
+		more general \texttt{update} method of \texttt{Class B} will be used in
+		place of the \texttt{update} method of \texttt{class A}. This is bad
+		because now instances of \texttt{Class B} will loose access to
+		\texttt{update} method that is specific for \texttt{Circle}. The user may
+		want to update \texttt{Circle} in a specific way but it will be treated like
+		\texttt{Shape} instead.
+
+	% 3
+	\item \textbf{Answer: }Under current version of C++, the code would invoke
+		\texttt{update} from \texttt{Class A}. This means it will print the
+		following:\\
+		\texttt{Circle radius: 1}\\
+		With this method specialization, the code would invoke \texttt{update} from
+		\texttt{Class A}:\\
+		\texttt{Circle radius: 7}\\
+
+	% 4
+	\item \textbf{Answer: }The users expect function overloading. When they pass
+		in a parameter of more specific type, they would like it to be handled by
+		the more specific method. (If they wanted the opposite, they would just down
+		cast bruh $\ldots$ lol UPenn scrub). By implementing the contravariant
+		method specialization, we are simply loosing interfaces and implementations
+		for more specific types.
+
+\end{enumerate}
+
+% 3
+\section{[10pts]Function Subtyping}
+\textbf{Answer: }
+$$C \mapsto D <: A \mapsto B \Rightarrow A <: C \wedge D <: B$$
+
+\end{document}
+

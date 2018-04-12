@@ -1,0 +1,3 @@
+g++ -std=c++11 -g -Wall -gdwarf-2   -c -o ActorGraph.o ActorGraph.cpp
+cc1plus: error: unrecognized command line option "-std=c++11"
+gmake: *** [ActorGraph.o] Error 1

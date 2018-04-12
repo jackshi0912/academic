@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="EventName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/infoWindowEventName"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textColor="#000"
+        />
+    <TextView
+        android:text="EventDate"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/infoWindowEventDate"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textColor="#000"
+        />
+    <TextView
+        android:text="EventTime"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/infoWindowEventTime"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textColor="#000"
+        />
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+
+Timing reference solution
+
+Loading dictionary...
+Finished loading dictionary.
+
+Starting timing tests for reference solution.
+
+	Test 1: prefix= "*iterating through alphabet*", num_completions= 10
+	Test 1: time taken: 35358414542 nanoseconds.
+	Test 1: results found: 260
+
+	Test 2: prefix= "a", num_completions= 10
+	Test 2: time taken: 4504112460 nanoseconds.
+	Test 2: results found: 10
+
+	Test 3: prefix= "the", num_completions= 10
+	Test 3: time taken: 2657714113 nanoseconds.
+	Test 3: results found: 10
+
+	Test 4: prefix= "app", num_completions= 10
+	Test 4: time taken: 32717125 nanoseconds.
+	Test 4: results found: 10
+
+	Test 5: prefix= "man", num_completions= 10
+	Test 5: time taken: 63014328 nanoseconds.
+	Test 5: results found: 10
+
+Would you like to run additional tests? y/n
+
+Finished timing reference solution.

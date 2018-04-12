@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_create_event"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/UCSD_Blue"
+    tools:context="cse110_group_13.ucsdconnect.CreateEventActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Event Name"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:ems="10"
+        android:id="@+id/create_event_name"
+        android:paddingTop="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Event Start Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_event_start_date"
+        android:height="45dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:clickable="true"
+        android:layout_below="@+id/create_event_name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Event End Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_event_end_date"
+        android:height="45dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:clickable="true"
+        android:layout_below="@+id/create_event_start_date"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Event Start Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_event_start_time"
+        android:onClick="showDialog"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:height="45dp"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:clickable="true"
+        android:layout_below="@+id/create_event_end_date"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Event End Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_event_end_time"
+        android:onClick="showDialog"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:height="45dp"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:clickable="true"
+        android:layout_below="@+id/create_event_start_time"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/create_event_description"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/create_event_category"
+        android:hint="Event Description"
+        android:scrollHorizontally="false"
+        android:layout_above="@+id/create_event_button" />
+
+    <!--android:inputType="textMultiLine"-->
+
+    <Button
+        android:text="Set Location and Create Event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_event_button"
+        android:background="@color/UCSD_Yellow"
+        android:textColor="@color/black"
+        android:layout_marginBottom="77dp"
+        android:textSize="@dimen/cast_libraries_material_featurehighlight_center_horizontal_offset"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <!-- from https://www.mkyong.com/android/android-spinner-drop-down-list-example/ -->
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_event_category"
+        android:layout_below="@+id/create_event_end_time"
+        android:minHeight="45dp"
+        android:entries="@array/categories"
+        android:textAlignment="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

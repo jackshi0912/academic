@@ -1,0 +1,146 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amsfonts, mathtools}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+\subsection*{1.}
+\begin{center}
+	\begin{tabular}{c|c c c|c}
+		Lies\textbackslash Gender & A & B & C & Margin\\
+		\hline
+		Lies\\
+	  Truth	\\
+		\hline
+		Margin & 0.42 & 0.3 & 0.28 & 1.00\\
+	\end{tabular}
+\end{center}
+
+\paragraph{Given Conditional probabilities:}$p(lies|A) = 0.20$, $p(lies|B) =
+	0.30$, $p(lies|C) = 0.40$
+\paragraph{Given Marginal probabilities:}$p(A) = 0.42$, $p(B) = 0.30$, 
+	$p(C) = 0.28$
+\paragraph{Find marginal probability}$p(lies)$ \\
+	By law of total probability and conditioning on Gender:
+	\begin{align*}
+		p(lies) &= \sum_{g\in\{A,B,C\}}p(lies,g)\\
+		        &= \sum_{g\in\{A,B,C\}}p(lies|g)p(g)\\
+		        &= p(lies|A)p(A) + p(lies|B)p(B) + p(lies|C)p(C)\\
+		        &= 0.20 \cdot 0.42 + 0.30 \cdot 0.30 + 0.28 \cdot 0.40\\
+						&= 0.286
+	\end{align*}
+	The probability that a randomly selected member of the civilization lies is
+	$0.286$
+
+\subsection*{2.}
+\paragraph{Random variables:}
+\begin{align*}
+X_1 &= \text{selecting a ball from the first box}\\
+X_2 &= \text{selecting a ball from the second box}
+\end{align*}
+Each of the Random variables can take on $\{R, G\}$ to denote the color of the
+selected ball.
+
+Let the probability of the secrete transfer being green is denoted as $p(X_1=G) =
+\frac{2}{5}=0.40$. Let the probability of the secrete transfer being red is
+denoted as $p(X_1=R) = \frac{3}{5}=0.60$.\\ 
+Given the secrete transer being green, the conditional probability
+of getting a green ball would be $p(X_2=G | X_1=G)=\frac{4}{5} = 0.8$ since it
+simply add another green ball into the mix.\\
+Given the secrete transer being red, the conditional probability
+of getting a green ball would be $p(X_2=G | X_1=R)=\frac{3}{5} = 0.6$ since it
+simply add another red ball into the mix.\\
+By law of total probability we can get the probability of drawing a green ball
+from the second box as follows:
+\begin{align*}
+	p(X_2=G) &= \sum_{c \in \{R,G\}}p(X_2=G | X_1=c)p(X_1=c) \\
+	         &= p(X_2=G | X_1=R)p(X_1=R) + p(X_2=G | X_1=G)p(X_1=G) \\
+	         &= 0.6*0.6 + 0.8*0.4\\
+					 &= 0.68
+\end{align*}
+The probability of getting a green box from the second box is $0.68$
+
+\newpage
+\subsection*{3a.}
+Let $O$ denote the older child love chocolate.\\
+Let $Y$ denote the younger child love chocolate.\\
+Since the events are independent, the following holds:
+\begin{align*}
+	p(O, Y | O) &= \frac{p(O)p(Y)}{P(O)}\\
+							&= p(Y) = 0.5
+\end{align*}
+
+\subsection*{3b.}
+
+\subsection*{4b}
+$$p(Some | Younger)=\frac{P(Some, Younger)}{P(Younger)}=\frac{0.15}{0.3}=0.5$$
+
+\subsection*{4c}
+\begin{align*}
+&p(Younger|None) + p(Younger|Some)\\
+=& \frac{Younger, None}{None} + \frac{Younger, Some}{Some} = \frac{0.1}{0.2} + \frac{0.15}{0.35}\\
+=& 0.5 + 0.429 = 0.929
+\end{align*}
+The probability of someone is Younger given they did not watch Lots of Olympics
+is $0.929$
+
+\subsection*{5a}
+Find probability that first three questions are guessed incorrectly and the 4th
+question is guessed correctly.
+Let random variable $X$ denote the event of guessing on an question. $X$ can
+take on $\{right, wrong\}$. Since the events are independent, the joint
+probability is as follows:
+\begin{align*}
+p &= p(X=wrong)p(X=wrong)p(X=wrong)p(X=right)\\
+&= \left(\frac{4}{5}\right)^3\frac{1}{5} = 0.512*0.2 = 0.1024
+\end{align*}
+The probability of the first question guessed right being number 4 is $0.1024$
+
+\subsection*{5b}
+Since each event is independent and the probability of getting an answer correct
+is uniformly $\frac{1}{5} = 0.2$. The probability of getting at least one right
+is therefore $0.2 \cdot 10= 2$. Since probability must be between 0 and 1, the
+probability of getting at least one right is normalized to $1$.
+
+\subsection*{6}
+\begin{align*}
+	&max \{P\left( (O\ or\ M\ or\ G)^C \right)\} \\
+	=& 1 - min \{P(O\ or\ M\ or\ G)\} \\
+	=& 1 - min \{P(O) +  P(M) + P(G) - P(O \cap M) - P(O \cap G) - P(M
+		\cap G) - 2\cdot P((O \cap M) \cap G)\}\\
+	=& 1- min \{P(O) +  P(M) + P(G) - (P(O \cap M) + P(O \cap G) + P(M \cap
+	G) + 2\cdot P((O \cap M) \cap G))\}
+\end{align*}
+Let $C$ denote the the sum of $P(O)$, $P(M)$, $P(G)$. Since C is fixed, 
+the minimization problem becomes maximizing the negative variable term:
+\begin{align*}
+	&1-\left(C - max \{P(O \cap M) + P(O \cap G) + P(M \cap G) + 2\cdot P((O \cap
+	M) \cap G)\}\right)\\
+	=&1-\left(C - (min\{P(O), P(M)\} + min\{P(O), P(G)\} + min\{P(M), P(G)\} - 
+	min\{P(O), P(M), P(G)\})\right)\\
+	=&1-\left((0.2+0.15+0.25) - (0.15 + 0.2 + 0.15 - 0.15)\right)\\
+	=& 1- 0.25 = 0.75
+\end{align*}
+$max \{P\left( (O\ or\ M\ or\ G)^C \right)\} = 0.75$
+
+\newpage
+\subsection*{7}
+\paragraph{Given} $p(pass|D) = 0.85$, $p(pass|Q) = 0.75$, $p(D)=0.3$, $p(Q)=0.7$
+\paragraph{Solving} $p(Q|pass)$
+\begin{align*}
+	p(Q|pass) &= \frac{p(pass|Q)p(Q)}{\sum_{s\in\{D, Q\}}p(pass|s)p(s)} \\
+						&= \frac{p(pass|Q)p(Q)}{p(pass|D)p(D) + p(pass|Q)p(Q)} \\
+						&= \frac{0.75\cdot 0.7}{0.8\cdot 0.3 + 0.75 \cdot 0.7} \\
+						&= 0.686
+\end{align*}
+The probability of ``you'' having professor Q given the course was passed is
+$0.686$.
+
+\subsection*{R5}
+\begin{align*}
+	p(HighSATV | highSATM) = \frac{p(HighSATV\ and\ highSATM)}{p(highSATM)}
+\end{align*}
+
+\end{document}
+

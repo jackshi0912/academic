@@ -1,0 +1,152 @@
+Ruogus-MBP:src ruogu$ java hw4.Escape room1.txt
+Goal found (with stack): It took 6 explored positions
+There is (are) 5 position(s) left to explore in stack
+
+********
+
+*      *
+
+*    @S*
+
+*     .*
+
+*   @ .*
+
+*   D..*
+
+*    ..*
+
+********
+
+Goal found (with queue): It took 13 explored positions
+There is (are) 10 position(s) left to explore in queue
+
+********
+
+*  ....*
+
+*   .@S*
+
+*  ....*
+
+*   @..*
+
+*   D..*
+
+*      *
+
+********
+
+Ruogus-MBP:src ruogu$ java hw4.Escape room2.txt
+Goal found (with stack): It took 5 explored positions
+There is (are) 2 position(s) left to explore in stack
+
+*******
+
+*  .D@*
+
+*@ .@.*
+
+*  S..*
+
+*******
+
+Goal found (with queue): It took 6 explored positions
+There is (are) 3 position(s) left to explore in queue
+
+*******
+
+*  .D@*
+
+*@..@ *
+
+*..S. *
+
+*******
+
+Ruogus-MBP:src ruogu$ java hw4.Escape room3.txt
+Goal found (with stack): It took 135 explored positions
+There is (are) 130 position(s) left to explore in stack
+
+***************
+
+*    @........*
+
+*@  ........@.*
+
+*   .S...... .*
+
+*   ........ .*
+
+*   .@....@. .*
+
+*   . ...... .*
+
+*   . ...... .*
+
+*   . ...... .*
+
+*   .@@..... .*
+
+*   .  @......*
+
+*   .   ...@..*
+
+*   .   ......*
+
+*   .   .@....*
+
+*   .@  ......*
+
+*   .   ......*
+
+*   .   ......*
+
+*   . D ......*
+
+*   ... ......*
+
+***************
+
+Goal found (with queue): It took 175 explored positions
+There is (are) 14103 position(s) left to explore in queue
+
+***************
+
+*....@........*
+
+*@..........@.*
+
+*....S........*
+
+*.............*
+
+*....@....@...*
+
+*.............*
+
+*.............*
+
+*.............*
+
+*....@@.......*
+
+*......@......*
+
+*..........@. *
+
+*...........  *
+
+*........@.   *
+
+*....@....    *
+
+*........     *
+
+* .....       *
+
+*  .. D       *
+
+*             *
+
+***************

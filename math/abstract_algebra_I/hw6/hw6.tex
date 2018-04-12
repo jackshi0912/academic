@@ -1,0 +1,125 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage[margin=1in]{geometry}
+
+\title{Abstract Algebra Homework 6}
+\author{Jack Shi - A92122910}
+\date{Feb. 21, 2018}
+
+\begin{document}
+\maketitle
+\section*{Section 8 }
+\subsection*{1. }
+\begin{equation*}
+	\Bigl(\begin{matrix}
+		1 & 2 & 3 & 4 & 5 & 6\\
+		1 & 2 & 3 & 6 & 5 & 4\\
+	\end{matrix}\Bigr)
+\end{equation*}
+\subsection*{7. }
+\begin{equation*}
+	\tau^2 = 
+	\Bigl(\begin{matrix}
+		1 & 2 & 3 & 4 & 5 & 6\\
+		4 & 3 & 2 & 1 & 5 & 6\\
+	\end{matrix}\Bigr)
+\end{equation*}
+\begin{equation*}
+	(\tau^2)^2 = 
+	\Bigl(\begin{matrix}
+		1 & 2 & 3 & 4 & 5 & 6\\
+		1 & 2 & 3 & 4 & 5 & 6\\
+	\end{matrix}\Bigr)
+\end{equation*}
+$<\tau^2> = \{\tau^2,\ e\}$ \qquad $|<\tau^2>| = 2$
+
+\subsection*{8. }
+\begin{align*}
+	\sigma^6 &= 
+	\Bigl(\begin{matrix}
+		1 & 2 & 3 & 4 & 5 & 6\\
+		1 & 2 & 3 & 4 & 5 & 6\\
+	\end{matrix}\Bigr)\\
+	\sigma^{100} &= (\sigma^6)^{16}\sigma^4 = \sigma^4 = 
+	\Bigl(\begin{matrix}
+		1 & 2 & 3 & 4 & 5 & 6\\
+		6 & 5 & 2 & 1 & 3 & 4\\
+	\end{matrix}\Bigr)
+\end{align*}
+
+\subsection*{33. }
+$f_4$ is not a permutation on $\mathbb{R}$ because $f_4$ is not a surjective. -1
+is in $\mathbb{R}$ but it is not in the image of $f_4$.
+
+\subsection*{34. }
+$f_5$ is not a permutation on $\mathbb{R}$ because $f_5$ is not a injective
+$f_5(2) = f_5(-1) = 0$.
+
+\subsection*{41. }
+No because b is a particular element in $B$, $\sigma(b) \in B$. This means that 
+it could be possible to have another function $\theta$ in this set that sends
+$\sigma(b)$ outside of B. This means $\theta(\sigma(b)) \not\in B$ is not in the
+set. This means that it is not closed.
+
+\subsection*{42. }
+No, the inverse is not strictly enforced. Lets say $\sigma(b) = b+1$ and
+$\sigma[B] = \mathbb{Z}^+$. $\sigma^{-1}(1)$ would be undefined in this case.
+
+\subsection*{48. }
+\begin{proof} Let c be the element shared between $\mathcal{O}_{a, \sigma}$ and
+$\mathcal{O}_{b, \sigma}$. This means that $\sigma^m(a) = c$, $\sigma^n(b) = c$.
+Wants to show $\sigma^z(a) = \sigma^{z+k}(b) \mid z \in \mathbb{Z}$.
+\begin{align*}
+	\sigma^{m-n}(a) &= \sigma^{-n}(\sigma^{m}(a)) \\
+								  &= \sigma^{-n}(c) \\
+								  &= b
+\end{align*}
+With this, we can subsitute $b = \sigma^{m-n}(a)$ into $\sigma^z(b)$ to try
+to get an relationship to $\sigma^z(a)$.
+\begin{align*}
+	\sigma^z(b) &= \sigma^z(\sigma^{m-n}(a)) \\
+							&= \sigma^{z+m-n}(a) \\
+\end{align*}
+Since $m-n$ is constant, let $k = m-n$ the definition holds $\sigma^z(a) =
+\sigma^{z+k}(b) \mid z \in \mathbb{Z}$. Hence shown $\mathcal{O}_{a,\sigma} =
+\mathcal{O}_{b,\sigma}$ when both orbits share an common element.
+\end{proof}
+
+\subsection*{49. }
+Let $A = \{a_1, a_2, \cdots a_n\}$. Let $\sigma(a_i) = a_{i+1\ mod\ n}$.
+$<\sigma>$ defines a group that sends element in A to the next element. Let $H =
+<\sigma>$, $|A| = |H| = n$. This satisfies the transitive property becasue given
+$a_i$ and $a_j$, let $i < j$, $\sigma^{j-i}(a_i) = a_j \wedge \sigma^{i-j}(a_j)
+= a_i$ (basically composing multiple ``move by one'' functions to send any a to
+destination element).
+
+\subsection*{52. }
+\begin{proof}Given permutation $\rho_a:G \mapsto G$, where $\rho_a(x) = xa \mid a \in G \wedge x
+\in G$. Let $H = \{\rho_a \mid a \in G\}$. Closed under permutation
+multiplication: let $a, b \ in G$
+\begin{align*}
+(\rho_a\rho_b)(x) &= \rho_a(\rho_b(x)) \\
+									&= \rho_a(xb) \\
+									&= xba \\
+									&= \rho_{ba}(x)
+\end{align*}
+$\rho_{ba}(x)$ is in $H$ because $ba \in G$. Identity element would be
+$\rho_e(x) \mid x \in G$. Inverse exists as the following holds true
+$\rho_a\rho_{-a} = \rho_e \mid a,-a \in G$. Hence H is a group.
+
+Define isomorphism $\phi$, such that $\phi(a) = \rho_a$. This function is
+trivially one to one. Since it is shown that $\rho_{ba} = \rho_a\rho_b$, the
+following homomorphic property holds:
+\begin{align*}
+	\phi(ab) &= \rho_{ab} \\
+					 &= \rho_a\rho_b\\
+					 &= \phi(a)\phi(b)\\
+\end{align*}
+Hence shown H is a isomorphic to G.
+\end{proof}
+
+\end{document}
+

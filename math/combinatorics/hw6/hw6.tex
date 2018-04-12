@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\title{Combinatorics Homework 6}
+\author{Jack Shi - A92122910}
+\date{March 2nd, 2018}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate} [label=(\arabic*)]
+	% (1)
+	\item Let $(\Omega, p)$ be a finite probability space, and let $X:\Omega
+		\mapsto \mathbb{R}$ be a random variable.
+		\begin{enumerate} [label=(\alph*)]
+			% (a)
+			\item If X is integer-valued, show that
+				\begin{equation*}
+					\mathbb{E}[X] = \sum_{k\in\mathbb{Z}}{k\ p(X=k)}
+				\end{equation*}
+				\begin{proof} By definiton of linear expectation:
+					\begin{equation*}
+						\mathbb{E}[X] = \sum_{\omega\in\Omega}{p(X=\omega)X(\omega)}
+					\end{equation*}
+					Since $X(\Omega)$ is a set of integer values. Let $\Omega$ be the
+					probability space that has the same cardinality as $\mathbb{Z}$ and
+					let $X$ map be a bijection between $\Omega$ and $\mathbb{Z}$. In this
+					case the following is true:
+				\begin{equation*}
+					\sum_{\omega\in\Omega}{p(X=\omega)X(\omega)} = \sum_{k\in\mathbb{Z}}{k\ p(X=k)}
+				\end{equation*}
+				Since every $X(X = \omega)$ can be mapped to some $k \in \mathbb{Z}$
+				the above euqlity holds.
+			\end{proof}
+
+		% (b)
+		\item The variance of X is by definition the number $\mathbb{V}[X] =
+			E[(X-\mathbb{E}[X])^2]$. Show that
+			\begin{equation*}
+				\mathbb{V}[X] = \mathbb{E}[X^2] - \mathbb{E}[X]^2
+			\end{equation*}
+			\begin{proof}
+				\begin{align*}
+					\mathbb{V}[X] &= E[(X-\mathbb{E}[X])^2] \\
+					\mathbb{V}[X] &= \sum_{x \in X} (x-\mathbb{E}[X])^2\ p(X=x) \\
+					\mathbb{V}[X] &= \sum_{x \in X}{(x^2 - 2\mathbb{E}[X] x +
+						(\mathbb{E}[X])^2)p(X=x)} \\
+					\mathbb{V}[X] &= \sum_{x \in X}{x^2p(X=x)} - 2\mathbb{E}[X] \sum_{x \in
+						X}{xp(X=x)} + (\mathbb{E}[X])^2\sum_{x \in X}{p(X=x)} \\
+					\mathbb{V}[X] &= \mathbb{E}[X^2] - 2(\mathbb{E}[X])^2 +
+						(\mathbb{E}[X])^2 \\
+					\mathbb{V}[X] &= \mathbb{E}[X^2] - (\mathbb{E}[X])^2
+				\end{align*}
+			\end{proof}
+				
+		% (c)
+		\item Show that, for any $k \ge 0$,
+			\begin{equation*}
+				p(|X-\mathbb{E}[X]| \ge k) \le \frac{\mathbb{V}[X]}{k^2}
+			\end{equation*}
+			Since $g(x)=x^2$ is a monotonic function for $x >= 0$ and
+				$|X-\mathbb{E}[X]|$ satisfies the condition, we have the following:
+				\begin{align*}
+					p(|X-\mathbb{E}[X]| \ge k) &= p(|X-\mathbb{E}[X]|^2 \ge k^2)\\
+					p(|X-\mathbb{E}[X]|^2 \ge k^2) &\le
+						\frac{\mathbb{E}[|X-\mathbb{E}[X]|^2]}{k^2}\\
+					p(|X-\mathbb{E}[X]| \ge k) &\le
+						\frac{\mathbb{V}[X]}{k^2}
+				\end{align*}
+		\end{enumerate}
+\end{enumerate}
+
+\end{document}
+

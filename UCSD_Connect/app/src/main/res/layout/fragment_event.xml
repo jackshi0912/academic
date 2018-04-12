@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ucsdconnect="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_event"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/UCSD_Blue"
+    tools:context="cse110_group_13.ucsdconnect.EventActivityFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <cse110_group_13.ucsdconnect.InfoRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ucsdconnect:titleText="@string/event_name"
+                ucsdconnect:contentText="Sportsball"
+                android:id="@+id/event_name"/>
+            <cse110_group_13.ucsdconnect.InfoRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ucsdconnect:titleText="Date"
+                ucsdconnect:contentText="Monday, October 17"
+                android:id="@+id/event_date"/>
+            <cse110_group_13.ucsdconnect.InfoRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ucsdconnect:titleText="Time"
+                ucsdconnect:contentText="11:00 AM"
+                android:id="@+id/event_time"/>
+            <cse110_group_13.ucsdconnect.InfoRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ucsdconnect:titleText="@string/event_location"
+                ucsdconnect:contentText="RIMAC"
+                android:id="@+id/event_location"/>
+
+            <cse110_group_13.ucsdconnect.InfoRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ucsdconnect:titleText="@string/event_description"
+                ucsdconnect:contentText="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                android:id="@+id/event_description"/>
+
+            <cse110_group_13.ucsdconnect.InfoRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ucsdconnect:titleText="@string/event_category"
+                ucsdconnect:contentText="Sports"
+                android:id="@+id/event_category"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Plan To Attend"
+                android:id="@+id/attend" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hide Event"
+                android:id="@+id/block" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

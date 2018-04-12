@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- from http://stackoverflow.com/questions/18312043/how-to-change-spinner-text-color -->
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="top"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:background="@color/dark_grey"
+        android:textAlignment="center" />

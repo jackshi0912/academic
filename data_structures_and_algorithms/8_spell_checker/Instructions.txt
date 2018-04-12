@@ -1,0 +1,9 @@
+insert ¡°marina¡±
+insert ¡°table¡±
+lookup ¡°fifty¡±
+insert ¡°fifty¡±
+lookup ¡°fifty¡±
+delete ¡°marina¡±
+insert ¡°fifty¡±
+lookup ¡°marina¡±
+print

@@ -1,0 +1,144 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{mathtools, amssymb}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\lstset {
+	tabsize=2
+}
+
+\title{Homework 4: Polymorphism}
+\date{Feb 23, 2019}
+\author{Jack Shi - A92122910 \\
+				Wyatt Guidry - A12994977 \\
+				Austin Coleman - A12888539}
+
+\begin{document}
+\maketitle
+% 1
+\section{[16pts] Type Polymorphism}
+% 1.1
+\subsection{Parametric Polymorphism}
+\begin{enumerate}
+	% 1. Polymorphic abstract data type for stacks
+	\item \textbf{Polymorphic abstract data type for stacks}
+		\begin{enumerate}
+      % a.
+			\item Complete implementation
+				\begin{lstlisting}
+	data Stack a = Stack [a]
+	push :: Stack [a] -> a -> Stack [a]
+	push (Stack xs) x = Stack (x:xs)
+
+	pop :: Stack [a] -> Stack [a]
+	pop (Stack []) = Stack []
+	pop (Stack xs) = Stack (drop 1 xs)
+				\end{lstlisting}
+
+      % b.
+			\item Explain type functions
+				\textbf{Answer: }\\
+				\texttt{push} has type \texttt{Stack [a] -> a -> Stack
+				[a]}. This means that the \texttt{push} function takes a stack that is
+				constructed from a list of type \texttt{a}, and a new element of type
+				\texttt{a}, and return a new stack that is constructed from a list of
+				type \texttt{a}. The return has the same type as the first argument
+				since adding an element to the stack does not change it's type.\\
+				\texttt{pop} has type \texttt{pop::Stack [a] -> Stack [a]}. It is a
+				function that takes a \texttt{Stack} that is constructed from a list of
+				type \texttt{a} and the return is the same type because removing an
+				element from a \texttt{Stack} does not change the type of the \texttt{Stack}.
+		\end{enumerate}
+\end{enumerate}
+
+% 1.2
+\subsection{Ad-hoc Polymorphism}
+\begin{enumerate}
+	% 1.
+	\item \textbf{Collection interface via type classes}
+		\begin{enumerate}
+      % a.
+			\item Complete implementation
+				\begin{lstlisting}
+	class Collection c where
+		push :: c -> int -> c
+		pop :: c -> c
+	
+	data Stack = Stack [int] deriving Show
+
+	-- | Make Stack an instance of the Collection class
+	instance Collection (Stack [c]) where
+		push (Stack xs) x = Stack (x:xs)
+		pop (Stack s) = if (lenght s) == 0 
+										then Stack s
+										else Stack (drop 1 s)
+	
+	data Queue = Queue [Int] deriving Show
+	
+	-- | Make Queue an instance of the Collection class
+
+	instance Collection (Queue [c]) where
+		push (Queue xs) x = Queue (xs ++ [x])
+		pop (Queue s) = if (lenght q) == 0 
+										then Queue q
+										else Queue (drop 1 q)
+				\end{lstlisting}
+		\end{enumerate}
+\end{enumerate}
+
+% 2
+\section{[18pts] Implementing Haskell Typeclasses}
+\begin{enumerate}
+	% 1
+	\item \textbf{Answer: }\\
+	\texttt{MyEqD} represent a dictionary that contains the implementation for the
+	operation \texttt{===}. The type generated is an operator that takes and
+	dictionary and two arguments then return a Boolean. The generated function
+	provide a template for pattern match for this specific dictionary. When the
+	operator is invoked, the pattern matching will automatically type match to the
+	correct dictionary therefore \texttt{===} would be able to find the correct
+	implementation for that specific type.
+
+	% 2
+	\item Complete implementation
+		\begin{lstlisting}
+	data Tree a = Leaf a | Node a (Tree a) (Tree a)
+								deriving Show
+	instance MyEq (Tree a) where
+		(===) (Leaf a) (Leaf b) = abs a == abs b
+		(===) (Node a1 (Tree b1) (Tree c1)) (Node a2 (Tree b2) (Tree c2)) =
+			abs a1 == abs a2 && b1 (===) b2 && c1 (===) c2
+		(===) _ _ 						  = False
+		\end{lstlisting}
+
+	% 3
+	\item Complete implementation
+		\begin{lstlisting}
+	dMyEqTree :: MyEqD a -> Tree a -> Tree a -> Bool
+	dMyEqTree elDict = MkMyEqD myEqTree
+		where myEqTree (Leaf a) (Leaf b) = (===) elDict a  b
+		 			myEqTree (Node a1 (Tree b1) (Tree c1)) (Node a2 (Tree b2) (Tree c2)) =
+						(===) elDict a1 a2 && b1 === b2 && c1 === c2
+		      myEqTree _ _ = False
+		\end{lstlisting}
+
+	% 4
+	\item \textbf{Answer: }\\
+		The compiler will change the type of \texttt{cmp} to \texttt{cmp::MyEqD a
+		-> a -> a -> String}. This function will now be passed in a dictionary and
+		the dictionary will be passed into the \texttt{===} operator for
+		implementation lookup when invoked in cmp.
+
+	% 4
+	\item Complete implementation: \\
+		\begin{lstlisting}
+	cmp :: MyEq a -> a -> a -> String
+	cmp dMyEqInt a b = if (===) dMyEqInt a b
+												then ``Equal''
+												else ``Not Equal''
+	result = cmp (dMyEqTree dMyEqInt) tree1 tree2
+		\end{lstlisting}
+\end{enumerate}
+\end{document}
+

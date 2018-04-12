@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{amsmath, amsthm, amsfonts, mathtools}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+
+\title {Abstract Algebra Homework 7}
+\date {March 2, 2018}
+\author {Huize(Jack) Shi - A92122910}
+
+\begin {document}
+\maketitle
+
+\section*{Section 9:}
+\subsection*{6. } 
+\begin{equation*}
+	\{3n \mid n \in \mathbb{Z}\},\ 
+	\{3n+1 \mid n \in \mathbb{Z}\},\ 
+	\{3n+2 \mid n \in \mathbb{Z}\}
+\end{equation*}
+
+\subsection*{9. }
+\begin{equation*}
+\Bigl(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+5 & 4 & 3 & 7 & 8 & 6 & 2 & 1\\
+\end{matrix}\Bigr)
+\end{equation*}
+
+\subsection*{23. }
+\begin{enumerate} [label=\alph*. ]
+	\item{False.}  % a.
+		\begin{equation*}
+		\Bigl(\begin{matrix}
+		1 & 2 & 3 & 4\\
+		2 & 1 & 4 & 3\\
+		\end{matrix}\Bigr) = (1, 2)(3, 4)
+		\end{equation*}
+
+	\item{True. }  % b.
+		A cycle can be written in permutation presentation.
+
+	\item{False. } % c.
+		The even and odd properties must be mutually exclusive.
+
+	\item{False. } % d. 
+		Counter example: $H = \{(1 2 3), (1 2 3)(1 2 3)\}$
+	\item{False. } % e. 
+		$\frac{5!}{2} = 60 \neq 120$
+	\item{False. } % f. 
+		$S_1$ contains only the identity therefore it is trivially cyclic.
+	\item{True. } % g. 
+	\item{True. } % h. 
+	\item{True. } % i. 
+	\item{False. } % j. 
+		Odd permutations in $S_8$ is not closed. Permutation multiplication of two
+		odd permutation result in a even permutation.
+\end{enumerate}
+
+\subsection*{29. }
+Let $\omega \in H$ be an odd permutation, $\epsilon \in H$ be an even
+permutation. We know $\epsilon$ exists if $\omega$ exists because odd
+permutation is not a closed, since odd permutation becomes even under
+permutation multiplication. Wants to show there exists bijection 
+$f(\epsilon) = \sigma\epsilon$. This function maps even permutation to odd
+permutation. $f$ is a bijection because $f^{-1}(\tau) = \sigma^{1}\tau$.
+$\tau^{-1}$ exists because $\tau$ is a odd permutation in $H$ which is
+bijective.\\
+This shows that $f$ is a bijection that maps even permutations in H to odd 
+permutations in $H$. This means the cardinality of odd permutation in $H$ must equal
+to the cardinality of even permutation if there exists a odd permutation. Since
+even permutations are closed under permutation multiplicaiton, every subgroup
+$H$ of $S_n$ for $n \ge 2$, either all the permutations in $H$ are even or
+exactly half of them are even (cardinality are the same between even
+permutaitons and odd permutaitons in $H$).
+
+\subsection*{34. }
+Let $\tau = (a_1\ a_2\ a_3 \cdots a_{2k}\ a_{2k+1})$
+$$\tau^2 = (a_1\ a_3\ a_5 \cdots a_{2k+1}\ a_2\ a_4 \cdots a_{2k})$$
+Hence shown square of an odd length cycle is a cycle.
+
+\subsection*{36. }
+Wants to show $\lambda_a(g) = ag$ is a bijection from G to G.\\
+$\lambda_a^{-1}(g') = a^{-1}g'$ is the inverse. It is well defined because $G$
+is a group therefore $a \in G$ implies $a^{-1} \in G$
+
+\end {document}
+

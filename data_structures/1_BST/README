@@ -1,0 +1,17 @@
+Name: Huize Shi
+Date: August 4, 2016
+
+Question 1:
+	Constructor uses the information from the parameter. It has no businese
+	creating temporary object because constructors are not functions where
+	stackframes can just be destroyed. If the data passing in is huge, it
+	could be expensive to create a copy. Passing by reference must be
+	constant so that the original data is not modified.
+Question 2:
+	a. The post-increment operator takes a dummy argument to distinguish
+	   itself from he pre-increment.
+	b. Pre-increment for iterators, by returning refernce, allow immediate
+	   access to the most updated value. Post increment provide the value
+	   that is no longer the most up to date. It make a lot of sense in the
+	   case of iterators.
+	   

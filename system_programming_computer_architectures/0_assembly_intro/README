@@ -1,0 +1,92 @@
+Filename: README
+Author: Huize Shi
+Userid: cs30xapo
+Description: This file tracks all the syntax/lint errors and how the erros were
+             fixed as well as answers to various questions.
+Date: March 31, 2016
+SourceAs of Help: Handout, gdb help pages
+
+Question 1:
+
+---------------------------- Errors -----------------------------------
+
+(pa0.c line 51) error: implicit function declaration: fprintf
+    fix: added "#include <stdio.h>" - fprintf is declared in stdio.h
+
+(pa0.c line 96) error: argument #1 is incompatible with prototype:
+    prototype: pointer to const struct DueDate
+    argument: struct DueDate
+    Fix: Change the argument from dueDate to &dueDate. - pass in the address for
+    struct DueDate as argument
+
+function falls off bottom without returning value
+    fix: add "return 0" to the end of main
+
+(printDueDate.c line 30) error: dubious tag declaration: struct DueDate
+    fix: add "#include "pa0.h"" - This contained the struct DueDate
+
+---------------------------- Warnings ---------------------------------
+
+pa0.c line 102: warning: format '%d' expects argument of type 'int', but
+argument 2 has type 'char *'
+
+Question 2:
+    Error: ./a.out: too many arguments
+           Usage: ./a.out [INTEGER]
+             Integer value to square
+    Reason: The program was expecting 1 argument but there are 2 (1 from system
+            and one from the user commandline input)
+    fix: Change line 48 of pa0.c from "--argVal;" to "--argc;" - subtract the
+         system argument from the argument count
+
+Question 3:
+    int argVal = 0;
+
+Question 4:
+    Screen: --argc;
+    Reason: Command nexti Step one instruction into the code but go through 
+            sub-routine calls.
+Question 5:
+    This command checks the valu stored in register $i0
+    Screen: 0x109f0:    "Spring 2016"
+
+Question 7:
+    foobar is being debugged
+
+Question 8:
+    "next" does not go into sub-routines. It gets treated as one line of code.
+    "step" go into sub-routines and it is ready to step through lines of code 
+    in the sub-routine.
+    "nexti" go into one instruction but treats subroutines as one line of code.
+    "stepi" go into on instruction but go into the subroutine (if there is one)
+    and it is ready to step through lines of code in the subroutine.
+
+Question 9:
+    $o0, $i0 are register addresses holding various values.
+
+Question 10:
+    "x" command allows user to examin the values stored in a  memory address.
+    "p" command allows user to examin the values stored in a variable.
+    One should use "x" to look at the contents of a register.
+    The /s specifies the unit size which defaults to "b" which is Bytes.
+    The /d formats the output to decimal values
+
+Question 11:
+    git reset HEAD <filename>
+
+Qeustion 12:
+    git log
+
+Question 13:
+     Create a file in the working directory called .gitignore.
+     Add "*.extension" to each line of the file. "extension" should be that of
+     the extension of the files to be ignored.
+
+Question 14:
+     .git
+
+Question 15:
+     strtol function stores the pointer to the "untranslated" portion of the
+     string (final string), to the endptr. Since argv points to a *char that
+     contains strictly integers, the endptr should contain the end of argv which
+     is the null character (The end of string in C is the null character).

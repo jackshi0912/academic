@@ -1,0 +1,8 @@
+To be tested:
+	pa2.c
+
+Test files to turn in:
+	testcreateMask.c - DONE
+	testrotate.c - DONE
+	testparseKey.c - DONE
+	testparseRotateValue.c - DONE

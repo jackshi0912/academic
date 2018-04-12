@@ -1,0 +1,158 @@
+Filename: README
+Author: Huize Shi
+Userid: cs30xapo
+Description: This file contains information regarding the program's function,
+        compiling instructions, run configurations, normal outputs 
+        and abnormal/errooutputs. It will also document how the 
+        program was tested with specific case.
+Date: April 16th, 2016
+Source of Help: man function, handout, stack overflow
+
+Program Description:
+
+    The program draw the letter S in a frame to the standard out stream. 
+The user may define the letter's width and height (one variable), the ASCII 
+value of the character with which the S is going to be drawn with, the ASCII 
+value of the character with which the border is going to be drawn with, and 
+the ASCII value of the character with which the empty space within the border 
+is going to be filled with.
+
+Compile Instructions:
+
+    Generate executable name pa1: 
+        gcc -g -o pa1 pa1.c isInRange.s isEven.s drawS.s printChar.s 
+        numOfDigits.s printSegment.s
+
+    Using make file:
+        "make" is defined to compile all necessary source files, link them
+        together and generate a executable.
+
+        "make new" run the clean scrip that deletes all the intermediate files,
+        such as .o and .ln files, and run "make" to generate a new executable.
+
+Run configuration:
+
+    execute "./pa arg1 arg2 arg3 arg4" - all arguments have to be integers
+    arg1 - The width (and height) the the letter "S" -- Must be within the range
+            of 4 and 1000 (inclusive). The value also has to be even.
+    arg2 - The ASCII decimal value for the character with which "S" will be
+            composed of. The ASCII value must be within [ 32 - 126 ].
+    arg3 - The ASCII decimal value for the character with which the filler 
+            will be composed of. The ASCII value must be within [ 32 - 126 ].
+    arg4 - The ASCII decimal value for the character with which the border
+            will be composed of. The ASCII value must be within [ 32 - 126 ].
+
+
+Example of normal output:
+   
+Terminal: ./pa1 10 32 88 124
+
+Standard Out:
+
+||||||||||||||
+||||||||||||||
+||X        X||
+|| XXXXXXXXX||
+|| XXXXXXXXX||
+|| XXXXXXXXX||
+|| XXXXXXXXX||
+|| XXXXXXXXX||
+|| XXXXXXXXX||
+|| XXXXXXXXX||
+|| XXXXXXXXX||
+||X        X||
+||XXXXXXXXX ||
+||XXXXXXXXX ||
+||XXXXXXXXX ||
+||XXXXXXXXX ||
+||XXXXXXXXX ||
+||XXXXXXXXX ||
+||XXXXXXXXX ||
+||XXXXXXXXX ||
+||X        X||
+||||||||||||||
+|||||||||||||| 
+
+
+Example of abnormal/error output:
+
+Terminal: ./pa1
+
+Standard Out:
+
+Usage: ./pa1 sWidth sChar fillerChar borderChar
+sWidth (must be within the range of [4 - 1000])
+(must be even)
+sChar (must be an ASCII value within the range [32 - 126])
+fillerChar (must be an ASCII value within the range [32 - 126])
+(must be different than sChar)
+borderChar (must be an ASCII value within the range [32 - 126])
+(must be different than sChar)
+
+
+Program Testing:
+
+    Unit Testing: 
+
+        testisEven - Test cases: 0, positive odd (3), neigative odd (-3),
+                     positive even (2), neigative even (-2) 
+
+        testnumOfDigits - Test cases: Base is set to power of two from 2 to 32
+                        - Base is set to power of two from -2 to -32
+                        - Base is set to the power of 10
+                        - Base is set to the power of 5
+                        - Base is set to the upper and lower borders
+                        - Base and input value are both set to 0
+
+        testisInRange - Test cases: Test around 0 (test if 0 is within 0 to 0
+                        for both inclusive and exclusive).
+                      - Test for a value properly within a set range (test 0 for
+                        between -1 and 1 for both exclusive and inclusive).
+                      - Test for the lower bound (test -5 for the bounds of -5
+                        to 5 for both inclusive and exclusive).
+                      - Test for the upper bound (test 5 for the bounds of -5
+                        to 5 for both inclusive and exclusive).
+                      - Test for value below the lower bound (test -10 for the
+                        range -5 to 5 for both inclusive and exclusive).
+                      - Test for value above the upper bound (test 10 for the
+                        range -5 to 5 for both inclusive and exclusive).
+
+    Testing the program as a whole:
+
+        Test all the given cases in the handout and was able to reproduce all
+        the outputs.
+
+        Test inputs with tweaked number from the handout. (changing other values
+        to non-int inputs, individually change certain values to be outside of
+        the defined range).
+
+
+Questions:
+
+    1. Command: "p argv"
+        My strtol is in a function. The value 9InchNails(argv[1]) is passed in.
+        The formal parameter is named "argv".
+
+    2. p $o2 
+
+    3. p/x endptr
+
+    4.
+        a. p val
+        b. p $o0
+
+    5. p *endptr
+
+    6. p endptr
+
+    7. p/d errno
+
+    8. git status
+
+    9. git reset --hard HEAD
+
+    10. git diff HEAD
+
+    11. I did not show my source code to anyone other than TAs. I also did not
+        attempt to ask for other people's code. I also sited all of my sources
+        of help.

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_event_list"
+        android:icon="@drawable/ic_menu_slideshow"
+        android:title="Event List" />
+    <item
+        android:id="@+id/nav_my_events"
+        android:icon="@drawable/ic_menu_share"
+        android:title="My Events" />
+
+    <item
+        android:id="@+id/nav_planned_events"
+        android:icon="@drawable/ic_menu_share"
+        android:title="Planned Events" />
+
+    <item
+        android:id="@+id/nav_blocked_events"
+        android:icon="@drawable/ic_menu_share"
+        android:title="Hidden Events" />
+
+    <item
+        android:id="@+id/nav_categories"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="Categories" />
+
+    <item
+        android:id="@+id/nav_map"
+        android:icon="@drawable/ic_menu_send"
+        android:title="Map" />
+
+    <item
+        android:id="@+id/nav_create_event"
+        android:icon="@drawable/ic_menu_share"
+        android:title="Create Event" />
+
+    <item
+        android:id="@+id/nav_sign_out"
+        android:title="Sign Out" />
+
+</menu>

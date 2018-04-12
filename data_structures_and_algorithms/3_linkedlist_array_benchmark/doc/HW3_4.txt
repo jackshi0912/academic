@@ -1,0 +1,15 @@
+Array:
+    I expected the runtime to be n^2 since each time an element is added, the 
+array of size n must be iterated through entirely to copy the data to a larger
+array. This process is iterated n times created a compound runtime of "n^2".
+The actual runtime appears to be quadratic as expected (I'm running linux on 
+a virtual machine so the performance can vary based on my main system load.
+The data may not appear as pretty)
+
+LinkedList:
+    I expected the runtime to be constant since the adding to the beginning 
+operation really only involve changing the references of the head and the 
+newly added node. The runtime of this particular operation does not depend on
+the size of the the list. The plot confirmed my expectation since all the data
+are between 0.1 and 0.5. Once the scale is adjusted based to match the Array 
+data, the constant behavior becomes more apparant.

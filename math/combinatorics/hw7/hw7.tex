@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\title{Combinatorics Homework 7}
+\author{Jack Shi - A92122910}
+\date{March 9th, 2018}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate} [label=(\arabic*)]
+
+	% (1)
+	\item Give an example showing that the Friendship Theorem does not hold for
+		infinite graphs.\\
+		Construct the following graph:
+			\begin{enumerate} [label=(\roman*)]
+				% i
+				\item Start with a regular pantagon $G_0=G_5$.
+				% ii
+				\item Add a vertex that is adjacent (connected) to each pair of
+					vertices in $G_i$ to form $G_{i+1}$.
+				% iii
+				\item Since the graph can be infinite, if this process were to be
+					repeated for infinite steps, each pair of vertex shares a common
+					neighbor because of step (ii).
+			\end{enumerate}
+				However, there does not exist a hub vertex since the original pantagon
+				does not get connected to a single point. Hence shown Friendship Theorem
+				does not hold for infinite graphs.
+
+	% (2)
+	\item Let G be the graph with vertex set $V = \{1,\ 2\dots\ n\}$ and edge set
+		$\{\{1,\ j\}:2\le j \le n\}$. Calculate the number of r-step walks on G
+		which:
+		\begin{enumerate} [label=(\alph*)]
+			% (a)
+			\item Begin and end at 1
+				\[
+					r-step-walk(r, n) = 
+						\begin{cases}
+							0, & \text{if } (r) \text{ is odd} \\
+							(n-1)^{\frac{r}{2}}, & \text{otherwise}
+						\end{cases}
+			\]
+			% (b)
+			\item Begin and end at 2
+				\[
+					r-step-walk(r, n) = 
+						\begin{cases}
+							0, & \text{if } (r) \text{ is odd} \\
+							(n-1)^{\frac{r-2}{2}}, & \text{otherwise}
+						\end{cases}
+			\]
+			% (c)
+			\item Begin at 1 and end at 2
+				\[
+					r-step-walk(r, n) = 
+						\begin{cases}
+							0, & \text{if } (r) \text{ is even} \\
+							(n-1)^{\frac{r-1}{2}}, & \text{otherwise}
+						\end{cases}
+			\]
+			% (d)
+			\item Begin at 2 and end at 3
+				\[
+					r-step-walk(r, n) = 
+						\begin{cases}
+							0, & \text{if } (r) \text{ is odd} \\
+							(n-1)^{\frac{r-2}{2}}, & \text{otherwise}
+						\end{cases}
+			\]
+		\end{enumerate}
+
+	% (3)
+	\item Prove that any group of six people contains either three mutual
+		friends, or three mutual strangers. Does the same statement hold for groups
+		of five? Explain.\\
+		\paragraph{Compute $R(3,3)$: }Given a complete graph $G=(V, E)$ on 6
+		vertices. Let 3 edges be blue and 3 be red. Given $v \in V$, since G is
+		complete, there are 5 edges with v: $(v, v_1),\ (v, v_2),\ (v, v_3),\ (v,
+		v_4),\ (v, v_5)$. Since half of the edges are colored differently from
+		the other half, at least 3 edges in the aforementioned set are of same
+		color. Lets pick $(v, v_1),\ (v, v_2),\ (v, v_3)$ are blue (if not possible,
+		just switch color). This means if $(v_1, v_2),\ (v_2, v_3),\ (v_1, v_3)$ are
+		blue, there exist a blue triangle, hence we have three mutual firends. If
+		none of the $(v_1, v_2),\ (v_2, v_3),\ (v_1, v_3)$ edges are blue, we have
+		an all red triangle and no blue triangle which means we have a group of
+		three strangers.
+		\paragraph{Group of 5: }No it does not. With group of five, draw a complete
+		graph $G_5$ and color all outside edges red and inside edges blue. In this
+		case we do not have any triangles of same color, therefore we can not state
+		that there exist either a group of 3 strangers or a group of 3 friends.
+
+\end{enumerate}
+
+\end{document}
