@@ -4,6 +4,7 @@
 
 \usepackage{blkarray}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{amssymb}    
 \usepackage{amsfonts}
 \usepackage{tikz}
@@ -50,13 +51,45 @@
             \end{itemize}
             Who is the winner?
             \begin{solutionorbox}[\stretch{1}]
+							Alice wins. This is a parity split problem. Regardless of what move was
+							chosen, the result is the total amount of numbers is subtracted by
+							one. Since there are a total of 20 numbers, and a move is not
+							possible when there is only 1 number left, the problem becomes
+							subtracting 1 from 19 until 0 is reached. This means that the
+							first person wins since 19 is odd.
             \end{solutionorbox}
             \newpage
  
         \question
             In the subtraction game where players may subtract $1$, $2$ or $5$ chips on
-            their turn, identify the N and P positions.
+            their turn, identify the N and P positions.\\
             \begin{solutionorbox}[\stretch{1}]
+							Let $c$ denote the number of chips in the pile.\\
+							Given a $P$ position $p$, $p+1=N$, $p+2=N$, $p+3=P$, $p+4=N$, $p+5=N$
+							\begin{proof} proof by induction:
+								\paragraph{base case}
+							\[
+							\begin{bmatrix}
+								c   & 0 & 1 & 2 & 3 & 4 & 5 \\
+								pos & P & N & N & P & N & N \\
+							\end{bmatrix}
+							\]
+
+							\paragraph{Induction step:}Assume given 
+							\[
+							\begin{bmatrix}
+								c   & k & k+1 & k+2 & k+3 & k+4 & k+5 \\
+								pos & P & N & N & P & N & N \\
+							\end{bmatrix}
+							\]
+							By the definition of $P$ and $N$ states, the following holds:
+							\[
+							\begin{bmatrix}
+								c   & k+6 & k+7 & k+8 & k+9 & k+10 & k+11 \\
+								pos & P & N & N & P & N & N \\
+							\end{bmatrix}
+							\]
+							\end{proof}
             \end{solutionorbox}
             \newpage
  
