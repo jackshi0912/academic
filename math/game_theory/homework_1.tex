@@ -65,28 +65,29 @@
             their turn, identify the N and P positions.\\
             \begin{solutionorbox}[\stretch{1}]
 							Let $c$ denote the number of chips in the pile.\\
-							Given a $P$ position $p$, $p+1=N$, $p+2=N$, $p+3=P$, $p+4=N$, $p+5=N$
+							The positions follows the patter $PNN$ starting from terminal
+							(left).
 							\begin{proof} proof by induction:
 								\paragraph{base case}
 							\[
 							\begin{bmatrix}
-								c   & 0 & 1 & 2 & 3 & 4 & 5 \\
-								pos & P & N & N & P & N & N \\
+								c   & 0 & 1 & 2 \\
+								pos & P & N & N \\
 							\end{bmatrix}
 							\]
 
 							\paragraph{Induction step:}Assume given 
 							\[
 							\begin{bmatrix}
-								c   & k & k+1 & k+2 & k+3 & k+4 & k+5 \\
-								pos & P & N & N & P & N & N \\
+								c   & k & k+1 & k+2\\
+								pos & P & N   & N  \\
 							\end{bmatrix}
 							\]
 							By the definition of $P$ and $N$ states, the following holds:
 							\[
 							\begin{bmatrix}
-								c   & k+6 & k+7 & k+8 & k+9 & k+10 & k+11 \\
-								pos & P & N & N & P & N & N \\
+								c   & k+6 & k+7 & k+8\\
+								pos & P   & N   & N  \\
 							\end{bmatrix}
 							\]
 							\end{proof}
@@ -96,6 +97,9 @@
         \question
             Is the Nim position $(1, 3, 5)$ an N-position (explain your answer)?
             \begin{solutionorbox}[\stretch{1}]
+							$(1_{10}, 3_{10}, 5_{10}) = (01_{2}, 11_{2}, 101_{2})$, Since
+							$01_{2} \oplus 11_{2} \oplus 101_{2} = 111 \neq 0$, the position
+							$(1, 3, 5)$ is an N position.
             \end{solutionorbox}
             \newpage
  
@@ -103,6 +107,36 @@
             Consider the Mis\'ere subtraction game where players may subtract 1, 5 or 6
             chips on their turn, identify the N and P positions.
             \begin{solutionorbox}[\stretch{1}]
+							The positions follows the patter $PNPNPNNNNNN$ starting from
+							terminal position (left).
+							\begin{proof} proof by induction:
+								\paragraph{base case}
+							\setcounter{MaxMatrixCols}{20}
+							\[
+							\begin{bmatrix}
+								c   & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+								pos & P & N & P & N & P & N & N & N & N & N & N  \\
+							\end{bmatrix}
+							\]
+
+							\paragraph{Induction step:}Assume given 
+							\[
+							\begin{bmatrix}
+								c   & k & k+1 & k+2 & k+3 & k+4 & k+5 & k+6 & k+7 & k+8 & k+9 & k+10 \\
+								pos & P & N & P & N & P & N & N & N & N & N & N  \\
+							\end{bmatrix}
+							\]
+
+							By the definition of $P$ and $N$ states, and the step sizes, the following holds:
+							\[
+							\begin{bmatrix}
+								c   & k+11 & k+12 & k+13 & k+14 & k+15 & k+16 & k+17 & k+18 &
+								k+19 & k+20 & k+21 \\
+								pos & P & N & P & N & P & N & N & N & N & N & N  \\
+							\end{bmatrix}
+							\]
+							Hence prooven the pattern works.
+						\end{proof}
             \end{solutionorbox}
             \newpage
  
