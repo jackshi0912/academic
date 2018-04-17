@@ -1,0 +1,11 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+dat = read.csv("coinflipcounts.csv")
+hist(dat$CountTilHeads)
+```
+```{r}
+pbinom(1100, 2018, 0.55, lower.tail=FALSE)
+```

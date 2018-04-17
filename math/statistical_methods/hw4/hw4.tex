@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amsfonts, mathtools}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+\subsection*{1.}
+Calculating the cost of owning the copiers for 3 year.
+\paragraph{Machine A:}
+\begin{align*}
+	\mathbb{E}(costA) &= 10,000 + \mathbb{E}(costRepair) \\
+										&= 10,000 + 50*12*3\\
+										&= 10,000 + 1800\\
+										&= 11,800
+\end{align*}
+
+\paragraph{Machine B:}
+\begin{align*}
+	\mathbb{E}(costB) &= 10,500 + \mathbb{E}(costRepair) \\
+										&= 10,500 + (1*0.25*200 + 2*0.15*200 + 3*0.1*200)*3 \\
+										&= 10,500 + 510 \\
+										&= 11,010
+\end{align*}
+If the department plan to get rid of the machine after 3 years, go with machine
+B. The expected cost of repair added with the copier cost is much lower than
+machine A.
+
+\subsection*{2.}
+\paragraph{A: } $\sum_{n \in [1,4]}{4\choose n}0.25^n0.75^{4-n} = 0.6836$
+\paragraph{B: } $\sum_{n \in [2,8]}{8\choose n}0.25^n0.75^{4-n} = 0.6329$
+\paragraph{C: } $\sum_{n \in [3,12]}{12\choose n}0.25^n0.75^{4-n} = 0.6093$
+\paragraph{Solution: } Based on the above calculations, situation A is most likely.
+
+\subsection*{3.}
+\subsection*{a.}
+\paragraph{Plan I}  $1 - 0.4*0.1 = 0.96$
+\paragraph{Plan II} $1 - 0.1*0.4 = 0.96$
+\subsection*{b.}
+\paragraph{Plan I}  $\mathbb{E}(cost)=0.6*50 + 0.4*(50+80) = 82$
+\paragraph{Plan II} $\mathbb{E}(cost)=0.9*80 + 0.1*(50+80) = 85$
+\subsection*{c.} 
+I would recommend plan I because the expected cost is cheaper while they both
+have the same probability that the child will be cured.
+
+\subsection*{4.a}
+$0.85^40.15=0.0783$
+
+\subsection*{4.b}
+$0.15 +0.85\cdot 0.15 +0.85^20.15+ 0.85^30.15=0.0783$
+
+\subsection*{4.c}
+$1 - (0.15 + 0.15*0.85) = 0.7225$
+
+\subsection*{4.d}
+\begin{align*}
+	\sum_{i=1}^{\inf}0.85^{2i-1}0.15 &= 0.15\sum_{i=1}^{\inf}0.85^{2i-1}\\
+																	 &= 0.15\frac{0.85}{1 - 0.85^{2}}\\
+																	 &= 0.4595
+\end{align*}
+
+\subsection*{4.e}
+\begin{align*}
+	\mathbb{E}(3X) &= 3 \mathbb(X)\\
+								 &= 3 \cdot \frac{1}{0.15}
+\end{align*}
+
+\subsection*{5}
+\begin{align*}
+	T_C(T_F) &= (T_F - 32) \cdot \frac{5}{9}\\
+					 &= \frac{5}{9} \cdot T_F - \frac{32\cdot 5}{9}
+\end{align*}
+Since the transform is linear, the transformed standard deviation is $12.2 \cdot
+\frac{5}{9} = \frac{61}{9}$
+
+\subsection*{6} Since multiplying the distribution by $20$ is a linear
+transformation, the resulting mean (expected) length will be $3 \cdot 20 = 60$,
+and the standard deviation is $0.1 \cdot 20 = 2$.
+
+\subsection*{7}
+Let $X$ be the random variable denoting the number on the marble when it is pulled
+from the bag.
+\begin{align*}
+	\mathbb{E}(X) &= \sum_{i \in [1, n]} i \cdot p(X=i)\\
+								&= \sum_{i \in [1, n]} i^2k\\
+								&= \frac{kn \cdot (n+1) \cdot (2n+1)}{6}
+\end{align*}
+\end{document}
+
