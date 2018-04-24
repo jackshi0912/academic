@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsthm, amsfonts, mathtools}
+\usepackage{enumitem}
+
+\begin{document}
+
+\null\hfill\begin{tabular}[t]{l@{}}
+	\textbf{Name: }Huize Shi - A92122910 \\
+	\textbf{Discussion: }A04 \\
+	\textbf{Homework: }3
+\end{tabular}
+\noindent\rule{\textwidth}{0.5pt}
+
+\begin{enumerate}
+	% 1
+	\item
+	\begin{enumerate}
+		% 1.a
+		\item Show that $\mathbb{Z}[w]=\{a+bw \mid a,b \in \mathbb{Z}\}$ is a
+			subring of $\mathbb{C}$ where $w = \frac{-1 + \sqrt{-3}}{2}$
+
+			\paragraph{Addition:}
+				\begin{align*}
+					&\left(a+b\left(\frac{-1 + \sqrt{-3}}{2}\right)\right)-
+					\left(c+d\left(\frac{-1 + \sqrt{-3}}{2}\right)\right)\\
+					=& \left((a-c)+(b+d)\left(\frac{-1 + \sqrt{-3}}{2}\right)\right)
+				\end{align*}
+			\paragraph{Multiplication:}
+				\begin{align*}
+					&\ \ \left(a+b\left(\frac{-1 + \sqrt{-3}}{2}\right)\right) \cdot
+						\left(c+d\left(\frac{-1 + \sqrt{-3}}{2}\right)\right)\\
+					&= ac + (ad+bc)\left(\frac{-1 + \sqrt{-3}}{2}\right) +
+						bd\left(\frac{-1 + \sqrt{-3}}{2}\right)^2\\
+					&= (ac - \frac{ad}{2} - \frac{bc}{2} - \frac{bd}{2}) +
+						(ad + bc + bd)\frac{\sqrt{-3}}{2}\\
+					&= ac - (ad + bc + bd)\frac{1}{2} + (ad + bc +
+						bd)\frac{\sqrt{-3}}{2}\\
+					&= ac + (ad + bc +
+						bd)\frac{-1 + \sqrt{-3}}{2}
+				\end{align*}
+
+				Hence shown $\mathbb{Z}[w]$ is a subring of $\mathbb{C}$.\\
+
+		% 1.b
+		\item Show that the field of fraction of $\mathbb{Z}[w]$ is
+			$\mathbb{Q}[w]=\{a+bw \mid a,b \in \mathbb{Q}\}$.
+
+
+	\end{enumerate}
+\end{enumerate}
+
+\end{document}
+
