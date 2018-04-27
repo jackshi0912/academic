@@ -1,0 +1,16 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(purrr)
+```
+
+```{r}
+samples = runif(10000, 0, 4)
+transformed = map_dbl(samples, ~ 3*.x^2 + 4*.x -1)
+print(mean(transformed))
+```
+```{r}
+mean(replicate(10000, sum(rexp(10, 1/5) > 3) ))
+```
