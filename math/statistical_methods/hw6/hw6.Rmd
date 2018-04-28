@@ -14,3 +14,4 @@ print(mean(transformed))
 ```{r}
 mean(replicate(10000, sum(rexp(10, 1/5) > 3) ))
 ```
+
