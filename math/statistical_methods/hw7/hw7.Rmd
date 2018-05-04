@@ -1,0 +1,25 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+R.1
+```{r}
+hist(rnorm(10000)^2)
+```
+1.a
+```{r}
+pnorm(-1, mean=-2, sd=3, lower.tail=FALSE)
+pnorm(1/3, lower.tail = FALSE)
+```
+1.b
+```{r}
+pnorm(7, mean=1, sd=2, lower.tail=T) - pnorm(0, mean=1, sd=2, lower.tail=T)
+pnorm(3, lower.tail = T) - pnorm(-0.5, lower.tail = T)
+```
+1.c
+```{r}
+1-pnorm(2, mean=1, sd=3, lower.tail=T) + pnorm(-2, mean=1, sd=3, lower.tail=T)
+1-pnorm(1/3, lower.tail = T) + pnorm(-1, lower.tail = T)
+```
+

@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amsfonts, mathtools}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+\subsection*{2a}
+\begin{align*}
+z-score_{83} = 2.33 &= \frac{83-65}{\sigma}\\
+						 \sigma &= \frac{18}{2.33}\\
+						 \sigma &= 7.725
+\end{align*}
+
+\subsection*{2b}
+\begin{align*}
+	X &\sim \mathcal{N}(50, 5)\\
+	P(X < 48) &= 0.346\\
+	3*\frac{1}{0.346} &=  8.67
+\end{align*}
+I would have to talk to roughly 9 people to meet 3 people scoring less than 48.
+
+\subsection*{3}
+\begin{align*}
+	z-score_{ucsd}{3.6} &= \frac{3.6-3.17}{\sigma}\\
+	z-score_{ucm}{3.8} &= \frac{3.8-3.56}{0.4}\\
+	z-score_{ucsd}{3.6} &= z-score_{ucm}{3.8}\\
+	 \frac{3.6-3.17}{\sigma} &= \frac{3.8-3.56}{0.4}\\
+	 \sigma &= 0.72
+\end{align*}
+
+\subsection*{4}
+\begin{align*}
+qnorm(0.975) = 1.96
+\end{align*}
+
+\subsection*{5}
+\begin{align*}
+	std\_z(0.99) &= 2.33\\
+	2.33 &= \frac{16 - \mu}{0.2}\\
+	\mu &= 16 - 2.33 * 0.2\\
+	\mu &= 15.534
+\end{align*}
+
+\subsection*{5}
+\begin{align*}
+	X &\sim \mathcal{N}\\
+	p(X=x) &= \frac{e^{-\frac{(x-\mu)^2}{2\sigma^2}}}{\sqrt{2\pi\sigma^2}}\\
+	\frac{dp(x)}{dx} &=
+	\frac{-(x-u)e^{\frac{-(x-\mu)^2}{2\sigma^2}}}{\sqrt{\sigma^62\pi}}\\
+	&= \frac{-(x-\mu)}{\sigma^2}p(x)\\
+	\frac{d^2p(x)}{dx^2} &= \frac{-p(x)}{\sigma^2} - \frac{(x-\mu)}{\sigma^2}\\
+	&= (\frac{(x-\mu)^2}{\sigma^4} - \frac{1}{\sigma^2})p(x)\\
+	\frac{d^2p(x)}{dx^2} = 0 &= (\frac{(x-\mu)^2}{\sigma^4} -
+	\frac{1}{\sigma^2})p(x)\\
+	0 &= \frac{(x-\mu)^2}{\sigma^4} - \frac{1}{\sigma^2}\\
+	0 &= (x-\mu)^2 - \sigma^2\\
+	\sigma^2  &= (x-\mu)^2\\
+	x &= \mu \pm \sigma
+\end{align*}
+
+\subsection*{R1}
+By squaring $\mathbb{N}$ all the negative points becomes positive hence
+integration starts at $0$.
+\begin{align*}
+	\int_0^\infty x^2\cdot\frac{e^{-\frac{x^2}{2}}}{\sqrt{2\pi}} dx = 1\\
+\end{align*}
+
+\end{document}
+

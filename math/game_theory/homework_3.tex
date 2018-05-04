@@ -1,0 +1,145 @@
+\documentclass[addpoints,answers]{exam}
+
+\usepackage{amsmath}
+\usepackage{amssymb}    
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{skak}
+
+\sloppy
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\checkboxchar{$\Box$}
+\checkedchar{$\blacksquare$}
+\CorrectChoiceEmphasis{}
+
+
+\begin{document}
+
+    \pagestyle{headandfoot}
+    \runningheadrule
+    \firstpageheader{Math 152}{Homework 3}{April 27, 2018}
+    \runningheader{Math 152}{Homework 3, Page \thepage\ of \numpages}{April 27, 2018}
+
+    \firstpagefooter{}{}{}
+    \runningfooter{}{}{}
+    \begin{flushright}
+        \makebox[0.4\textwidth]{Name:Huize Shi}
+
+        \vspace{0.2in}
+
+        \makebox[0.4\textwidth]{Pid:A92122910}
+    \end{flushright}
+
+    \begin{questions}
+        \question[10]
+            Two players have two boards $8 \times 8$ and $9 \times 9$, one by one they put
+            rooks on these boards such that none of the rooks attack each other (on each
+            turn a player can put a rook on only one board). Who is the
+            winner in this game.
+            \begin{solutionorbox}[\stretch{1}]
+							The first player is always the winner of this game. The first
+							player will take the center of the $9 \times 9$ board on the first
+							turn. For any subsequent turns, the first player will place rooks
+							symetric to the second player along either diagonal on the same
+							board. Since the center is claimed on the $9\times 9$ board and
+							$8\times 8$ board does not have a center point, this is possible
+							for the first player. Since rook attack all horizontal and
+							vertical squares, diagonal mirroring positions never attack
+							eachother therefore if the second player has a move, the first
+							player will always have a move.
+            \end{solutionorbox}
+            \newpage
+ 
+        \question
+            Compute the Grundy function for states of the subtraction game with two piles of
+            chips where players may subtract $1$, $2$ or $5$ chips from one of the piles on
+            their turn.
+            \begin{solutionorbox}[\stretch{1}]
+							\begin{center}
+							\begin{tabular}{c||c|c|c|c|c|c|c}
+								x & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+								\hline
+								g(x) & 0 & 1 & 2 & 0 & 1 & 2 & 0 
+							\end{tabular}
+							\end{center}
+							Assume $g(x) = x\ mod\ 3$ for $x \le k$. Show that $g(k+1)$
+							holds.
+							\begin{center}
+							\begin{tabular}{c||c|c|c}
+								k+1 mod 3 & 0 & 1 & 2\\
+								\hline
+								mex\{g(x-1), g(x-2), g(x-5)\} & mex\{2, 1, 1\}=0 & mex\{2, 0,
+								2\}=1 & mex\{1, 0, 0\}=2
+							\end{tabular}
+							\end{center}
+
+							Hence shown $g(x) = x\ mod\ 3$ is the correct Grundy function for one
+							subtraction game.\\
+							By the Grundy theorem, the grundy function for two subtraction
+							game would be the following: 
+							\begin{equation*}
+								g_{G_1, G_2}(x_1, x_2) = (x_1\ mod\ 3)\oplus (x_2\ mod\ 3)
+							\end{equation*}
+							\begin{center}
+							\begin{tabular}{c|c c c}
+								$x_2$ \slash $x_1$& 0 & 1 & 2\\
+								\hline
+								0 & 0 & 1 & 2\\
+								1 & 1 & 0 & 3\\
+								2 & 2 & 3 & 0\\
+							\end{tabular}
+							\end{center}
+
+            \end{solutionorbox}
+            \newpage
+ 
+        \question
+            Let $G_1$ be the subtraction game where on their turn a player may
+            remove $1$ or $2$ coins, and where there are $10$ coins initially. Let $G_2$ be
+            the game of Nim with three piles, of sizes $1$, $6$, $7$. List all winning moves
+            in $G_1 + G_2$
+            \begin{solutionorbox}[\stretch{1}]
+							\begin{center}
+							\begin{tabular}{c||c|c|c|c|c|c|c}
+								x & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+								\hline
+								g(x) & 0 & 1 & 2 & 0 & 1 & 2 & 0 
+							\end{tabular}
+							\end{center}
+							Assume $g_{G_1}(x) = x\ mod\ 3$ for $x \le k$. Show that $g(k+1)$
+							holds.
+							\begin{center}
+							\begin{tabular}{c||c|c|c}
+								k+1 mod 3 & 0 & 1 & 2\\
+								\hline
+								mex\{g(x-1), g(x-2)\} & mex\{2, 1\}=0 & mex\{2, 0,\}=1 & mex\{1, 0\}=2
+							\end{tabular}
+							\end{center}
+
+							Hence shown $g_{G_1}(x) = x\ mod\ 3$ is the correct Grundy function for one
+							subtraction game.\\\\
+
+							Winning move would be one that move both games to p positions.
+							This is because if both games are in p positions after the first
+							move, the first player can win any game that the second player
+							make a play on for every move. In this case, the game of Nim is
+							already in p position since $1 \oplus 6 \oplus 7 = 0$. The players
+							only winning move would be taking 1 from the subtraction game,
+							since $g_{G_1}(9)=9\ mod\ 3=0$, the condition is met for p
+							position for both games. \\\\
+							Note: the converse strategy (making both games n-positions) does not work,
+							since sending both games to n positions does not result in winning
+							since an n position can go to another n position, but a p position
+							can only go to n position. The second player can mave a move such
+							that a n-position game remains in n-position.
+            \end{solutionorbox}
+            \newpage
+ 
+\end{questions}
+\end{document}
