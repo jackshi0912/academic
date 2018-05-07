@@ -1,0 +1,26 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+qnorm(0.93)
+```
+Question 2 $y(x) = 2$
+```{r}
+qnorm(.95)
+pnorm(0.82)
+```
+```{r}
+yoshi = read.csv("yoshinums.csv")
+```
+
+```{r}
+hist(yoshi$x)
+```
+```{r}
+mean(yoshi$x)
+sd(yoshi$x)
+```
+
+
