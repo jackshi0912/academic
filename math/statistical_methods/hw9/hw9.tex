@@ -3,5 +3,110 @@
 \usepackage{enumitem}
 \usepackage[margin=1in]{geometry}
 \begin{document}
+
+\section*{1a}
+The alternative hypothesis should be $\bar{x} > 78.74$ since the question is
+whether American women \textbf{live longer} than American men.
+
+\section*{1b}
+The prior null distribution should be normal: $H_0 \sim \mathcal{N}$. The
+sampling method should be unbiased thus making sure that the sample distribution
+is also normal.
+
+\section*{1c}
+\begin{align*}
+H_0 &\sim \mathcal{N}(78.74, \frac{5.3}{\sqrt{200}} = 0.375)\\
+p(\bar{x} > 79.5 \mid H_0) &= \texttt{pnorm(79.5, mean=78.74, sd=0.375,
+																			lower.tail=F)}\\
+													 &= 0.0213
+\end{align*}
+Since $0.0213 < 0.05$, we reject $H_0$ in favor of $H_A$. American women does
+live longer than American men.
+
+\section*{2}
+$\mu$: made up SSI mean of the phony samples.
+\begin{align*}
+	H_0:\ \mu &= 62\\
+	H_A:\ \mu &< 62\\
+	H_0 &\sim \mathcal{N}(62, \frac{7}{\sqrt{40}}=1.107)\\
+	\mu &= \texttt{qnorm(0.01, mean=62, sd=1.107, lower.tail=T)}\\
+			&= 59.425
+\end{align*}
+I should make up SSI average $\mu=59.425$ to achieve $\alpha = 0.01$ cutoff.
+
+\section*{3a}
+Weight of 16 students $\sim \mathcal{N}(147 \cdot 16,
+\frac{10}{\sqrt{16}}\cdot 16) = \mathcal{N}(2352, 40)$
+
+\section*{3b}
+$\mu$: The mean weight of the combined college students
+\begin{align*}
+p &\sim \mathcal{N}(2352, 40)\\
+p(\mu > 2500) &= \texttt{pnorm(2500, mean=2352, sd=40, lower.tail=F)}\\
+							&= 0.00010780
+\end{align*}
+
+\section*{3c}
+Let random variable $X$ deonte: the number of trials to get $k^{th}$ success
+(success being a zazzle got into elevator).
+\begin{align*}
+p &\sim NBinom(k=5)\\
+\mathbb{E}[X] &= \frac{5}{0.00010780}\\
+							&= 46382.19\\
+\end{align*}
+It is expected that roughly 46383 groups of 16 would need to ride before the
+cable snaps.
+
+\section*{4a}
+$\sigma_{\bar{x}}$: The standard deviation of the sampling distribution of
+standard IQ tests scores for American men.
+\begin{align*}
+H_0:\ \sigma_{\bar{x}} &= 14\\
+H_A:\ \sigma_{\bar{x}} &> 14
+\end{align*}
+
+\section*{4b}
+We would fail to reject the null hypothesis. It appears that the standard
+deviation of the sampling distribution of standard IQ tests scores for American
+men is insuffiently different from that of American woman.
+
+\section*{4c}
+P-value indicate the probability of seeing an experiement observation appear in
+the null distribution $H_0$. A p-value of $0.07$ means that the probability of
+seeing the experimental observation appear in the null distribution is $0.07$.
+Unless it is below some threshold, we would conclude that the observation is not
+rare enough to reject that the $H_0$ distribution models the system correctly,
+hence failing to reject the null hypothesis.
+
+\section*{5b}
+The exact shape is a Gaussian distribution $\mathcal{N}(2,
+\frac{1.155}{\sqrt{300}}) = \mathcal{N}(2, 0.0667)$. The distribution is
+centered around 2 with standard deviation of $0.0667$
+
+\section*{5c}
+The shape is defined by $p(x) = 0.125x$ it is a left skewed distribution. The
+center is at 2.667. The standard deviation is 0.889.
+
+\section*{R1}
+$\mu$: The mean of the measurements Michelson made for the speed of light.\\
+Hypothesis:
+\begin{align*}
+	H_0:\ \mu = 300000\\
+	H_A:\ \mu \neq 300000
+\end{align*}
+CV = [299712.44, 299799.99]\\
+Since 300000 is not in the confidence interval, we reject $H_0$, it appears that
+the the measurements taken by Michelson disagrees with the real speed of light.
+
+\section*{R2}
+\begin{align*}
+H_0 &\sim \mathcal{N}(299756.217, 107.115)\\
+p\_value &= 2 \cdot pnorm(300000, mean=299756.217, sd=107.115, lower.tail=F)\\
+p\_value &= 0.023
+\end{align*}
+The mean and standard deviation for the null distribution are calculated from
+the Michelson experiments. The p-value is calculated by calculating the
+probability of the true value showing up in the null distribution.
+
 \end{document}
 
