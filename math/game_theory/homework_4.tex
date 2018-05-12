@@ -2,6 +2,7 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}    
+\usepackage{enumerate}
 \usepackage{amsfonts}
 \usepackage{tikz}
 \usepackage{verbatim}
@@ -29,11 +30,11 @@
     \firstpagefooter{}{}{}
     \runningfooter{}{}{}
     \begin{flushright}
-        \makebox[0.4\textwidth]{Name:\enspace\hrulefill}
+        \makebox[0.4\textwidth]{Name: Huize Shi}
 
         \vspace{0.2in}
 
-        \makebox[0.4\textwidth]{Pid:\enspace\hrulefill}
+        \makebox[0.4\textwidth]{Pid: A92122910}
     \end{flushright}
 
     \begin{questions}
@@ -49,6 +50,48 @@
                 \item or Bob has no apples.
             \end{itemize}
             \begin{solutionorbox}[\stretch{1}]
+							To prove that the following are Pareto optimal,
+            \begin{itemize}
+                \item either Alice has no bananas
+                \item or Bob has no apples.
+            \end{itemize}
+						two conditions must be checked: 
+						\begin{enumerate}
+							\item $A(x^*, y^*) < A(x,y) \Rightarrow B(x^*, y^*) > B(x,y)$
+							\item $B(x^*, y^*) < B(x,y) \Rightarrow A(x^*, y^*) > A(x,y)$
+						\end{enumerate}
+						Let function $A$ represent income for Alice, function $B$ represent
+						income for Bob. $a$ stands for the number of apples. $b$ stands for
+						the number of bananas.
+						\begin{align*}
+							A(x^*, y^*) &= 2a\\
+							B(x^*, y^*) &= 2b\\
+							A(x, y) &= 2(a-n) + k\\
+							B(x, y) &= n + 2(b-k)
+						\end{align*}
+						In case 1 (Alice trade n apples for k bananas and Alice income rose):
+						\begin{align*}
+							A(x^*, y^*) &< A(x, y)\\
+							2a < 2(a-n) + k &\Rightarrow k>2n\\
+															&\Rightarrow 0 > 2n -k\\
+															&\Rightarrow 2b > 2b + 2n -k\\
+												 k>2n	&\Rightarrow 2b > 2b + 2n -k -k - n\\
+														  &\Rightarrow 2b > 2(b-k) + n\\
+							A(x^*, y^*) < A(x, y)&\Rightarrow B(x^*, y^*) > B(x,y)
+						\end{align*}
+						In case 2 (Alice trade n apples for k bananas and Bob income rose):
+						\begin{align*}
+							B(x^*, y^*) &< B(x, y)\\
+							2b < 2(b-k) + n &\Rightarrow n>2k\\
+															&\Rightarrow 0 > 2k -n\\
+															&\Rightarrow 2a > 2a + 2k -n\\
+												 n>2k	&\Rightarrow 2a > 2a + 2k -n -n - k\\
+														  &\Rightarrow 2a > 2(a-n) + k\\
+							B(x^*, y^*) < B(x, y)&\Rightarrow A(x^*, y^*) > A(x,y)
+						\end{align*}
+						As proven above, either conditions are satisfied for the given
+						states to be Pareto optimal.
+						
             \end{solutionorbox}
             \newpage
  
@@ -57,6 +100,51 @@
             number of pebbles from one pile or split this pile into two piles. Compute the
             Grudny function for this game for all the initial states with one pile.
             \begin{solutionorbox}[\stretch{1}]
+
+							\begin{center}
+							\begin{tabular}{c||c|c|c|c|c|c|c}
+								x & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+								\hline
+								g(x) & 0 & 1 & $mex\{0, 1, 1\oplus 1=0 \}=2$ & $mex\{0, 1, 2,
+								2\oplus 1=3 \}=4$ & 3 & 5 & 6
+							\end{tabular}
+							\end{center}
+							The function swiches order on every 3rd and 4th counting from the
+							$1^{st}$. $\forall x \in \mathbb{Z}^{\ge 0}$
+							\begin{align*}
+							g(0) &= 0\\
+							g(4x+1) &= 4x+1\\
+							g(4x+2) &= 4x+2\\
+							g(4x+3) &= 4x+4\\
+							g(4x+4) &= 4x+3
+							\end{align*}
+							\paragraph{Proof by induction:}
+								\subparagraph{4x+1}A single pile would have Grundy function
+								value from 0 to 4x. Two pile tuples $(4x, 1),
+								(4x-1,2),\dots,(2x+1, 2x)$, have even (because the parity bit
+								between the two piles are the same) Grundy values. This means
+								that $g(4x+1) = 4x+1$.
+
+								\subparagraph{4x+2}A single pile would have Grundy function
+								value from 0 to 4x+1. Two pile tuples $(4x+1, 1),
+								(4x,2),\dots,(2x+1, 2x+1)$, have odd (because the parity bit
+								between the two piles are different), and divisible by 4 Grundy 
+								values. This means that $g(4x+2) = 4x+2$.
+
+								\subparagraph{4x+3}A single pile would have Grundy function
+								value from 0 to 4x+2. Two pile tuples $(4x+2, 1),
+								(4x+1,2),\dots,(2x+2, 2x+1)$, have odd (because the parity bit
+								between the two piles are different), Grundy values. However,
+								$g(4x+2,1)=4x+3$. This means that the next element in mex set
+								would be $g(4x+3) = 4x+4$.
+
+								\subparagraph{4x+4}A single pile would have Grundy function
+								value from 0 to 4x+2 and by last part, 4x+4. 
+								Two pile tuples $(4x+3, 1),
+								(4x+2,2),\dots,(2x+2, 2x+2)$, have 1 mod 4, and even, Grundy
+								values. This means that the next element in mex set
+								would be $g(4x+4) = 4x+3$ since that is not taken.
+
             \end{solutionorbox}
             \newpage
  
