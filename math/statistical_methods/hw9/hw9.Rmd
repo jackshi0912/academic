@@ -1,0 +1,39 @@
+1 c
+```{r}
+pnorm(79.5, mean=78.74, sd=0.375, lower.tail=F)
+```
+2
+```{r}
+qnorm(0.01, mean=62, sd=1.107, lower.tail=T)
+```
+3 b
+```{r}
+pnorm(2500, mean=2352, sd=40, lower.tail=F)
+```
+5 a
+```{r}
+hist(runif(100000))
+```
+5 b
+```{r}
+hist(replicate(100000, mean(runif(300, 0,4))))
+```
+5 c
+```{r}
+hist(replicate(10000, max(runif(2, 0, 4))))
+```
+R1
+```{r}
+spd = c(883, 778, 682, 611, 1051, 578, 774, 772, 573, 748, 851, 723, 816, 796, 711, 599, 781, 796, 820, 696, 748, 797, 809)
+spd = spd + 299000
+mspd = mean(spd)
+std = sd(spd)
+cv_l = mspd - 1.96 * std/sqrt(23)
+cv_h = mspd + 1.96 * std/sqrt(23)
+```
+
+R2
+```{r}
+2*pnorm(300000, mean=299756.217, sd=107.115, lower.tail=F)
+```
+
