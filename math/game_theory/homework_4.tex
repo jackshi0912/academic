@@ -1,0 +1,64 @@
+\documentclass[addpoints,answers]{exam}
+
+\usepackage{amsmath}
+\usepackage{amssymb}    
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{skak}
+
+\sloppy
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\checkboxchar{$\Box$}
+\checkedchar{$\blacksquare$}
+\CorrectChoiceEmphasis{}
+
+
+\begin{document}
+
+    \pagestyle{headandfoot}
+    \runningheadrule
+    \firstpageheader{Math 152}{Homework 4}{May 4, 2018}
+    \runningheader{Math 152}{Homework 4, Page \thepage\ of \numpages}{May 4, 2018}
+
+    \firstpagefooter{}{}{}
+    \runningfooter{}{}{}
+    \begin{flushright}
+        \makebox[0.4\textwidth]{Name:\enspace\hrulefill}
+
+        \vspace{0.2in}
+
+        \makebox[0.4\textwidth]{Pid:\enspace\hrulefill}
+    \end{flushright}
+
+    \begin{questions}
+        \question
+            Alice and Bob has several apples and bananas and they want to split these
+            fruits. Both of them like both fruits, but value them differently. For Alice,
+            $1$ apple is exactly equivalent to $2$ bananas. For Bob, $2$ apples are exactly
+            equivalent to $1$ banana.
+            
+            Show that the way to split all the fruits is Pareto optimal if and only if
+            \begin{itemize}
+                \item either Alice has no bananas
+                \item or Bob has no apples.
+            \end{itemize}
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+ 
+        \question
+            Let us consider a modified game of Nim: on each turn a player may remove some
+            number of pebbles from one pile or split this pile into two piles. Compute the
+            Grudny function for this game for all the initial states with one pile.
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+ 
+\end{questions}
+\end{document}
