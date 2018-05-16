@@ -330,7 +330,43 @@
 			$\alpha := \frac{a}{b}$ satisfies both conditions.
 
 		% 5 c
-		\item Let $\phi:\mathbb{Z}$
+		\item Let $\phi:\mathbb{Z}[\omega] \mapsto \mathbb{Z}_p$, $\phi_\alpha(c+d\omega) :=
+			c+d\alpha$ where $\alpha$ is given in part \textbf{b}. Prove that $\phi$
+			is a ring homomorphism.
+			\paragraph{Closed under addition:} 
+			\begin{align*}
+			(c+d\alpha) + (e+f\alpha) &= (c+e) + (d+f) (\alpha)\\
+			\end{align*}
+			\paragraph{Closed under multiplication:}
+			\begin{align*}
+				(c+d\alpha) \cdot (e+f\alpha) &= ce + (de + cf)\alpha + df\alpha^2\\
+				&= ce + (de + cf + df\frac{a}{b})\alpha
+			\end{align*}
+			Hence shown $\phi$ is a ring homomorphism.
+
+		% 5 d
+		\item Prove that $ker\ \phi = \langle a-b\omega \rangle$
+			\begin{align*}
+				\phi_\alpha(a-b\omega) &= a-b\alpha = 0\\
+				a-b\alpha \in ke\ \phi &\Rightarrow \langle a-b\omega \rangle \subseteq
+				ke\ \phi
+			\end{align*}
+			By part \textbf{5 a}, we know that $a-b\omega$ is irreducible in
+				$\mathbb{Z}[\omega]$, since $\mathbb{Z}[\omega]$ is a PID, we know that
+				$\langle a-b\omega \rangle$ is a maximal ideal, $\langle a-b\omega
+				\rangle \subseteq ke\ \phi$ means that $ker\ \phi = \langle a-b\omega
+				\rangle$.
+
+		% 5 e
+			\item Prove that $\faktor{\mathbb{Z}[\omega]}{\langle a-b\omega \rangle}
+				\simeq \mathbb{Z}_p$\\
+				Show that $\phi$ is surjective: $\forall z \in \mathbb{Z}_p, \phi(z) =
+				z$.\\
+				By part \textbf{5 d}, we know $ker\ \phi = \langle a-b\omega \rangle$.
+				By part \textbf{5 c}, we know that $\phi$ is a ring homomorphism. By the
+				$1^{st}$ isomorphism theorem, $\faktor{\mathbb{Z}[\omega]}{\langle
+				a-b\omega \rangle} \simeq \mathbb{Z}_p$.
+
 	\end{enumerate}
 
 \end{enumerate}
