@@ -1,0 +1,19 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+budget = c(93.74, 129.75, 100.33, 111.04, 167.15, 149.56, 124.26, 108.57, 118.62, 129.81, 98.58)
+thrifty = c(88.54, 125, 99.03, 104.14, 162.08, 141.41, 122.99, 102.51, 117.44, 121.76, 77.32)
+difference = budget - thrifty
+```
+```{r}
+mean_price_diff = mean(difference)
+sd_price_diff = sd(difference)
+```
+
+```{r}
+
+```
+
