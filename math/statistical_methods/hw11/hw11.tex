@@ -45,7 +45,20 @@ difference in mean price lies within the interval [3.978, 8.602].
 
 \section*{3.}
 $H_0$: $\mu_{dome} - \mu_{ndome} = 0$\\
-$H_A$: $\mu_{dome} - \mu_{ndome} \neq 0$
+$H_A$: $\mu_{dome} - \mu_{ndome} \neq 0$\\
+$SE = \sqrt{\frac{15.74^2}{5} + \frac{6.56^2}{7}}=7.46$\\
+$T = \frac{(83.96-84.84)-0}{7.46}=-0.1179$\\
+\texttt{2*pt(-0.1179, df=4) = 0.912}\\
+Since $0.912 > 0.03$ we fail to reject $H_0$, we decide that there is no
+difference between the two strategies.
 
+\section*{5.}
+$H_0$: $\mu_o - \mu_s = 0$\\
+$H_A$: $\mu_o - \mu_s \neq 0$\\
+$SE = \frac{7.3}{\sqrt{37}} = 1.20$\\
+$T = \frac{3.5-0}{1.20} = 2.917$\\
+\texttt{2*pt(-2.917, df=36)=0.006}\\
+Since 0.006 < 0.05, we reject the $H_0$ in favor of $H_A$. There appears to be a
+difference in critical review of original movies and their sequals.
 \end{document}
 

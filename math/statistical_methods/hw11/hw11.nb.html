@@ -190,11 +190,167 @@ sd_price_diff = sd(difference)</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucXQoMC45LCBkZj0xMClcbmBgYCJ9 -->
+<pre class="r"><code>qt(0.9, df=10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEuMzcyMTg0XG4ifQ== -->
+<pre><code>[1] 1.372184</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMS4zNzIqKDUuNTg5L3NxcnQoMTEpKVxuYGBgIn0= -->
+<pre class="r"><code>1.372*(5.589/sqrt(11))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIuMzEyMDIyXG4ifQ== -->
+<pre><code>[1] 2.312022</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuNi4yOSArIDIuMzEyXG5gYGAifQ== -->
+<pre class="r"><code>6.29 + 2.312</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDguNjAyXG4ifQ== -->
+<pre><code>[1] 8.602</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuNi4yOSAtIDIuMzEyXG5gYGAifQ== -->
+<pre class="r"><code>6.29 - 2.312</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMuOTc4XG4ifQ== -->
+<pre><code>[1] 3.978</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Problem 3</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZG9tZXMgPSBjKDEwMC4wLCA1OC42LCA5My41LCA4My42LCA4NC4xKVxud2l0aG91dCA9IGMoNzYuNCwgODQuMiwgOTYuNSwgODguOCwgODUuMywgNzkuMSwgODMuNilcbm1lYW4oZG9tZXMpXG5gYGAifQ== -->
+<pre class="r"><code>domes = c(100.0, 58.6, 93.5, 83.6, 84.1)
+without = c(76.4, 84.2, 96.5, 88.8, 85.3, 79.1, 83.6)
+mean(domes)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDgzLjk2XG4ifQ== -->
+<pre><code>[1] 83.96</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWVhbih3aXRob3V0KVxuYGBgIn0= -->
+<pre class="r"><code>mean(without)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDg0Ljg0Mjg2XG4ifQ== -->
+<pre><code>[1] 84.84286</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2QoZG9tZXMpXG5gYGAifQ== -->
+<pre class="r"><code>sd(domes)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDE1Ljc0NDYyXG4ifQ== -->
+<pre><code>[1] 15.74462</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2Qod2l0aG91dClcbmBgYCJ9 -->
+<pre class="r"><code>sd(without)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDYuNTU3MTQ4XG4ifQ== -->
+<pre><code>[1] 6.557148</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU0UgPSBzcXJ0KCgxNS43NF4yLzUpICsgKDYuNTZeMi83KSlcblNFXG5gYGAifQ== -->
+<pre class="r"><code>SE = sqrt((15.74^2/5) + (6.56^2/7))
+SE</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDcuNDYzMDU0XG4ifQ== -->
+<pre><code>[1] 7.463054</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKDgzLjk2LTg0Ljg0KS9TRVxuYGBgIn0= -->
+<pre class="r"><code>(83.96-84.84)/SE</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0wLjExNzkxNDJcbiJ9 -->
+<pre><code>[1] -0.1179142</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMipwdCgtMC4xMTc5LCBkZj00KVxuYGBgIn0= -->
+<pre class="r"><code>2*pt(-0.1179, df=4)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuOTExODMwMVxuIn0= -->
+<pre><code>[1] 0.9118301</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Problem 5</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuNy4zL3NxcnQoMzcpXG5gYGAifQ== -->
+<pre class="r"><code>7.3/sqrt(37)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEuMjAwMTEzXG4ifQ== -->
+<pre><code>[1] 1.200113</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMy41LzEuMlxuYGBgIn0= -->
+<pre class="r"><code>3.5/1.2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIuOTE2NjY3XG4ifQ== -->
+<pre><code>[1] 2.916667</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMipwdCgtMi45MTcsIGRmPTM2LCBsb3dlci50YWlsPVQpXG5gYGAifQ== -->
+<pre class="r"><code>2*pt(-2.917, df=36, lower.tail=T)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMDA2MDUyMzMzXG4ifQ== -->
+<pre><code>[1] 0.006052333</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>R Question</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGkgPSByZWFkLmNzdihcInBpLmNzdlwiKVxuZSA9IHJlYWQuY3N2KFwiZS5jc3ZcIilcbmBgYCJ9 -->
+<pre class="r"><code>pi = read.csv(&quot;pi.csv&quot;)
+e = read.csv(&quot;e.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGlfcyA9IHNhbXBsZShwaSRkaWdpdHMsIDQwMCwgcmVwbGFjZT1GLCBwcm9iPU5VTEwpXG5lX3MgPSBzYW1wbGUoZSRkaWdpdHMsIDQwMCwgcmVwbGFjZT1GLCBwcm9iPU5VTEwpXG5gYGAifQ== -->
+<pre class="r"><code>pi_s = sample(pi$digits, 400, replace=F, prob=NULL)
+e_s = sample(e$digits, 400, replace=F, prob=NULL)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudC50ZXN0KHBpX3MsIGVfcyxcbiAgICAgICBhbHRlcm5hdGl2ZSA9IGMoXCJ0d28uc2lkZWRcIiwgXCJsZXNzXCIsIFwiZ3JlYXRlclwiKSxcbiAgICAgICBtdSA9IDAsIHBhaXJlZCA9IEZBTFNFLCB2YXIuZXF1YWwgPSBGQUxTRSxcbiAgICAgICBjb25mLmxldmVsID0gMC45OSlcbmBgYCJ9 -->
+<pre class="r"><code>t.test(pi_s, e_s,
+       alternative = c(&quot;two.sided&quot;, &quot;less&quot;, &quot;greater&quot;),
+       mu = 0, paired = FALSE, var.equal = FALSE,
+       conf.level = 0.99)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5cdFdlbGNoIFR3byBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBwaV9zIGFuZCBlX3NcbnQgPSAtMC4zMDY1NCwgZGYgPSA3OTcuMDEsIHAtdmFsdWUgPSAwLjc1OTNcbmFsdGVybmF0aXZlIGh5cG90aGVzaXM6IHRydWUgZGlmZmVyZW5jZSBpbiBtZWFucyBpcyBub3QgZXF1YWwgdG8gMFxuOTkgcGVyY2VudCBjb25maWRlbmNlIGludGVydmFsOlxuIC0wLjU4ODk0MyAgMC40NjM5NDNcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggbWVhbiBvZiB5IFxuICAgNC40OTUwICAgIDQuNTU3NSBcbiJ9 -->
+<pre><code>
+    Welch Two Sample t-test
+
+data:  pi_s and e_s
+t = -0.30654, df = 797.01, p-value = 0.7593
+alternative hypothesis: true difference in means is not equal to 0
+99 percent confidence interval:
+ -0.588943  0.463943
+sample estimates:
+mean of x mean of y 
+   4.4950    4.5575 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudF92YWwgPSAobWVhbihwaV9zKS1tZWFuKGVfcykpLyhzcXJ0KChzZChwaV9zKV4yLzQwMCkrKHNkKGVfcyleMi80MDApKSlcbnRfdmFsXG5gYGAifQ== -->
+<pre class="r"><code>t_val = (mean(pi_s)-mean(e_s))/(sqrt((sd(pi_s)^2/400)+(sd(e_s)^2/400)))
+t_val</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIC0wLjMwNjUzOThcbiJ9 -->
+<pre><code>[1] -0.3065398</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMipwdCh0X3ZhbCwgZGY9Mzk5KVxuYGBgIn0= -->
+<pre class="r"><code>2*pt(t_val, df=399)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuNzU5MzUzNlxuIn0= -->
+<pre><code>[1] 0.7593536</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmJ1ZGdldCA9IGMoOTMuNzQsIDEyOS43NSwgMTAwLjMzLCAxMTEuMDQsIDE2Ny4xNSwgMTQ5LjU2LCAxMjQuMjYsIDEwOC41NywgMTE4LjYyLCAxMjkuODEsIDk4LjU4KQp0aHJpZnR5ID0gYyg4OC41NCwgMTI1LCA5OS4wMywgMTA0LjE0LCAxNjIuMDgsIDE0MS40MSwgMTIyLjk5LCAxMDIuNTEsIDExNy40NCwgMTIxLjc2LCA3Ny4zMikKZGlmZmVyZW5jZSA9IGJ1ZGdldCAtIHRocmlmdHkKYGBgCmBgYHtyfQptZWFuX3ByaWNlX2RpZmYgPSBtZWFuKGRpZmZlcmVuY2UpCnNkX3ByaWNlX2RpZmYgPSBzZChkaWZmZXJlbmNlKQpgYGAKCmBgYHtyfQoKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CmJ1ZGdldCA9IGMoOTMuNzQsIDEyOS43NSwgMTAwLjMzLCAxMTEuMDQsIDE2Ny4xNSwgMTQ5LjU2LCAxMjQuMjYsIDEwOC41NywgMTE4LjYyLCAxMjkuODEsIDk4LjU4KQp0aHJpZnR5ID0gYyg4OC41NCwgMTI1LCA5OS4wMywgMTA0LjE0LCAxNjIuMDgsIDE0MS40MSwgMTIyLjk5LCAxMDIuNTEsIDExNy40NCwgMTIxLjc2LCA3Ny4zMikKZGlmZmVyZW5jZSA9IGJ1ZGdldCAtIHRocmlmdHkKYGBgCmBgYHtyfQptZWFuX3ByaWNlX2RpZmYgPSBtZWFuKGRpZmZlcmVuY2UpCnNkX3ByaWNlX2RpZmYgPSBzZChkaWZmZXJlbmNlKQpgYGAKCmBgYHtyfQpxdCgwLjksIGRmPTEwKQpgYGAKCmBgYHtyfQoxLjM3MiooNS41ODkvc3FydCgxMSkpCjYuMjkgKyAyLjMxMgo2LjI5IC0gMi4zMTIKYGBgClByb2JsZW0gMwpgYGB7cn0KZG9tZXMgPSBjKDEwMC4wLCA1OC42LCA5My41LCA4My42LCA4NC4xKQp3aXRob3V0ID0gYyg3Ni40LCA4NC4yLCA5Ni41LCA4OC44LCA4NS4zLCA3OS4xLCA4My42KQptZWFuKGRvbWVzKQptZWFuKHdpdGhvdXQpCnNkKGRvbWVzKQpzZCh3aXRob3V0KQpTRSA9IHNxcnQoKDE1Ljc0XjIvNSkgKyAoNi41Nl4yLzcpKQpTRQooODMuOTYtODQuODQpL1NFCjIqcHQoLTAuMTE3OSwgZGY9NCkKYGBgClByb2JsZW0gNQpgYGB7cn0KNy4zL3NxcnQoMzcpCjMuNS8xLjIKMipwdCgtMi45MTcsIGRmPTM2LCBsb3dlci50YWlsPVQpCmBgYApSIFF1ZXN0aW9uCmBgYHtyfQpwaSA9IHJlYWQuY3N2KCJwaS5jc3YiKQplID0gcmVhZC5jc3YoImUuY3N2IikKYGBgCgpgYGB7cn0KcGlfcyA9IHNhbXBsZShwaSRkaWdpdHMsIDQwMCwgcmVwbGFjZT1GLCBwcm9iPU5VTEwpCmVfcyA9IHNhbXBsZShlJGRpZ2l0cywgNDAwLCByZXBsYWNlPUYsIHByb2I9TlVMTCkKYGBgCgpgYGB7cn0KdC50ZXN0KHBpX3MsIGVfcywKICAgICAgIGFsdGVybmF0aXZlID0gYygidHdvLnNpZGVkIiwgImxlc3MiLCAiZ3JlYXRlciIpLAogICAgICAgbXUgPSAwLCBwYWlyZWQgPSBGQUxTRSwgdmFyLmVxdWFsID0gRkFMU0UsCiAgICAgICBjb25mLmxldmVsID0gMC45OSkKYGBgCmBgYHtyfQp0X3ZhbCA9IChtZWFuKHBpX3MpLW1lYW4oZV9zKSkvKHNxcnQoKHNkKHBpX3MpXjIvNDAwKSsoc2QoZV9zKV4yLzQwMCkpKQp0X3ZhbAoyKnB0KHRfdmFsLCBkZj0zOTkpCmBgYAoK</div>
 
 
 

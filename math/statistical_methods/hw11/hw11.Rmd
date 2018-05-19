@@ -14,6 +14,53 @@ sd_price_diff = sd(difference)
 ```
 
 ```{r}
+qt(0.9, df=10)
+```
 
+```{r}
+1.372*(5.589/sqrt(11))
+6.29 + 2.312
+6.29 - 2.312
+```
+Problem 3
+```{r}
+domes = c(100.0, 58.6, 93.5, 83.6, 84.1)
+without = c(76.4, 84.2, 96.5, 88.8, 85.3, 79.1, 83.6)
+mean(domes)
+mean(without)
+sd(domes)
+sd(without)
+SE = sqrt((15.74^2/5) + (6.56^2/7))
+SE
+(83.96-84.84)/SE
+2*pt(-0.1179, df=4)
+```
+Problem 5
+```{r}
+7.3/sqrt(37)
+3.5/1.2
+2*pt(-2.917, df=36, lower.tail=T)
+```
+R Question
+```{r}
+pi = read.csv("pi.csv")
+e = read.csv("e.csv")
+```
+
+```{r}
+pi_s = sample(pi$digits, 400, replace=F, prob=NULL)
+e_s = sample(e$digits, 400, replace=F, prob=NULL)
+```
+
+```{r}
+t.test(pi_s, e_s,
+       alternative = c("two.sided", "less", "greater"),
+       mu = 0, paired = FALSE, var.equal = FALSE,
+       conf.level = 0.99)
+```
+```{r}
+t_val = (mean(pi_s)-mean(e_s))/(sqrt((sd(pi_s)^2/400)+(sd(e_s)^2/400)))
+t_val
+2*pt(t_val, df=399)
 ```
 
