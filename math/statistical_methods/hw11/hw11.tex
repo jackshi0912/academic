@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{amsmath, amsthm, amsfonts, mathtools}
+\usepackage{enumitem}
+\usepackage{geometry}
+
+\begin{document}
+
+\section*{1.}
+$$\mathcal{N}(\mu, \frac{Sx}{\sqrt{n}})$$
+$$SE = \frac{Sx}{\sqrt{n}}$$
+$$CI = \bar{x} \pm z \cdot \frac{Sx}{\sqrt{n}}$$
+$$z=\frac{\bar{x} - \mu}{SE}$$\\\\\\
+
+\begin{center}
+The difference between \\
+the two population means:
+\end{center}
+$$\mu_1 - \mu_2$$\\\\
+
+$$H_0:\ \mu_1 - \mu_2 = 0$$
+$$H_A:\ \mu_1 - \mu_2 \neq 0$$\\
+
+$$SE = \frac{S_d}{\sqrt{n}}$$
+$$\bar{d} \pm t_{df}^* \cdot SE$$
+$$\frac{\bar{d} - \mu}{SE}$$\\\\\\
+
+\begin{center}
+The difference between \\
+the two population means:
+\end{center}
+$$\mu_1 - \mu_2$$\\\\
+$$t_{df=min(n_1 -1, n_2 -1)}$$
+$$SE = \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$$
+$$CI = (\bar{x_1} - \bar{x_2}) \pm t_{df}^* \cdot SE$$
+
+\section*{2.}
+\subsection*{c.}
+\texttt{qt(0.90, df = 10)=1.372}\\
+\begin{align*}
+CI &= 6.29 \pm 1.372 \cdot \frac{5.589}{\sqrt{11}}\\
+&= [3.978, 8.602]
+\end{align*}
+The unit is in dollars. The experiment is 80 percent confident that the true 
+difference in mean price lies within the interval [3.978, 8.602].
+
+\section*{3.}
+$H_0$: $\mu_{dome} - \mu_{ndome} = 0$\\
+$H_A$: $\mu_{dome} - \mu_{ndome} \neq 0$
+
+\end{document}
+
