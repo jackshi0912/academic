@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsthm, amsfonts, mathtools, amssymb}
+\usepackage{faktor}
+\usepackage{enumitem}
+\usepackage{array}
+
+\begin{document}
+
+\null\hfill\begin{tabular}[t]{l@{}}
+	\textbf{Name: }Huize Shi - A92122910 \\
+	\textbf{Discussion: }A04 \\
+	\textbf{Homework: }7
+\end{tabular}
+\noindent\rule{\textwidth}{0.5pt}
+
+\begin{enumerate}
+
+	% 1
+	\item Find all the primes $p$ such that $x+2$ is a factor of $f(x)=x^6 + x^4 + x^3
+		-x + 1 \in \mathbb{Z}_p[x]$.\\
+		Suppose $f(x) = (x+2)g(x)$, since $\mathbb{Z}_p$ is a field by theorem, $-2$
+		is a zero of $f(x)$. 
+		\begin{align*}
+			f(-2) &\overset{p}{\equiv} (-2)^6 + (-2)^4 + (-2)^3 + 2 + 1\\
+						&\overset{p}{\equiv} 75
+		\end{align*}
+		Since $75 = 5 \cdot 5 \cdot 3$, $p \in \{5,3\}$.
+
+	% 2
+	\item Find a zero of $x^3 - 2x + 1$ in $\mathbb{Z}_5$ and express it as a
+		product of a degree $1$ and a degree $2$ polynomial.
+		\begin{center}
+			\begin{tabular}{c|c}
+				$x$ & $x^3 - 2x + 1$ \\
+				\hline
+				$0$ & $1$\\
+				$1$ & $0$\\
+				$2$ & $5$\\
+				$3$ & $22$\\
+				$4$ & $57$\\
+			\end{tabular}
+		\end{center}
+		$x^3 - 2x + 1 = (x-1)(x^2 + x - 1)$
+	% 3
+	\item How many degree $2$ and degree $3$ polynomials with no zeros in
+		$\mathbb{Z}_2[x]$ are there?\\\\
+		Since the leading coefficient has to be 1 in order for polynomial to have
+		the right degrees, and the constant has to be 1 since otherwise $0$ would be
+		a zero of the polynomial, there is only two options for degree 2 polynomial
+		and 4 options for degree three polynomials. One top of that, $x=0$ is not a
+		zero for any of these functions since all have constant of 1. In case of
+		$1$, it is not zero for any polynomial with odd terms since it would result
+		in odd number which is $1$ in $\mathbb{Z}_p$. We have $x^2+x+1$,
+		$x^3+x^2+1$, $x^3+x+1$. \\\\
+		There are three polynomials with no zeros in $\mathbb{Z}_2[x]$.
+
+	% 4
+	\item We are told that $x^4 - 2x^2 - 2$ is irreducible in $\mathbb{Q}[x]$.
+		\begin{enumerate}
+			% 4 a
+			\item Prove that $\faktor{\mathbb{Q}[x]}{\langle x^4 - 2x^2 - 2\rangle}
+				\simeq \{c_0 + c_1\alpha + c_2\alpha^2 + c_3\alpha^3 \mid c_i \in
+				\mathbb{Q}\}$ where $\alpha = \sqrt{1 + \sqrt{3}} \in \mathbb{R}$.\\\\
+				Let $\phi:\mathbb{Q}[x] \mapsto \{c_0 + c_1\alpha + c_2\alpha^2 +
+				c_3\alpha^3 \mid c_i \in \mathbb{Q}\}$ by $\phi(f) = \phi(\alpha)$. We
+				know evaluation map is a homomorphism.
+
+				\paragraph{$ker\ \phi = \langle x^4 - 2x^2 - 2 \rangle$} To show this,
+				first show that $\langle x^4 - 2x^2 - 2\rangle \subseteq ker\ \phi$
+				\begin{align*}
+					\phi(x^4 - 2x^2 - 2) &= \left(\sqrt{1+\sqrt{3}}\right)^4 -
+																	2\left(\sqrt{1+\sqrt{3}}\right)^2 - 2 \\
+															 &= (1+\sqrt{3})^2 - 2(1+\sqrt{3}) - 2\\
+															 &= 1 +2\sqrt{3} + 3 - 2 - 2\sqrt{3} - 2\\
+															 &= 0
+				\end{align*}
+
+				Since we know $x^4 - 2x^2 - 2$ is irreducible in $\mathbb{Q}[x]$ and
+				$\mathbb{Q}[x]$ is a PID since $\mathbb{Q}$ is a field, $\langle x^4 -
+				2x^2 - 2 \rangle$ is maximal in $\mathbb{Q}[x]$. Since $\langle x^4 -
+				2x^2 - 2\rangle \subseteq ker\ \phi$, and $\langle x^4 - 2x^2 - 2
+				\rangle$ is maximal, we know $ker\ \phi = \langle x^4 - 2x^2 - 2
+				\rangle$.
+
+				Since $\mathbb{Q}$ is a field, $\mathbb{Q}[x]$ is a euclidean domain,
+				hence $f(x) = (x^4 - 2x^2 - 2)q(x) + r(x),\ \forall f \in
+				\mathbb{Q}[x],\ r(x)=c_0 + c_1x + c_2x^2 + c_3x^3 \mid c_i \in
+				\mathbb{Q}$
+				\begin{align*}
+					\phi(f) &= (\alpha^4 - 2\alpha^2 - 2)q(\alpha) + r(\alpha) \\
+									&= 0 \cdot q(\alpha) + r(\alpha) \\
+									&= c_0 + c_1\alpha + c_2\alpha^2 + c_3\alpha^3
+				\end{align*}
+				Hence shown $Im\ \phi(f) = \{c_0 + c_1\alpha + c_2\alpha^2 + c_3\alpha^3
+				\mid c_i \in \mathbb{Q}\}$.\\
+				By $1^{st}$ isomorphism theorem, 
+				$$\faktor{\mathbb{Q}[x]}{\langle x^4 - 2x^2 - 2\rangle} \simeq \{c_0 +
+					c_1\alpha + c_2\alpha^2 + c_3\alpha^3 \mid c_i \in \mathbb{Q}\}$$
+
+			% 4 b
+			\item Write $\alpha^{-1}$ in the form $c_0 + c_1\alpha + c_2\alpha^2 +
+				c_3\alpha^3 \mid c_i \in \mathbb{Q}$.\\
+				Assume $\alpha^{-1} = c_0 + c_1\alpha + c_2\alpha^2 + c_3\alpha^3 \mid
+				c_i \in \mathbb{Q}$
+				\begin{align*}
+					\alpha(c_0 + c_1\alpha + c_2\alpha^2 + c_3\alpha^3) &= 1\\
+					c_0\alpha + c_1\alpha^2 + c_2\alpha^3 + c_3\alpha^4 &= 1\\
+					c_0\sqrt{1+\sqrt{3}} + c_1\left(\sqrt{1+\sqrt{3}}\right)^2 +
+						\left(c_2\sqrt{1+\sqrt{3}}\right)^3 +
+						c_3\left(\sqrt{1+\sqrt{3}}\right)^4 &= 1\\
+					c_0\sqrt{1+\sqrt{3}} + c_1(1+\sqrt{3}) +
+						\left(c_2\sqrt{1+\sqrt{3}}\right)^3 + c_3(1+2\sqrt{3}+3) &= 1\\
+					c_0\sqrt{1+\sqrt{3}} + c_1 + c_1\sqrt{3} +
+						\left(c_2\sqrt{1+\sqrt{3}}\right)^3 + c_3+2c_3\sqrt{3}+3c_3) &= 1\\
+					c_0\sqrt{1+\sqrt{3}} + \left(c_2\sqrt{1+\sqrt{3}}\right)^3 + c_1 
+						+\sqrt{3}(2c_3 + c_1) + 4c_3) &= 1\\
+					c_0=0 &, c_2=0\\
+					c_1 + 4c_3 &= 1\\
+					2c_3+c_1 &= 0\\
+					2c_3 &= 1 \Rightarrow c_3 = \frac{1}{2}\\
+					c_1 &= -1
+				\end{align*}
+				$a^{-1} = -\alpha + \frac{1}{2}\alpha^3$
+		\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
