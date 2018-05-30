@@ -1,0 +1,47 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+1
+```{r}
+qnorm(0.05, lower.tail=F)
+qnorm(0.9, lower.tail=F)
+```
+2
+```{r}
+4/sqrt(25)
+qnorm(0.015, mean = 13.7, sd=0.8)
+qnorm(0.015, mean = 13.7, sd=0.8, lower.tail=F)
+pnorm(11.96, mean=11.7, sd=0.8) + pnorm(15.44, mean=15.7, sd=0.8, lower.tail=F)
+```
+4
+```{r}
+pf(1.87, df1=7, df2=189, lower.tail=F)
+```
+
+R1
+```{r}
+cereal = read.csv("cereal.csv")
+freq = table(cereal$mfr)
+min_key = names(freq)[which.min(freq)]
+second_min = names(freq)[which.min(freq[names(freq) != min_key])]
+cereal = subset(cereal, mfr != min_key)
+cereal = subset(cereal, mfr != second_min)
+```
+
+R2
+```{r}
+# cereal$mfr = as.integer(cereal$mfr)
+boxplot(calories ~ mfr, data=cereal)
+```
+
+R3
+```{r}
+aggregate(cereal[, "calories"], list(cereal$mfr), mean)
+aggregate(cereal[, "calories"], list(cereal$mfr), sd)
+```
+
+```{r}
+aov(calories ~ mfr, data=cereal)
+```
+

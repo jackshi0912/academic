@@ -1,0 +1,37 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+P1
+```{r}
+2*pnorm(0.835, mean=0.8, sd=0.057, lower.tail = F)
+```
+P2
+```{r}
+qnorm(0.9)
+```
+P3
+```{r}
+qnorm(0.06, lower.tail=F)
+qnorm(0.8, lower.tail=F)
+```
+P4
+```{r}
+qnorm(0.96)
+pnorm(0.5+0.875/2)
+```
+P5
+```{r}
+qnorm(0.04)
+```
+R
+```{r}
+pi_bin = read.csv("pibinary.csv")
+pi_sample = sample(pi_bin$digits, size=300, replace=F)
+```
+```{r}
+prob_ones = sum(pi_sample==1)/(length(pi_sample))
+2*pnorm(prob_ones, mean=0.5, sd=sqrt(0.25/300))
+```
+

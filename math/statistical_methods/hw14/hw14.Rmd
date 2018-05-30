@@ -1,0 +1,42 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+Q1
+```{r}
+sqrt((0.9*0.1/610) + (0.5*0.5/724))
+0.4 + 1.44*0.022
+0.4 - 1.44*0.022
+prop.test(x=c(610*0.9, 724*0.5), n=c(610, 724), p=c(0.9, 0.5))
+```
+Q3
+```{r}
+p_pool = (15+70)/(2952+2000)
+se_pool = sqrt((p_pool*(1-p_pool))/2952 + (p_pool*(1-p_pool))/2000)
+z = (15/2952-70/2000)/0.0038
+2*pnorm(-7.873)
+```
+Q4
+```{r}
+p_p = (72+55)/(2*3273)
+se_p = sqrt(((0.0194*0.9806)/(3273))*2)
+z_t = ((72/3273) - (55/3273))/0.0034
+2*pnorm(1.53, lower.tail=F)
+```
+R1
+```{r}
+sum(runif(50, 0, 100)>99)/50
+hist(replicate(50000, sum(runif(50, 0, 100)>99)/50))
+```
+```{r}
+library(moments)
+```
+R4
+```{r}
+kurtosis(replicate(50000, sum(runif(50, 1, 99)>80)/50))
+sum(runif(50, 1, 99)>80)/50
+hist(replicate(50000, sum(runif(50, 1, 99)>80)/50))
+```
+
+
+
