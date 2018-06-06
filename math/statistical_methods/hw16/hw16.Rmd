@@ -1,0 +1,22 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+p2
+```{r}
+x = c(1, 1, 2, 3)
+y = c(2, 4, 2, 0)
+sd(x)
+sd(y)
+cor(x, y)
+reg1 <- lm(x~y)
+plot(x,y)
+abline(reg1)
+```
+R2
+```{r}
+x = rnorm(500, 1, 0.7)
+y = rnorm(500, 32, 4)
+plot(x, y)
+cor(x, y)
+```
